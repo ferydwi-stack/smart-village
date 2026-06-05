@@ -1,0 +1,25 @@
+.env
+node_modules/
+__pycache__/
+.next/
+vendor/
+*.exe
+models/*.pkl
+
+# Python virtual environment
+venv/
+env/
+.venv/
+*.pyc
+*.pyo
+
+# Sensitive files
+akun.txt
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

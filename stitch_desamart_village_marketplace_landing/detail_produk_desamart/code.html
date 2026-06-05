@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed": "#2c160e",
+                    "primary-fixed-dim": "#91d78a",
+                    "surface-container": "#f4eddd",
+                    "primary": "#00450d",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-low": "#faf3e2",
+                    "on-primary-fixed": "#002203",
+                    "error-container": "#ffdad6",
+                    "outline": "#717a6d",
+                    "on-secondary": "#ffffff",
+                    "background": "#fff9ec",
+                    "outline-variant": "#c0c9bb",
+                    "error": "#ba1a1a",
+                    "secondary-container": "#fed3c7",
+                    "primary-fixed": "#acf4a4",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed-variant": "#0c5216",
+                    "surface-bright": "#fff9ec",
+                    "inverse-on-surface": "#f7f0df",
+                    "tertiary-fixed": "#abf4ac",
+                    "secondary-fixed": "#ffdbd0",
+                    "secondary": "#77574d",
+                    "on-primary": "#ffffff",
+                    "tertiary-container": "#185e27",
+                    "surface-dim": "#e0dac9",
+                    "on-tertiary-fixed": "#002107",
+                    "on-secondary-fixed-variant": "#5d4037",
+                    "tertiary": "#004516",
+                    "secondary-fixed-dim": "#e7bdb1",
+                    "primary-container": "#1b5e20",
+                    "on-tertiary-fixed-variant": "#07521d",
+                    "on-error": "#ffffff",
+                    "surface-variant": "#e9e2d2",
+                    "on-tertiary-container": "#8fd691",
+                    "surface": "#fff9ec",
+                    "tertiary-fixed-dim": "#90d792",
+                    "on-surface": "#1e1c12",
+                    "on-background": "#1e1c12",
+                    "inverse-primary": "#91d78a",
+                    "surface-container-high": "#eee8d7",
+                    "on-surface-variant": "#41493e",
+                    "surface-tint": "#2a6b2c",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-surface": "#333025",
+                    "surface-container-highest": "#e9e2d2",
+                    "on-secondary-container": "#795950",
+                    "on-primary-container": "#90d689"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "4px",
+                    "margin-mobile": "20px",
+                    "xl": "40px",
+                    "margin-desktop": "64px",
+                    "lg": "24px",
+                    "sm": "8px",
+                    "gutter": "16px",
+                    "md": "16px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Inter"],
+                    "h1": ["Plus Jakarta Sans"],
+                    "body-md": ["Inter"],
+                    "h2": ["Plus Jakarta Sans"],
+                    "h3": ["Plus Jakarta Sans"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "label-sm": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "h1": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "h2": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "h3": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-thumb {
+            border: 2px solid #1b5e20;
+        }
+        .pressed-effect:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Top Navigation Bar -->
+<header class="bg-white dark:bg-stone-900 border-b border-stone-200 dark:border-stone-800 shadow-sm shadow-stone-900/5 sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-4 md:px-12 py-3 max-w-7xl mx-auto font-['Plus_Jakarta_Sans'] text-base tracking-tight">
+<div class="text-2xl font-black text-green-900 dark:text-green-50 tracking-tighter">DesaMart</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-stone-600 dark:text-stone-400 hover:bg-stone-50 dark:hover:bg-stone-800 transition-colors duration-200 px-3 py-1 rounded-lg" href="#">Home</a>
+<a class="text-green-800 dark:text-green-400 font-bold border-b-2 border-green-800 px-3 py-1" href="#">Products</a>
+<a class="text-stone-600 dark:text-stone-400 hover:bg-stone-50 dark:hover:bg-stone-800 transition-colors duration-200 px-3 py-1 rounded-lg" href="#">Community</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-green-900 dark:text-green-400 active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+<button class="p-2 text-green-900 dark:text-green-400 active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-stone-200 dark:bg-stone-800 overflow-hidden">
+<span class="material-symbols-outlined text-stone-500 scale-125">account_circle</span>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-4 md:px-12 py-8">
+<!-- Breadcrumb -->
+<nav class="flex items-center gap-2 text-label-sm font-label-sm text-on-surface-variant mb-8">
+<a class="hover:text-primary transition-colors" href="#">Beranda</a>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Makanan &amp; Minuman</a>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="text-on-surface font-bold">Madu Hutan Asli</span>
+</nav>
+<div class="flex flex-col md:flex-row gap-12">
+<!-- Left Column: Product Visuals -->
+<div class="w-full md:w-[60%] space-y-6">
+<div class="aspect-square bg-white rounded-xl shadow-lg shadow-[#5D4037]/5 overflow-hidden border border-outline-variant/10">
+<img alt="Madu Hutan Asli" class="w-full h-full object-cover" data-alt="close-up of a rustic honey jar with golden liquid and a wooden dipper in a warm sunlit farm kitchen setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOQ41Ry5SjvSZQrx5mwp6YD4J52jHLqibm7INLVpCl5yAYN_MMViN2pgsWksn0-LkH5cmlmoD3PIUAM-ol14fcxlLb7faiZDnFccGWQnZ0x8wOgHKYu1lyBGgpcWolTL-cyODaCCcYFoMA9Y9tuODu92tpQ1j5pOQJ4vhS6_k3GysPOgLfkxX5oAdcUKXJm3szzDC-l7DdbXCsWEIcjhT6jVzge6AdhNup_aJgzoKrt1RFLubl7yeBPJkkairJZoT_fnmuTGwaABE"/>
+</div>
+<div class="grid grid-cols-4 gap-4">
+<div class="aspect-square bg-white rounded-xl active-thumb overflow-hidden cursor-pointer">
+<img alt="Thumbnail 1" class="w-full h-full object-cover" data-alt="close up of liquid gold honey being poured from a wooden spoon in a kitchen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMyVfLzsADVTlTPGzFQSl5iP8S2r7FARRBnPYkzUkFQiHaQo4p_4ZghC8wbIB9PwkN0Q1g2pLt2tCbHQ0cp4Q5GWa9049VLLBdwBA8kduikMX5hiSfjF_tf-bDM9pWbW8iWXXNM1145BzvUMlYyQb9ijP2lS-qrFQ9qB25c5v5oEAnQC1nDXNhGKZjVnt-WkJKHtg1LjiLKYQO5mx0ZTRAn0aDe_HmZYQOnsnEu2h6R-ZYdHyMDAuiRkaHh0KPyv_-NNvJvCXpmh8"/>
+</div>
+<div class="aspect-square bg-white rounded-xl border border-outline-variant/10 overflow-hidden cursor-pointer hover:border-primary transition-colors">
+<img alt="Thumbnail 2" class="w-full h-full object-cover" data-alt="beehive frames full of organic honey in a natural outdoor village setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJvnXszWszZKNSIZhFimAtKU1Z74K4kyq3B3wclN55vPR3aosbMZKZUtEk16HICSSvGuAOEuEKPa_24_YDTFKapWpez-2VACFjtcRG4QP6e-H77LEz419YdLMSYnRbI-PZPA3_-eewc5SSr159p2QPoC0cbXkV1XgV9n0RvnOKsXVu1PC6QMbYvJ9AASP8Px_Z_ZyoOQSwT0aCSBBiS3g9Ub4LeKVWkJSdz1n_oBSSEoyFasH_wgX-1WmF9T7w9GLz2kmf0F2HqSs"/>
+</div>
+<div class="aspect-square bg-white rounded-xl border border-outline-variant/10 overflow-hidden cursor-pointer hover:border-primary transition-colors">
+<img alt="Thumbnail 3" class="w-full h-full object-cover" data-alt="a glass jar of dark forest honey on a wooden table with blurred trees in background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOfoMDMqpDxe8Kb8FDVf6oEfebgccDigQjvI-ThsosRqvBHrnF26IK-IdAu9usU1gIjDCTl2680xRt3dgOOp30jGEkc0GueBCE3ZH2E89nh4qPyCyZcIIUqaL0Zm2srHDQISsFSeLMeHhhiXPHtqWxW8Vj0xTGXjtJx0F_2dJlhxCVe82cun7UB8-l_tJc8tkRi5k2OehFzk0rCecbPnq6tczx64dEDSv6HoAfC6ueJLeLokjU-FCOSG6bcxXT3kqhXMz0Cnz62GE"/>
+</div>
+<div class="aspect-square bg-white rounded-xl border border-outline-variant/10 overflow-hidden cursor-pointer hover:border-primary transition-colors">
+<img alt="Thumbnail 4" class="w-full h-full object-cover" data-alt="traditional clay pots and wooden tools used for honey harvesting in an Indonesian village" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANTqPsGtsIOKZdT85oUC7biNJt7MeZdCZrrWnvxCcLTuIVJr_4nEx0MdmnfxClr5Tzy4wb2YfmaskD54e7innmj7VHLYc7_GLjDVDXczQ6eKbRC85MtQq7ZMt2MgHnmsmcTcliHIro94jberWq9ufPKlOn3jTlsC4w7RXEJJ3hthrPG4b54Ne5_lEtIYgra66jl64r5TFbV4YYb0oKFEIda3C38qfFRVQ7OnkZ8hUPsdML7gS2_wp5K6wp_sHMC6klOm7lz1BcOWg"/>
+</div>
+</div>
+<!-- Tabs Section -->
+<div class="mt-12">
+<div class="flex gap-8 border-b border-outline-variant/30 mb-6">
+<button class="pb-4 text-h3 font-h3 text-primary border-b-2 border-primary">Deskripsi</button>
+<button class="pb-4 text-h3 font-h3 text-on-surface-variant hover:text-primary transition-colors">Ulasan</button>
+</div>
+<div class="bg-white p-8 rounded-xl shadow-sm border border-outline-variant/10">
+<p class="text-body-lg font-body-lg text-on-surface-variant leading-relaxed">
+                            Madu hutan asli yang dipanen langsung dari hutan Desa Sumber Makmur. Tanpa campuran, tanpa pengawet. Kemasan 500ml. Diproses secara tradisional oleh petani lokal untuk menjaga kemurnian dan khasiat alaminya. Cocok untuk meningkatkan daya tahan tubuh atau sebagai pemanis alami yang sehat.
+                        </p>
+</div>
+</div>
+</div>
+<!-- Right Column: Product Details & Purchase -->
+<div class="w-full md:w-[40%] space-y-8">
+<div class="bg-white p-8 rounded-xl shadow-lg shadow-[#5D4037]/5 border border-outline-variant/10">
+<span class="inline-block px-3 py-1 bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm rounded-full mb-4">Makanan &amp; Minuman</span>
+<h1 class="font-h2 text-h2 text-on-surface mb-2 leading-tight">Madu Hutan Asli Desa Sumber Makmur</h1>
+<div class="flex items-center gap-2 mb-6">
+<div class="flex text-[#FFB300]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star_half</span>
+</div>
+<span class="text-body-md font-medium text-on-surface">4.8</span>
+<span class="text-on-surface-variant text-body-md">· 23 ulasan</span>
+</div>
+<div class="text-[28px] font-bold text-primary mb-8">Rp 85.000</div>
+<div class="space-y-6 pb-8 border-b border-outline-variant/20">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-on-surface-variant">Jumlah Pesanan</span>
+<div class="flex items-center border border-outline-variant rounded-lg overflow-hidden">
+<button class="px-4 py-2 hover:bg-surface-container-low transition-colors">-</button>
+<span class="px-6 py-2 font-bold text-on-surface">1</span>
+<button class="px-4 py-2 hover:bg-surface-container-low transition-colors">+</button>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-on-surface-variant">Stok</span>
+<span class="text-primary font-bold">15 tersedia</span>
+</div>
+<div class="flex items-center justify-between pt-4">
+<span class="text-body-lg font-medium text-on-surface">Total</span>
+<span class="text-h3 font-h3 text-on-surface">Rp 85.000</span>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-4 mt-8">
+<button class="w-full bg-primary text-white font-h3 py-4 rounded-xl shadow-md hover:bg-primary-container hover:text-on-primary-container transition-all pressed-effect">
+                            Beli Sekarang
+                        </button>
+<button class="w-full border-2 border-primary text-primary font-h3 py-4 rounded-xl flex items-center justify-center gap-2 hover:bg-primary/5 transition-all pressed-effect">
+<span class="material-symbols-outlined">chat_bubble</span>
+                            Tanya Penjual
+                        </button>
+</div>
+</div>
+<!-- Seller Box -->
+<div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/20">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-16 h-16 rounded-full bg-white border-2 border-primary-fixed overflow-hidden flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary text-3xl">storefront</span>
+</div>
+<div>
+<h3 class="font-h3 text-on-surface text-lg">Toko Pak Budi</h3>
+<p class="text-on-surface-variant text-body-md">Desa Sumber Makmur</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="bg-white p-3 rounded-lg text-center">
+<p class="text-on-surface-variant text-label-sm">Produk</p>
+<p class="font-bold text-on-surface">12</p>
+</div>
+<div class="bg-white p-3 rounded-lg text-center">
+<p class="text-on-surface-variant text-label-sm">Terjual</p>
+<p class="font-bold text-on-surface">45</p>
+</div>
+</div>
+<div class="flex items-center justify-between text-label-sm text-on-surface-variant mb-6">
+<span>Bergabung Jan 2026</span>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-bold">Verified Farmer</span>
+</div>
+</div>
+<a class="block text-center text-primary font-bold hover:underline underline-offset-4 transition-all" href="#">
+                        Lihat Toko →
+                    </a>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-stone-50 dark:bg-stone-950 border-t border-stone-200 dark:border-stone-800 mt-24">
+<div class="w-full py-16 px-8 flex flex-col md:flex-row justify-between items-center gap-6 max-w-7xl mx-auto">
+<div class="text-lg font-bold text-green-900 dark:text-green-100 font-['Plus_Jakarta_Sans']">DesaMart</div>
+<div class="flex flex-wrap justify-center gap-8 font-['Plus_Jakarta_Sans'] text-sm font-medium">
+<a class="text-stone-500 hover:text-green-800 dark:hover:text-green-300 underline-offset-4 transition-all" href="#">Community Hub</a>
+<a class="text-stone-500 hover:text-green-800 dark:hover:text-green-300 underline-offset-4 transition-all" href="#">Farmer Directory</a>
+<a class="text-stone-500 hover:text-green-800 dark:hover:text-green-300 underline-offset-4 transition-all" href="#">Impact Report</a>
+<a class="text-stone-500 hover:text-green-800 dark:hover:text-green-300 underline-offset-4 transition-all" href="#">Support</a>
+</div>
+<p class="text-stone-500 dark:text-stone-500 font-['Plus_Jakarta_Sans'] text-sm font-medium">
+                © 2024 DesaMart. Rooted in Tradition, Powered by Tech.
+            </p>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-secondary": "#ffffff",
+                "tertiary-container": "#185e27",
+                "surface-tint": "#2a6b2c",
+                "surface-container": "#f4eddd",
+                "on-primary-fixed": "#002203",
+                "error": "#ba1a1a",
+                "secondary-container": "#fed3c7",
+                "primary": "#00450d",
+                "on-tertiary-fixed": "#002107",
+                "secondary-fixed-dim": "#e7bdb1",
+                "surface-dim": "#e0dac9",
+                "outline": "#717a6d",
+                "inverse-on-surface": "#f7f0df",
+                "tertiary-fixed-dim": "#90d792",
+                "surface-variant": "#e9e2d2",
+                "on-secondary-container": "#795950",
+                "on-background": "#1e1c12",
+                "surface-bright": "#fff9ec",
+                "inverse-surface": "#333025",
+                "inverse-primary": "#91d78a",
+                "on-error-container": "#93000a",
+                "on-tertiary": "#ffffff",
+                "surface": "#fff9ec",
+                "primary-fixed-dim": "#91d78a",
+                "surface-container-highest": "#e9e2d2",
+                "on-surface": "#1e1c12",
+                "surface-container-lowest": "#ffffff",
+                "on-primary-fixed-variant": "#0c5216",
+                "outline-variant": "#c0c9bb",
+                "primary-fixed": "#acf4a4",
+                "on-error": "#ffffff",
+                "secondary-fixed": "#ffdbd0",
+                "on-primary": "#ffffff",
+                "on-primary-container": "#90d689",
+                "primary-container": "#1b5e20",
+                "surface-container-low": "#faf3e2",
+                "on-secondary-fixed-variant": "#5d4037",
+                "error-container": "#ffdad6",
+                "secondary": "#77574d",
+                "tertiary": "#004516",
+                "background": "#fff9ec",
+                "on-secondary-fixed": "#2c160e",
+                "on-tertiary-container": "#8fd691",
+                "on-tertiary-fixed-variant": "#07521d",
+                "on-surface-variant": "#41493e",
+                "tertiary-fixed": "#abf4ac",
+                "surface-container-high": "#eee8d7"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "fontFamily": {
+                "h3": ["Plus Jakarta Sans"],
+                "h2": ["Plus Jakarta Sans"],
+                "label-sm": ["Inter"],
+                "body-lg": ["Inter"],
+                "h1": ["Plus Jakarta Sans"],
+                "body-md": ["Inter"]
+            },
+            "fontSize": {
+                "h3": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                "h2": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                "label-sm": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "h1": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .step-line {
+            width: 2px;
+            flex-grow: 1;
+            margin-left: 11px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen">
+<!-- Top Navigation Bar -->
+<header class="bg-stone-50/95 dark:bg-stone-950/95 text-green-900 dark:text-green-50 font-plus-jakarta-sans antialiased docked full-width top-0 sticky border-b border-stone-200 dark:border-stone-800 shadow-sm backdrop-blur-md z-50 flex justify-between items-center w-full px-4 md:px-8 h-16">
+<div class="flex items-center gap-4">
+<button class="hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors p-2 rounded-full active:scale-98 duration-200">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="text-xl font-extrabold tracking-tight">Detail Pesanan #ORD-20260428-001</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="material-symbols-outlined p-2 hover:bg-stone-100 dark:hover:bg-stone-800 rounded-full transition-colors">notifications</button>
+<button class="material-symbols-outlined p-2 hover:bg-stone-100 dark:hover:bg-stone-800 rounded-full transition-colors">help</button>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-4 md:px-8 py-8">
+<div class="flex flex-col md:flex-row gap-8">
+<!-- LEFT COLUMN: Tracking & Status -->
+<div class="w-full md:w-[60%] space-y-6">
+<!-- Status Badge Card -->
+<section class="bg-white rounded-xl shadow-sm border border-stone-100 p-6 flex items-center justify-between">
+<div>
+<h2 class="font-h3 text-h3 mb-1">Status Pesanan</h2>
+<p class="text-on-surface-variant">Terakhir diperbarui: 29 Apr 2026, 10:00</p>
+</div>
+<div class="flex items-center gap-2 bg-indigo-100 text-indigo-700 px-6 py-2.5 rounded-full font-bold">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">local_shipping</span>
+<span>Dikirim</span>
+</div>
+</section>
+<!-- Vertical Timeline -->
+<section class="bg-white rounded-xl shadow-sm border border-stone-100 p-8">
+<h3 class="font-h3 text-h3 mb-8">Timeline Pelacakan</h3>
+<div class="space-y-0">
+<!-- Step 1: Done -->
+<div class="flex gap-4 min-h-[80px]">
+<div class="flex flex-col items-center">
+<div class="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center text-white ring-4 ring-green-50">
+<span class="material-symbols-outlined text-[16px] font-bold">check</span>
+</div>
+<div class="step-line bg-green-500"></div>
+</div>
+<div class="pb-8">
+<p class="font-bold text-on-surface">Pesanan Dibuat</p>
+<p class="text-sm text-on-surface-variant">28 Apr 2026, 08:00</p>
+</div>
+</div>
+<!-- Step 2: Done -->
+<div class="flex gap-4 min-h-[80px]">
+<div class="flex flex-col items-center">
+<div class="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center text-white ring-4 ring-green-50">
+<span class="material-symbols-outlined text-[16px] font-bold">check</span>
+</div>
+<div class="step-line bg-green-500"></div>
+</div>
+<div class="pb-8">
+<p class="font-bold text-on-surface">Pesanan Diterima Penjual</p>
+<p class="text-sm text-on-surface-variant">28 Apr 2026, 09:30</p>
+</div>
+</div>
+<!-- Step 3: Done -->
+<div class="flex gap-4 min-h-[80px]">
+<div class="flex flex-col items-center">
+<div class="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center text-white ring-4 ring-green-50">
+<span class="material-symbols-outlined text-[16px] font-bold">check</span>
+</div>
+<div class="step-line border-l-2 border-dashed border-blue-500"></div>
+</div>
+<div class="pb-8">
+<p class="font-bold text-on-surface">Barang Dikemas</p>
+<p class="text-sm text-on-surface-variant">28 Apr 2026, 14:00</p>
+</div>
+</div>
+<!-- Step 4: Current -->
+<div class="flex gap-4 min-h-[80px]">
+<div class="flex flex-col items-center">
+<div class="w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center text-white ring-4 ring-blue-100 animate-pulse">
+<div class="w-2 h-2 bg-white rounded-full"></div>
+</div>
+<div class="step-line bg-stone-200"></div>
+</div>
+<div class="pb-8">
+<p class="font-bold text-blue-600">Barang Dikirim</p>
+<p class="text-sm text-on-surface-variant">29 Apr 2026, 10:00</p>
+<div class="mt-2 p-3 bg-blue-50 rounded-lg text-sm text-blue-700 border border-blue-100">
+                                    Paket sedang dibawa oleh kurir menuju lokasi transit terdekat.
+                                </div>
+</div>
+</div>
+<!-- Step 5: Pending -->
+<div class="flex gap-4">
+<div class="flex flex-col items-center">
+<div class="w-6 h-6 rounded-full bg-stone-300 flex items-center justify-center text-white">
+</div>
+</div>
+<div>
+<p class="font-bold text-stone-400">Pesanan Selesai</p>
+<p class="text-sm text-stone-400">Menunggu...</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- RIGHT COLUMN: Details -->
+<aside class="w-full md:w-[40%] space-y-6">
+<!-- Produk Dipesan -->
+<div class="bg-white rounded-xl shadow-sm border border-stone-100 overflow-hidden">
+<div class="p-4 bg-surface-container-low border-b border-stone-100">
+<h4 class="font-bold text-green-900">Produk Dipesan</h4>
+</div>
+<div class="p-4 flex gap-4">
+<img alt="Madu Hutan" class="w-20 h-20 rounded-lg object-cover" data-alt="Close-up of a jar of golden wild forest honey with a wooden dipper on a rustic wooden table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAo-N8S2xBnFtLmUPNOO9pJyXLhnHLk18NX7KD9p2-EeWMwYRGJQKE9IqNe0pueyLlOQflAYJN6ZK0rT4EHWuyjdAj2wDfPFMYGwagfcD9Q4Utqf_PQKy_kkegct1_TOBKLc8VmLVSIl79MRSMajdltCR408fDcTAUNjLswXTYiVGEuSwymXX7SgsYxnoFkIADBgtgPWtqIhaPIE5UbCovYUNG_ankhSZaJt4sgug85ZU43k6XdYOq7h2d_HJAsHKYrp-ALB3RcBVk"/>
+<div class="flex flex-col justify-center">
+<p class="font-bold text-on-surface line-clamp-2">Madu Hutan Asli Desa Sumber Makmur</p>
+<p class="text-sm text-on-surface-variant">Jumlah: 1</p>
+<p class="font-bold text-green-700 mt-1">Rp 85.000</p>
+</div>
+</div>
+</div>
+<!-- Info Pengiriman -->
+<div class="bg-white rounded-xl shadow-sm border border-stone-100 overflow-hidden">
+<div class="p-4 bg-surface-container-low border-b border-stone-100 flex items-center gap-2">
+<span class="material-symbols-outlined text-green-800 text-sm">location_on</span>
+<h4 class="font-bold text-green-900">Info Pengiriman</h4>
+</div>
+<div class="p-4 space-y-3">
+<div>
+<p class="text-xs uppercase tracking-wider text-stone-500 font-bold mb-1">Alamat</p>
+<p class="text-on-surface leading-relaxed">Jl. Raya Desa No. 15, RT 02/RW 05, Desa Sumber Makmur</p>
+</div>
+<div class="pt-3 border-t border-stone-100">
+<p class="text-xs uppercase tracking-wider text-stone-500 font-bold mb-1">Catatan</p>
+<p class="text-on-surface italic text-sm">"Tolong dikemas dengan baik"</p>
+</div>
+</div>
+</div>
+<!-- Info Penjual -->
+<div class="bg-white rounded-xl shadow-sm border border-stone-100 p-4 flex items-center gap-4">
+<img alt="Penjual" class="w-12 h-12 rounded-full object-cover border-2 border-green-100" data-alt="Portrait of a friendly smiling middle-aged Indonesian farmer wearing a traditional hat in a sunny outdoor setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUM_G5g6FzKbARChi420GGpjgSnjw4OpVUPvf6lfsqQrr8aWnxDGTSLCRJK--GS-WA6ZkL5TYH9Uwyd5QGSCB-AtCh0ZSr0lMCmUE0Q7AX2TqXWPyQgq9ssTEjmPTvDfRRxFfMp7pUaeYnTLEK_Whqo6DR_HdNTAv9KjlXPx5CuszTHqhGNVoEkvAWX0LEfg9hItcj0ioZ72FQ78SyAfdkYSqLRzsjvKEPJLSgChOWbT1tP2xkYk_xfUuWOXNrCPqozcEWpsGny2w"/>
+<div>
+<h4 class="font-bold text-on-surface">Toko Pak Budi</h4>
+<div class="flex items-center gap-1 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-xs">store</span>
+<span>Desa Sumber Makmur</span>
+</div>
+</div>
+<button class="ml-auto text-primary p-2 hover:bg-primary-fixed rounded-full transition-colors">
+<span class="material-symbols-outlined">chat_bubble</span>
+</button>
+</div>
+<!-- Ringkasan Pembayaran -->
+<div class="bg-white rounded-xl shadow-sm border border-stone-100 overflow-hidden">
+<div class="p-4 bg-surface-container-low border-b border-stone-100">
+<h4 class="font-bold text-green-900">Ringkasan Pembayaran</h4>
+</div>
+<div class="p-4 space-y-3">
+<div class="flex justify-between text-on-surface-variant">
+<span>Subtotal Produk</span>
+<span>Rp 85.000</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Ongkos Kirim</span>
+<span class="text-green-600 font-medium">Rp 0</span>
+</div>
+<div class="pt-3 border-t border-stone-200 flex justify-between items-center">
+<span class="font-bold text-on-surface">Total Pembayaran</span>
+<span class="text-xl font-bold text-green-700">Rp 85.000</span>
+</div>
+</div>
+</div>
+<!-- CTA Actions -->
+<div class="grid grid-cols-2 gap-3">
+<button class="bg-white border border-secondary text-secondary py-3 rounded-lg font-bold hover:bg-secondary-fixed transition-colors active:scale-95 duration-150">Bantuan</button>
+<button class="bg-primary text-white py-3 rounded-lg font-bold shadow-md hover:bg-primary-container transition-colors active:scale-95 duration-150">Lacak Map</button>
+</div>
+</aside>
+</div>
+</main>
+<!-- Bottom Nav Bar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 py-3 md:hidden bg-stone-50 dark:bg-stone-950 border-t border-stone-200 dark:border-stone-800 shadow-[0_-2px_10px_rgba(93,64,55,0.05)]">
+<div class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-5 py-1.5 hover:text-green-800 dark:hover:text-green-200 active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[11px] font-semibold font-plus-jakarta-sans">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-green-100 dark:bg-green-900/30 text-green-900 dark:text-green-100 rounded-2xl px-5 py-1.5 active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">receipt_long</span>
+<span class="text-[11px] font-semibold font-plus-jakarta-sans">My Orders</span>
+</div>
+<div class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-5 py-1.5 hover:text-green-800 dark:hover:text-green-200 active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="text-[11px] font-semibold font-plus-jakarta-sans">Inbox</span>
+</div>
+<div class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-5 py-1.5 hover:text-green-800 dark:hover:text-green-200 active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[11px] font-semibold font-plus-jakarta-sans">Profile</span>
+</div>
+</nav>
+<!-- Spacer for Mobile Bottom Nav -->
+<div class="h-24 md:hidden"></div>
+</body></html>

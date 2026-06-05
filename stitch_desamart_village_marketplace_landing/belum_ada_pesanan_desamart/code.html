@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DesaMart - Pesanan</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-container": "#1b5e20",
+                    "on-secondary": "#ffffff",
+                    "outline": "#717a6d",
+                    "inverse-primary": "#91d78a",
+                    "surface-tint": "#2a6b2c",
+                    "background": "#fff9ec",
+                    "on-surface": "#1e1c12",
+                    "tertiary-container": "#185e27",
+                    "primary-fixed": "#acf4a4",
+                    "secondary": "#77574d",
+                    "surface-variant": "#e9e2d2",
+                    "tertiary-fixed": "#abf4ac",
+                    "on-secondary-fixed": "#2c160e",
+                    "on-primary-container": "#90d689",
+                    "primary": "#00450d",
+                    "on-secondary-fixed-variant": "#5d4037",
+                    "on-surface-variant": "#41493e",
+                    "inverse-surface": "#333025",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed": "#002203",
+                    "surface-bright": "#fff9ec",
+                    "surface-container-low": "#faf3e2",
+                    "tertiary": "#004516",
+                    "surface": "#fff9ec",
+                    "surface-dim": "#e0dac9",
+                    "on-error-container": "#93000a",
+                    "inverse-on-surface": "#f7f0df",
+                    "error": "#ba1a1a",
+                    "secondary-container": "#fed3c7",
+                    "primary-fixed-dim": "#91d78a",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#90d792",
+                    "on-secondary-container": "#795950",
+                    "surface-container": "#f4eddd",
+                    "on-primary-fixed-variant": "#0c5216",
+                    "on-background": "#1e1c12",
+                    "on-tertiary-fixed-variant": "#07521d",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-container": "#8fd691",
+                    "on-error": "#ffffff",
+                    "surface-container-high": "#eee8d7",
+                    "secondary-fixed": "#ffdbd0",
+                    "on-tertiary-fixed": "#002107",
+                    "secondary-fixed-dim": "#e7bdb1",
+                    "outline-variant": "#c0c9bb",
+                    "on-primary": "#ffffff",
+                    "surface-container-highest": "#e9e2d2"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "16px",
+                    "gutter": "16px",
+                    "lg": "24px",
+                    "sm": "8px",
+                    "margin-mobile": "20px",
+                    "xl": "40px",
+                    "xs": "4px",
+                    "margin-desktop": "64px"
+            },
+            "fontFamily": {
+                    "h2": ["Plus Jakarta Sans"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "h1": ["Plus Jakarta Sans"],
+                    "label-sm": ["Inter"],
+                    "h3": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "h2": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "h1": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-sm": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "h3": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fff9ec;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface">
+<!-- TopAppBar -->
+<header class="bg-stone-50 dark:bg-stone-900 border-b border-stone-200/40 dark:border-stone-800 shadow-sm fixed top-0 w-full z-50 px-4 h-16 flex justify-between items-center font-['Plus_Jakarta_Sans'] antialiased">
+<div class="text-2xl font-extrabold tracking-tight text-green-900 dark:text-green-50">DesaMart</div>
+<div class="flex gap-4">
+<button class="hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors active:scale-95 duration-150 p-2 rounded-full text-green-900 dark:text-green-400">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors active:scale-95 duration-150 p-2 rounded-full text-green-900 dark:text-green-400">
+<span class="material-symbols-outlined">shopping_basket</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-24 pb-32 px-gutter min-h-screen flex flex-col items-center justify-center">
+<!-- Empty State Container -->
+<div class="max-w-md w-full text-center space-y-lg">
+<!-- Illustration Card -->
+<div class="relative group">
+<!-- Decorative Backglow -->
+<div class="absolute inset-0 bg-primary-fixed opacity-20 blur-3xl rounded-full scale-75 group-hover:scale-100 transition-transform duration-700"></div>
+<!-- Main Illustration Card -->
+<div class="relative bg-white rounded-[32px] p-xl shadow-[0_12px_40px_rgba(93,64,55,0.08)] border border-surface-container flex flex-col items-center">
+<div class="relative w-48 h-48 mb-lg">
+<!-- Background Circle -->
+<div class="absolute inset-0 bg-surface-container-low rounded-full scale-90"></div>
+<!-- Empty Box Image -->
+<div class="relative flex items-center justify-center h-full">
+<img alt="Empty Box Illustration" class="w-32 h-32 object-contain drop-shadow-xl" data-alt="a rustic cardboard delivery box with a single fresh green leaf resting on top, soft warm lighting, minimalist village aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZ3c103bZqRLAX-kFVExgywu4pmputkZWgCAMa2OK20jxkBmFDur58RDgld4c5hAeA3_6tt3tjz4JMbeKU3c5bNoowsmib5JdeQ26KbMav8m3pketZqsxS0bLq4HIpMjbte9ZzmbSUwfFZMuR9LjVw78WQXpgFL37VS70CAVF_QhrAjRZjho-8kOyNHDvlw4zuJEqBXHDJFEQAepDEEnoZ73IlSViSdSJoEXURG_DqtgUEwPyeOSqxUQutMicxdi9jTMT4TIoknqo"/>
+<!-- Floating Leaf Element (Visual Metaphor) -->
+<div class="absolute top-8 right-8 bg-primary-fixed p-3 rounded-2xl shadow-lg rotate-12">
+<span class="material-symbols-outlined text-primary text-3xl">eco</span>
+</div>
+</div>
+</div>
+<!-- Typography -->
+<div class="space-y-sm">
+<h1 class="font-h2 text-primary">Belum Ada Pesanan</h1>
+<p class="font-body-md text-on-surface-variant px-md">Anda belum melakukan pemesanan. Mulai belanja sekarang!</p>
+</div>
+<!-- CTA Button -->
+<div class="pt-xl w-full">
+<button class="w-full bg-primary text-white font-h3 py-md px-lg rounded-xl flex items-center justify-center gap-sm group hover:bg-primary-container transition-all active:scale-95 shadow-md">
+                            Mulai Belanja
+                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Trust Badge Section -->
+<div class="flex items-center justify-center gap-md pt-lg">
+<div class="flex items-center gap-xs px-md py-sm bg-surface-container rounded-full">
+<span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label-sm text-on-surface-variant">Petani Terverifikasi</span>
+</div>
+<div class="flex items-center gap-xs px-md py-sm bg-surface-container rounded-full">
+<span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">local_shipping</span>
+<span class="font-label-sm text-on-surface-variant">Pengiriman Cepat</span>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-safe pt-2 bg-white/90 dark:bg-stone-900/90 backdrop-blur-md border-t border-stone-200/50 dark:border-stone-800 shadow-[0_-4px_12px_rgba(93,64,55,0.05)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-5 py-1.5 hover:text-green-800 dark:hover:text-green-300 transition-all active:scale-90" href="#">
+<span class="material-symbols-outlined">storefront</span>
+<span class="text-[11px] font-semibold font-['Plus_Jakarta_Sans']">Pasar</span>
+</a>
+<!-- Active Tab: Pesanan -->
+<a class="flex flex-col items-center justify-center bg-green-100 dark:bg-green-900/40 text-green-900 dark:text-green-100 rounded-2xl px-5 py-1.5 transition-all active:scale-90" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">receipt_long</span>
+<span class="text-[11px] font-semibold font-['Plus_Jakarta_Sans']">Pesanan</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-5 py-1.5 hover:text-green-800 dark:hover:text-green-300 transition-all active:scale-90" href="#">
+<span class="material-symbols-outlined">contact_support</span>
+<span class="text-[11px] font-semibold font-['Plus_Jakarta_Sans']">Bantuan</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-5 py-1.5 hover:text-green-800 dark:hover:text-green-300 transition-all active:scale-90" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[11px] font-semibold font-['Plus_Jakarta_Sans']">Profil</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,12 @@
+{
+  "venvPath": "d:/smt 6/pbs/smart-village/nlp-service",
+  "venv": "venv",
+  "pythonVersion": "3.11",
+  "pythonPlatform": "Windows",
+  "typeCheckingMode": "off",
+  "reportMissingImports": false,
+  "reportMissingModuleSource": false,
+  "reportGeneralTypeIssues": false,
+  "reportOptionalMemberAccess": false,
+  "exclude": ["**/venv/**", "**/__pycache__/**"]
+}

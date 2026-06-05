@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#ffdad6",
+                    "surface-container-low": "#faf3e2",
+                    "secondary-fixed": "#ffdbd0",
+                    "surface-tint": "#2a6b2c",
+                    "primary-container": "#1b5e20",
+                    "surface-container": "#f4eddd",
+                    "secondary-fixed-dim": "#e7bdb1",
+                    "tertiary-fixed": "#abf4ac",
+                    "tertiary-container": "#185e27",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-container": "#fed3c7",
+                    "on-secondary-container": "#795950",
+                    "on-primary-fixed": "#002203",
+                    "inverse-primary": "#91d78a",
+                    "on-tertiary-container": "#8fd691",
+                    "surface-dim": "#e0dac9",
+                    "outline": "#717a6d",
+                    "tertiary-fixed-dim": "#90d792",
+                    "primary-fixed-dim": "#91d78a",
+                    "on-primary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "outline-variant": "#c0c9bb",
+                    "surface-container-highest": "#e9e2d2",
+                    "on-tertiary-fixed": "#002107",
+                    "on-secondary-fixed-variant": "#5d4037",
+                    "primary": "#00450d",
+                    "on-surface": "#1e1c12",
+                    "on-error": "#ffffff",
+                    "on-tertiary-fixed-variant": "#07521d",
+                    "on-primary-fixed-variant": "#0c5216",
+                    "error": "#ba1a1a",
+                    "surface": "#fff9ec",
+                    "on-secondary": "#ffffff",
+                    "surface-variant": "#e9e2d2",
+                    "on-primary-container": "#90d689",
+                    "inverse-on-surface": "#f7f0df",
+                    "surface-bright": "#fff9ec",
+                    "surface-container-high": "#eee8d7",
+                    "on-secondary-fixed": "#2c160e",
+                    "tertiary": "#004516",
+                    "on-error-container": "#93000a",
+                    "background": "#fff9ec",
+                    "on-surface-variant": "#41493e",
+                    "on-background": "#1e1c12",
+                    "primary-fixed": "#acf4a4",
+                    "secondary": "#77574d",
+                    "inverse-surface": "#333025"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "4px",
+                    "md": "16px",
+                    "lg": "24px",
+                    "margin-mobile": "20px",
+                    "gutter": "16px",
+                    "sm": "8px",
+                    "xl": "40px",
+                    "margin-desktop": "64px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "h3": ["Plus Jakarta Sans"],
+                    "body-md": ["Inter"],
+                    "h1": ["Plus Jakarta Sans"],
+                    "h2": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "label-sm": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "h3": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "h1": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "h2": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-24">
+<!-- Top AppBar Component -->
+<header class="bg-[#FDFBF7] dark:bg-stone-950 border-b border-stone-200/50 dark:border-stone-800 shadow-sm shadow-[#5D4037]/5 docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center w-full px-4 h-16">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#1B5E20] dark:text-green-400">grid_view</span>
+<h1 class="text-xl font-black text-[#1B5E20] dark:text-green-100 tracking-tight font-['Plus_Jakarta_Sans']">DesaMart</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors active:scale-95 duration-200 p-2 rounded-full">
+<span class="material-symbols-outlined text-[#1B5E20]">search</span>
+</button>
+<button class="hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors active:scale-95 duration-200 p-2 rounded-full">
+<span class="material-symbols-outlined text-[#1B5E20]">menu</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-screen-xl mx-auto">
+<!-- Category Chips Section -->
+<section class="py-4 px-margin-mobile overflow-hidden">
+<div class="flex gap-3 overflow-x-auto no-scrollbar pb-2">
+<button class="px-5 py-2 rounded-full bg-primary-container text-white font-label-sm whitespace-nowrap shadow-sm">Semua</button>
+<button class="px-5 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm whitespace-nowrap hover:bg-surface-container-highest transition-colors">Makanan &amp; Minuman</button>
+<button class="px-5 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm whitespace-nowrap hover:bg-surface-container-highest transition-colors">Pertanian</button>
+<button class="px-5 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm whitespace-nowrap hover:bg-surface-container-highest transition-colors">Kerajinan</button>
+<button class="px-5 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm whitespace-nowrap hover:bg-surface-container-highest transition-colors">Pakaian</button>
+</div>
+</section>
+<!-- Hero Promo (Asymmetric Layout element) -->
+<section class="px-margin-mobile mb-8">
+<div class="relative overflow-hidden rounded-[24px] bg-[#E8F5E9] p-6 h-48 flex flex-col justify-center">
+<div class="z-10 relative">
+<span class="bg-[#1B5E20] text-white text-[10px] px-2 py-1 rounded-full font-bold uppercase tracking-widest mb-2 inline-block">Diskon Desa</span>
+<h2 class="font-h2 text-primary leading-tight max-w-[60%]">Produk Lokal Segar Hari Ini</h2>
+<p class="text-on-surface-variant font-label-sm mt-1">Dukung petani desa kita sekarang.</p>
+</div>
+<img alt="Fresh vegetables" class="absolute right-[-20px] top-0 h-full w-[50%] object-cover opacity-80" data-alt="vibrant assortment of fresh local vegetables and organic produce in a rustic wooden basket under natural sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHC5Zb5KW2q7siagluLrWJLnIWS18m6W_jP7otPtz1IJwxCAr0MptbiTHXSvXjRZNHfE87fngbkFr5mKWxA2hMM8DiWa33SIfJEGFGd_V7tCS-pim7o92T-1XTJ5yY3f6MXfVI-vGSXO8dl4pODghqEKJ0LtYyjBmo299WgKYN9OpR9b3X0LVeZBP1KEkkEc4kidHB0D5pY1jsStyuPrfKvg1r8LM-ygbiewRRFns37J8FWT_d63wxncAoq8NraKDlKGAqycWF5fU"/>
+</div>
+</section>
+<!-- Product Grid Section -->
+<section class="px-margin-mobile">
+<div class="flex justify-between items-center mb-4">
+<h3 class="font-h3 text-on-surface">Terpopuler</h3>
+<span class="text-primary font-label-sm">Lihat Semua</span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<!-- Card 1 -->
+<div class="bg-white rounded-[12px] overflow-hidden shadow-[0_-4px_20px_0px_rgba(93,64,55,0.08)] flex flex-col group active:scale-95 transition-transform duration-200">
+<div class="relative aspect-square">
+<img alt="Honey" class="w-full h-full object-cover" data-alt="a rustic jar of pure golden forest honey with honeycomb on a wooden table in soft morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMtlWgh8wnIHWJgvqf1zZqj74rYKdnGbsCb_E7HCCTbNk_VsYa_3yCdQfi_CgFG_QPoeZ-DEtXQRDqv2v6jorIR8hH78VygK_NIdVCDaze_vLdBz2dGCoN8IJvq5ITXm4p2eZfQsiSZbVACW9J0K251vXNjv2REkzc-49Sa7fww7o5NWbp2FSAJfuA6CHxD4bit0ER9rfIpVr3upVR7eMKyaixOtGWnPJFNzZzR6VWFz_FDgZH1EPlPd3cXckvQeNCy6MDK2CdKFc"/>
+<div class="absolute top-2 right-2 bg-white/90 backdrop-blur-sm p-1 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-red-500" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+</div>
+<div class="p-3 flex-1 flex flex-col">
+<h4 class="font-label-sm text-on-surface line-clamp-1 mb-1">Madu Hutan Asli</h4>
+<div class="flex items-center gap-1 mb-2">
+<div class="w-4 h-4 rounded-full bg-green-100 flex items-center justify-center">
+<span class="material-symbols-outlined text-[10px] text-green-700" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<span class="text-[10px] text-stone-500">Pak Budi</span>
+</div>
+<div class="mt-auto flex justify-between items-end">
+<span class="font-bold text-[#1B5E20]">Rp 25.000</span>
+<button class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-white active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-white rounded-[12px] overflow-hidden shadow-[0_-4px_20px_0px_rgba(93,64,55,0.08)] flex flex-col group active:scale-95 transition-transform duration-200">
+<div class="relative aspect-square">
+<img alt="Crackers" class="w-full h-full object-cover" data-alt="crispy golden Indonesian shrimp crackers in a transparent packaging on a clean wooden surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmLbWkjdo6P0belCkTZftF8Jf3sXYaMhcHQX-n2QvTIhkmQW9QeW6Lxcwtgxhk4D3UR-3OGXAQUqez9_SSjm8v2SmYKG16124mS5c5cI-v3sZSvSm0MpMRgqeSOaeNqXWSs5_aBlu4AHXLtTdfXgf7dLxvVxB-F7rbYS733IHM4bdiRO8Pq2hZISH3348VlOkX43KLvzQ9PIPmN6pPCIHm5xA7MyfGH206-wrPKKduaTAK9GxANiKa7bLfKXH3d4p94HtsEx9uCbM"/>
+</div>
+<div class="p-3 flex-1 flex flex-col">
+<h4 class="font-label-sm text-on-surface line-clamp-1 mb-1">Kerupuk Udang</h4>
+<div class="flex items-center gap-1 mb-2">
+<div class="w-4 h-4 rounded-full bg-green-100 flex items-center justify-center">
+<span class="material-symbols-outlined text-[10px] text-green-700" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<span class="text-[10px] text-stone-500">Ibu Sari</span>
+</div>
+<div class="mt-auto flex justify-between items-end">
+<span class="font-bold text-[#1B5E20]">Rp 15.000</span>
+<button class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-white active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-white rounded-[12px] overflow-hidden shadow-[0_-4px_20px_0px_rgba(93,64,55,0.08)] flex flex-col group active:scale-95 transition-transform duration-200">
+<div class="relative aspect-square">
+<img alt="Coffee" class="w-full h-full object-cover" data-alt="hand-roasted organic coffee beans in a burlap sack with a wooden scoop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAs8ngb81gUIqhbmZgB-ZXyNRfKoju_3BPQS4JJKvqueIO1wV3ErMnhFFEGeIDjrhhPp39bOttydPdMhrgWuMrV-V9pG12t7BW8fGAILX3DhcDNlP4JesulADXBmedEeyyAgHPxLGM_Stp5uHFcvFnMcSJL29WDJebIhDWMPC33p5p1SHkPg6LCKhQA3XUdHY5YSR9HQq39DYeJ9LoCSQGIu2J-X3rd2rVnus9nxGnHuVR5WRD6Vx5wqYwh4P1-QM80bme9p-lFDBo"/>
+</div>
+<div class="p-3 flex-1 flex flex-col">
+<h4 class="font-label-sm text-on-surface line-clamp-1 mb-1">Kopi Robusta Desa</h4>
+<div class="flex items-center gap-1 mb-2">
+<span class="text-[10px] text-stone-500">Petani Sejahtera</span>
+</div>
+<div class="mt-auto flex justify-between items-end">
+<span class="font-bold text-[#1B5E20]">Rp 45.000</span>
+<button class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-white active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-white rounded-[12px] overflow-hidden shadow-[0_-4px_20px_0px_rgba(93,64,55,0.08)] flex flex-col group active:scale-95 transition-transform duration-200">
+<div class="relative aspect-square">
+<img alt="Basket" class="w-full h-full object-cover" data-alt="intricately woven traditional bamboo basket handicraft from a local Indonesian artisan village" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjbS_wgDHwT2vPzl9kC34V3WMb1AKaxHz_JJkPMvTA2FJNAHFTN6jTl-PcyOb_OtJksl7xeGRkSfSBnTL-ScGy2ouNd6ENb3Qrnwk4KJd_7SMEPxnWt4ysvplJTua8h-E9ttkqfjjc1fJTXwHtuRZfFcJ3oSmIjXDQZr7MTWWRXhrklYC9J55W59mhN1rwrcwHVSy5cuJd_SzSuW_rDRCFG7IDw8qadshqTcYHJNtszONyeC531Svvh7i9bGMR1_47gkYlpVbj5QY"/>
+</div>
+<div class="p-3 flex-1 flex flex-col">
+<h4 class="font-label-sm text-on-surface line-clamp-1 mb-1">Bakul Bambu Anyam</h4>
+<div class="flex items-center gap-1 mb-2">
+<div class="w-4 h-4 rounded-full bg-green-100 flex items-center justify-center">
+<span class="material-symbols-outlined text-[10px] text-green-700" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<span class="text-[10px] text-stone-500">Mbah Joyo</span>
+</div>
+<div class="mt-auto flex justify-between items-end">
+<span class="font-bold text-[#1B5E20]">Rp 60.000</span>
+<button class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-white active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Community Progress Section -->
+<section class="px-margin-mobile mt-10 mb-10">
+<div class="bg-surface-container rounded-xl p-5 border border-[#5D4037]/10">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-[#1B5E20]">group</span>
+<h4 class="font-label-sm text-on-surface">Target Panen Desa Cilember</h4>
+</div>
+<div class="h-3 w-full bg-white rounded-full overflow-hidden mb-2">
+<div class="h-full bg-primary-container w-[75%] rounded-full"></div>
+</div>
+<p class="text-[11px] text-stone-600 flex justify-between">
+<span>Target: 500kg Padi</span>
+<span class="font-bold">75% Tercapai</span>
+</p>
+</div>
+</section>
+</main>
+<!-- Floating Action Button -->
+<div class="fixed bottom-24 right-6 z-50">
+<button class="w-14 h-14 bg-[#1B5E20] text-white rounded-full shadow-lg shadow-[#1B5E20]/30 flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[28px]">chat</span>
+</button>
+</div>
+<!-- Bottom Navigation Bar Component -->
+<nav class="bg-white/95 dark:bg-stone-900/95 backdrop-blur-sm border-t border-stone-100 dark:border-stone-800 shadow-[0_-4px_20px_0px_rgba(93,64,55,0.08)] fixed bottom-0 left-0 w-full flex justify-around items-center px-2 py-3 pb-safe z-[60] rounded-t-[24px]">
+<!-- active state applied to 'Beranda' -->
+<div class="flex flex-col items-center justify-center bg-[#E8F5E9] dark:bg-green-900/40 text-[#1B5E20] dark:text-green-200 rounded-2xl px-4 py-1.5 active:scale-90 transition-transform duration-150 cursor-pointer">
+<span class="material-symbols-outlined">home</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-bold uppercase tracking-wider mt-0.5">Beranda</span>
+</div>
+<div class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 px-4 py-1.5 hover:text-[#1B5E20] dark:hover:text-green-300 active:scale-90 transition-transform duration-150 cursor-pointer">
+<span class="material-symbols-outlined">search</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-bold uppercase tracking-wider mt-0.5">Cari</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#1B5E20] -mt-8 bg-white rounded-full p-2 shadow-md hover:scale-110 transition-transform active:scale-90 duration-150 cursor-pointer">
+<span class="material-symbols-outlined text-[36px]" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-bold uppercase tracking-wider -mt-1 mb-1">Jual</span>
+</div>
+<div class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 px-4 py-1.5 hover:text-[#1B5E20] dark:hover:text-green-300 active:scale-90 transition-transform duration-150 cursor-pointer">
+<span class="material-symbols-outlined">chat</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-bold uppercase tracking-wider mt-0.5">Chat</span>
+</div>
+<div class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 px-4 py-1.5 hover:text-[#1B5E20] dark:hover:text-green-300 active:scale-90 transition-transform duration-150 cursor-pointer">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-bold uppercase tracking-wider mt-0.5">Profil</span>
+</div>
+</nav>
+</body></html>

@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DesaMart | Pasar Desa Digital</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#e9e2d2",
+                    "surface": "#fff9ec",
+                    "secondary": "#77574d",
+                    "on-primary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "primary-fixed-dim": "#91d78a",
+                    "on-error": "#ffffff",
+                    "on-secondary-container": "#795950",
+                    "surface-container-high": "#eee8d7",
+                    "on-tertiary-container": "#8fd691",
+                    "surface-dim": "#e0dac9",
+                    "surface-container-highest": "#e9e2d2",
+                    "on-tertiary-fixed-variant": "#07521d",
+                    "secondary-fixed-dim": "#e7bdb1",
+                    "tertiary": "#004516",
+                    "surface-container-lowest": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "primary": "#00450d",
+                    "surface-bright": "#fff9ec",
+                    "outline": "#717a6d",
+                    "outline-variant": "#c0c9bb",
+                    "on-background": "#1e1c12",
+                    "inverse-surface": "#333025",
+                    "primary-container": "#1b5e20",
+                    "inverse-primary": "#91d78a",
+                    "on-surface": "#1e1c12",
+                    "surface-tint": "#2a6b2c",
+                    "on-tertiary-fixed": "#002107",
+                    "surface-container-low": "#faf3e2",
+                    "on-tertiary": "#ffffff",
+                    "on-surface-variant": "#41493e",
+                    "on-primary-fixed-variant": "#0c5216",
+                    "secondary-container": "#fed3c7",
+                    "on-secondary-fixed-variant": "#5d4037",
+                    "on-secondary": "#ffffff",
+                    "on-primary-container": "#90d689",
+                    "tertiary-fixed-dim": "#90d792",
+                    "tertiary-container": "#185e27",
+                    "tertiary-fixed": "#abf4ac",
+                    "inverse-on-surface": "#f7f0df",
+                    "primary-fixed": "#acf4a4",
+                    "error": "#ba1a1a",
+                    "surface-container": "#f4eddd",
+                    "on-secondary-fixed": "#2c160e",
+                    "secondary-fixed": "#ffdbd0",
+                    "background": "#fff9ec",
+                    "on-primary-fixed": "#002203"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "lg": "24px",
+                    "gutter": "16px",
+                    "xl": "40px",
+                    "xs": "4px",
+                    "margin-desktop": "64px",
+                    "sm": "8px",
+                    "margin-mobile": "20px",
+                    "md": "16px"
+            },
+            "fontFamily": {
+                    "h2": ["Plus Jakarta Sans"],
+                    "h3": ["Plus Jakarta Sans"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "h1": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "h2": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "h3": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-sm": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "h1": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        body {
+            background-color: #fff9ec; /* surface */
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-stone-50/95 dark:bg-stone-900/95 backdrop-blur-md border-b border-stone-200 dark:border-stone-800 shadow-sm font-plus-jakarta-sans antialiased">
+<div class="flex justify-between items-center px-6 py-4 max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">eco</span>
+<span class="text-2xl font-extrabold tracking-tight text-green-900 dark:text-green-50">DesaMart</span>
+</div>
+<div class="hidden md:flex flex-1 max-w-2xl mx-12">
+<div class="relative w-full">
+<input class="w-full bg-stone-100 border-none rounded-xl py-3 px-12 text-body-md focus:ring-2 focus:ring-primary focus:bg-white transition-all outline-none" placeholder="Cari produk desa..." type="text"/>
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-stone-500">search</span>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative group cursor-pointer active:scale-95 duration-150">
+<span class="material-symbols-outlined text-stone-700 text-2xl" data-icon="shopping_cart">shopping_cart</span>
+<span class="absolute -top-2 -right-2 bg-primary text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full ring-2 ring-white">3</span>
+</div>
+<div class="flex items-center gap-3 cursor-pointer group active:scale-95 duration-150">
+<div class="text-right hidden sm:block">
+<p class="text-label-sm leading-tight">Pak Budi</p>
+<p class="text-[10px] text-stone-500">Pembeli Setia</p>
+</div>
+<img alt="Avatar" class="w-10 h-10 rounded-full border-2 border-stone-100 group-hover:border-primary transition-colors" data-alt="portrait of a middle aged indonesian man with a friendly smile, clean background, professional lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbdjMcZAH0KT1HNQ_Vni14QrZcqTyJeLBNNkyU9sVx0GgU0qONFfqnsPzL-ygS_Hjx_GPFw90MHRFKiAHO7_Q0elkOMjQ_xqLRd4RACEjmv4nXYbLhrtgYc0ww8_c_LuDqnoEEQX_vX5EmW6pqt4QwJVRvhbNH7uBxMWQXgEgGQSpsLtTWrwdC1Oila3ZTr6dc7CJBiKyOF76Xqh-nfOAW2ia7mCJv1tK6D6BRSesPx8ycap42E6qAg2LlZMBiRTaKYv-OU_Ocilk"/>
+<span class="material-symbols-outlined text-stone-400 group-hover:text-primary transition-colors">expand_more</span>
+</div>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-20 px-6 max-w-screen-2xl mx-auto min-h-screen flex flex-col">
+<!-- Category Bar -->
+<section class="mt-4 mb-8">
+<div class="flex items-center gap-3 overflow-x-auto hide-scrollbar pb-2">
+<button class="whitespace-nowrap px-6 py-2.5 rounded-xl text-label-sm transition-all bg-primary-container text-on-primary-container font-bold">Semua</button>
+<button class="whitespace-nowrap px-6 py-2.5 rounded-xl text-label-sm transition-all bg-white text-stone-600 border border-stone-100 hover:bg-stone-50">Makanan &amp; Minuman</button>
+<button class="whitespace-nowrap px-6 py-2.5 rounded-xl text-label-sm transition-all bg-white text-stone-600 border border-stone-100 hover:bg-stone-50">Pertanian</button>
+<button class="whitespace-nowrap px-6 py-2.5 rounded-xl text-label-sm transition-all bg-white text-stone-600 border border-stone-100 hover:bg-stone-50">Kerajinan Tangan</button>
+<button class="whitespace-nowrap px-6 py-2.5 rounded-xl text-label-sm transition-all bg-white text-stone-600 border border-stone-100 hover:bg-stone-50">Pakaian</button>
+<button class="whitespace-nowrap px-6 py-2.5 rounded-xl text-label-sm transition-all bg-white text-stone-600 border border-stone-100 hover:bg-stone-50">Elektronik</button>
+<button class="whitespace-nowrap px-6 py-2.5 rounded-xl text-label-sm transition-all bg-white text-stone-600 border border-stone-100 hover:bg-stone-50">Rumah Tangga</button>
+<button class="whitespace-nowrap px-6 py-2.5 rounded-xl text-label-sm transition-all bg-white text-stone-600 border border-stone-100 hover:bg-stone-50">Jasa</button>
+<button class="whitespace-nowrap px-6 py-2.5 rounded-xl text-label-sm transition-all bg-white text-stone-600 border border-stone-100 hover:bg-stone-50">Lainnya</button>
+</div>
+</section>
+<!-- Sort / Filter -->
+<section class="flex justify-between items-center mb-6">
+<div>
+<p class="text-stone-500 font-medium">Menampilkan <span class="text-on-surface font-bold">120 produk</span></p>
+</div>
+<div class="flex items-center gap-3">
+<div class="relative inline-block text-left">
+<button class="flex items-center gap-2 px-4 py-2 bg-white rounded-lg border border-stone-200 text-label-sm text-stone-700 hover:border-primary transition-colors">
+<span>Urutkan: Terbaru</span>
+<span class="material-symbols-outlined text-lg">expand_more</span>
+</button>
+</div>
+<button class="p-2 bg-white rounded-lg border border-stone-200 text-stone-700 hover:text-primary hover:border-primary transition-all active:scale-95">
+<span class="material-symbols-outlined">tune</span>
+</button>
+</div>
+</section>
+<!-- Product Grid -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<!-- Card 1 -->
+<div class="bg-white rounded-xl overflow-hidden shadow-[0_4px_12px_rgba(93,64,55,0.05)] border border-stone-100 group transition-all hover:shadow-[0_8px_24px_rgba(93,64,55,0.1)]">
+<div class="aspect-[4/3] overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="crispy shrimp crackers in a traditional basket with golden lighting and organic textures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbXYtrbSQrCVYW0Vxq8HPBMMoIXUY6wHUfAb6Kw39JJKYss8MGOXAYzuJiy1unhgpQojYs6DO0DrfJ69Gqm03qPD0zZrVcZyWtwjhnIYnzJQjwConQm_L_CvIWsM0ooelxMpflfLJWpeVRS9JxY-SJnLMng3Q4fUSXakg82Cb0dHO26dMudwjP1h5g4EytxJXFIqmEf5DHqWb_jRRbaHQZJ3iSWXdeS6LaacbhENh7YFhTKM00njcTzTw6Vir5agfBh906z2NrUFQ"/>
+<span class="absolute top-3 left-3 bg-primary/90 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Camilan</span>
+</div>
+<div class="p-4">
+<h3 class="font-h3 text-body-md mb-1 text-on-surface">Kerupuk Udang Bu Sari</h3>
+<p class="font-bold text-primary mb-3">Rp 25.000</p>
+<div class="flex items-center gap-2 mb-4">
+<img class="w-6 h-6 rounded-full" data-alt="close-up profile photo of a smiling indonesian woman in a hijab" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuDSb2Fvzo3_XPOYd8RFNt1zVR1F6TNvm6dTaam3BdO-Vewu0XQv68RMU_eNbFW-YOIlcJdnvq1a8IoPiPX-EA2Y1osoRHneATKV42VRhnlAfS6kAUf4U6DIQckMkR1xXyaWwM4h0QyLui0WZHq81XY7qoB9XDIQ6l7n5F8bTxKsRSl1NmitRL0sG9PzQ6ymLDqWPC_0MxKltNBLfyx51-fwrVmfuNGEJw_Dp-n3IduClhOQvWWY4RELIknboIsVPkEeu-R5ZGt1U"/>
+<span class="text-label-sm text-stone-500">Toko Ibu Sari</span>
+</div>
+<button class="w-full py-2.5 rounded-lg border-2 border-primary text-primary font-bold text-label-sm hover:bg-primary hover:text-white transition-all active:scale-95">Lihat Detail</button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-white rounded-xl overflow-hidden shadow-[0_4px_12px_rgba(93,64,55,0.05)] border border-stone-100 group transition-all hover:shadow-[0_8px_24px_rgba(93,64,55,0.1)]">
+<div class="aspect-[4/3] overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="basket of fresh leafy green vegetables with water droplets, vibrant colors, morning sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqRIetVDsEWG86KpubuKBp7RpPFIhJQO93dX-XsSGgZYkEEeejrayylkSok6HwZVEeIhoqVUDWeYwRV3tb6o1rSkH7-pGNLslAEptyKXoS0GOQ0Vth19jKaiZhUD64n-sKKJixbMXvPzkbKGL_DWUJZp5-WUkO1Gk_c4YaWzmy3ygK-bCNR3pw43-ncDjsmmYDObNOt3lBJ2ucKnnYLhaH0NWqKM9M9lkVNoMD1NN8uqzyYPJ3iWFyJ83UhVkC_gLc4JGoo252_xY"/>
+<span class="absolute top-3 left-3 bg-primary/90 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Pertanian</span>
+</div>
+<div class="p-4">
+<h3 class="font-h3 text-body-md mb-1 text-on-surface">Sayuran Segar Pak Tani</h3>
+<p class="font-bold text-primary mb-3">Rp 12.000</p>
+<div class="flex items-center gap-2 mb-4">
+<img class="w-6 h-6 rounded-full" data-alt="friendly indonesian farmer wearing a conical straw hat" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTyGByOuzdNtHSyNDDvzX8VKerYqt1MWW-EHvTek5Pep2TvdWQGNyThEgOx3fpdWpyDnBcZNl1JcH_d-lG4T7s2V9l9KI38LJaou3e1QzAabAxnMK-Uv-LzT-X5MMkQNrNYJWRIc55iaCnzzTo0m_H7Gl7Oy8vei7aWIW0OIjv7NViIudTAZzOM9FfhstMTSkEu8gQoiPeyZnCy6DO9ghJPn-Oo5qu8Nzok8itClN8n6eEb01cSWyjy_i6myC4pPT6ce2px28FeXE"/>
+<span class="text-label-sm text-stone-500">Hasil Bumi Mandiri</span>
+</div>
+<button class="w-full py-2.5 rounded-lg border-2 border-primary text-primary font-bold text-label-sm hover:bg-primary hover:text-white transition-all active:scale-95">Lihat Detail</button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-white rounded-xl overflow-hidden shadow-[0_4px_12px_rgba(93,64,55,0.05)] border border-stone-100 group transition-all hover:shadow-[0_8px_24px_rgba(93,64,55,0.1)]">
+<div class="aspect-[4/3] overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="intricate hand-drawn batik fabric with traditional indonesian patterns, warm earth tones, textile detail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuvhlI_PVVBCKHyiUbCkC8NtlOiOLsJei7IM4uH-O_wHPoR4owfOjwdGuIHkiPpiB9_LuBzrzoMETARFPb4bIQtnVR0amp972sKLQkHpAyyKv1JOrdM2KFYranmjwGfk4MXXxDhGWSK7Pk4pKedEEVTzyLcMawzgyk6wpPnDdg9Ecf6d83BV6fq756EtY86olPKDgDf06Z4S1wglEp2AgvWXq55jq0IbmbEfBU3iMxAAnzUcaTts-E0Y4Qc31vNGiUm0QrJPh_j_4"/>
+<span class="absolute top-3 left-3 bg-primary/90 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Pakaian</span>
+</div>
+<div class="p-4">
+<h3 class="font-h3 text-body-md mb-1 text-on-surface">Batik Tulis Khas Desa</h3>
+<p class="font-bold text-primary mb-3">Rp 450.000</p>
+<div class="flex items-center gap-2 mb-4">
+<img class="w-6 h-6 rounded-full" data-alt="skilled artisan woman working with textiles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxiy5IbTGrihODa6EP__C9aAY-EZfgydkkw4tQy2uv417YcsWlN3yrlvziI_9sBkuXIFa12CnFccMgwwVDiYhZ8UGZ8IbVrHxyOmIycypR89WV09uypOq4L7ZBWMJPoYzfdnWRE6ew8cVHUmCFBfY_HzqllLYeLwmy7j7jry2rCvhjCTaGzgHWaq_fHA-LoLAzGQK4BouVr3F6fsCRCB1AvsKMSvFdwpOnKGtI6M4BdqKjSIpDoUelqxXYtqGINJcAntwAeTlNzyY"/>
+<span class="text-label-sm text-stone-500">Sanggar Batik Ayu</span>
+</div>
+<button class="w-full py-2.5 rounded-lg border-2 border-primary text-primary font-bold text-label-sm hover:bg-primary hover:text-white transition-all active:scale-95">Lihat Detail</button>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-white rounded-xl overflow-hidden shadow-[0_4px_12px_rgba(93,64,55,0.05)] border border-stone-100 group transition-all hover:shadow-[0_8px_24px_rgba(93,64,55,0.1)]">
+<div class="aspect-[4/3] overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="amber colored honey in a glass jar with a wooden dipper, rustic background, soft focused light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuCAOX0kYajDhx7ndMcc65XA3oMQmhkNPZ4SmNcJ-Jfl_1eyMl8J8SMUhnnxi6JDvEbWJZakRs1VJUuQ2RpNj6cfM5u2nRLQzz2dheIWBGzDcMQbQzbM_QbkbY-AaOdERYY7F41CSHeXKyJwMQucvAnc92V7e0rCz4wUyJUcqVQf9hw6J2C7-274U-2ThZtvF_c_S_-RPQtGf5j_xvZftJtoU6mbzV_07N3frjUjT2byfnMKo7t37eLRdfZQEsObRxCJGS985Uhg8"/>
+<span class="absolute top-3 left-3 bg-primary/90 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Makanan</span>
+</div>
+<div class="p-4">
+<h3 class="font-h3 text-body-md mb-1 text-on-surface">Madu Hutan Asli</h3>
+<p class="font-bold text-primary mb-3">Rp 85.000</p>
+<div class="flex items-center gap-2 mb-4">
+<img class="w-6 h-6 rounded-full" data-alt="portrait of a bearded man in outdoor gear" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9JA6_UsYt3ZmhawEDGAJSSGJgQxruQrsuNz_CDsK-5tOF9msWoXIdY0eNE3vNe5e4VN-YH23f1KoFZFvX-jlDECE-H-V-BE4L-PpMEYShuTnAkh-Ddb1obPpuhDl-QE0kHK5d4PsnJTaeIwVWDk2IFGnYI03wRJMscW66CRhbpZxXMMLKWIDTR6YzPGwWv36f8NsTjTzkPKXdNIgOsVlUk8zOdiQAtEiNsJKKClvrzMx0YTGhcPAFOmUkNy8kOwtu2woJ5_DMBeA"/>
+<span class="text-label-sm text-stone-500">Madu Alam Desa</span>
+</div>
+<button class="w-full py-2.5 rounded-lg border-2 border-primary text-primary font-bold text-label-sm hover:bg-primary hover:text-white transition-all active:scale-95">Lihat Detail</button>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="bg-white rounded-xl overflow-hidden shadow-[0_4px_12px_rgba(93,64,55,0.05)] border border-stone-100 group transition-all hover:shadow-[0_8px_24px_rgba(93,64,55,0.1)]">
+<div class="aspect-[4/3] overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="roasted coffee beans in a wooden bowl with aromatic smoke, dark aesthetic, high contrast" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCC5ft7eoa5IoUzkUZbMaQmN5VYXTZGsni_dMXPW4C8R8tPrhKH2l4SYZwH64oB6O24ArNthAI1lKsVtDs-4eqgJDbEFEqaFZojHRY1wLXEw7DrVHD8CaNX-GKnHdl5pXODxPs0XeOFFuyTvDG1sP3x8dt14fquk77I0jR93Zdp4QwmuESDp_Z3mpvQvvn1nb0VTjihPNv8p9MGtl03eQvbdOLUZjhyLkMBQHQZh97KmRWcVzVTlpfz9C5BNMHPxGm_-hGQ-SxaTO4"/>
+<span class="absolute top-3 left-3 bg-primary/90 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Minuman</span>
+</div>
+<div class="p-4">
+<h3 class="font-h3 text-body-md mb-1 text-on-surface">Kopi Robusta Desa</h3>
+<p class="font-bold text-primary mb-3">Rp 45.000</p>
+<div class="flex items-center gap-2 mb-4">
+<img class="w-6 h-6 rounded-full" data-alt="professional barista with coffee tools" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiaTlZS_KmCd4DeqWV02iT-LhVPtDAEqui0SA4BxUT94AglvtAoWs4wBB8mI-1M0_mv4ExJXlcduW4NwO4JpdyeWr2RkQhDJUOa1RQMc6OA2ds_uNLXRedTj_4L7TTMfg1cY0vm2Gx8FwAxjyWrJ8lWqO3MzHkoF7CKsYX6S_mHdREuQ4aPyJy2mu0kKVCGTvvS_8OpNiJcB9n6m3cuHuCiU9lJnYVVptGvr10C7fjmYtcnB7SvjvhpkjhmIikxn6hvTS1b_CXTfU"/>
+<span class="text-label-sm text-stone-500">Kebun Kopi Wangi</span>
+</div>
+<button class="w-full py-2.5 rounded-lg border-2 border-primary text-primary font-bold text-label-sm hover:bg-primary hover:text-white transition-all active:scale-95">Lihat Detail</button>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="bg-white rounded-xl overflow-hidden shadow-[0_4px_12px_rgba(93,64,55,0.05)] border border-stone-100 group transition-all hover:shadow-[0_8px_24px_rgba(93,64,55,0.1)]">
+<div class="aspect-[4/3] overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="colorful hand-knitted tote bag on a neutral background, boho style, soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPoKwk1DMMpB2nnSBnKRPhSSiByXUWdekVilSCKRo-nS3zbTowzGxnqck98A0VM6IZfAVMpgQupxklKmmeXApoP3pt_8sTe6qRdWRyKH0t_Rbh9VLlgRVX2KiBE9fifRefGJowv79uLHnLpaLnSSQ4km3HQk-KGO8mZEYKG_ktcKyBetw12K581KvUunjIiJjBTA40De4kSVXFBwnLE1WXByDWGgSHX5vSv72Y2otTbZ5pJdlnJ1mfsiGnqxLcfL4dSVojLsGGU9Y"/>
+<span class="absolute top-3 left-3 bg-primary/90 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Kerajinan</span>
+</div>
+<div class="p-4">
+<h3 class="font-h3 text-body-md mb-1 text-on-surface">Tas Rajut Handmade</h3>
+<p class="font-bold text-primary mb-3">Rp 120.000</p>
+<div class="flex items-center gap-2 mb-4">
+<img class="w-6 h-6 rounded-full" data-alt="creative young woman smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9IykMzQ_9OTxzD15u9ok7QfoIdNy2opFdli8Z_cTOg7oMR_NmoPHWaJ-tFLv5xDDybVcPBns2VZOG-p9oms_CNKLQFQGPrD1e7U8QNrUkeGOqP7BfatJI06hjGyYlTploi0fCCBunGFa09IrDmTnVTRt2Cd0SWcrIbqkwJWr8P0xLBLa0wvk1wBKFBH7M-DASfoYMlS1zeenTfuEdmGzNifa1GSaMzqrKvC0XwDaVaWMrKEJhPutXYnTB9ZtFO_43BZaCAYYZdJU"/>
+<span class="text-label-sm text-stone-500">Rajut Cantik</span>
+</div>
+<button class="w-full py-2.5 rounded-lg border-2 border-primary text-primary font-bold text-label-sm hover:bg-primary hover:text-white transition-all active:scale-95">Lihat Detail</button>
+</div>
+</div>
+<!-- Card 7 -->
+<div class="bg-white rounded-xl overflow-hidden shadow-[0_4px_12px_rgba(93,64,55,0.05)] border border-stone-100 group transition-all hover:shadow-[0_8px_24px_rgba(93,64,55,0.1)]">
+<div class="aspect-[4/3] overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="traditional indonesian chili paste (sambal) in a stone mortar with red chilies and garlic around it" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwsXh1hGd826DAgsStzHhqdpldg12zvxSPHKAAPD6wXkfvaz7zDTWOR6Xs_HEPnPgihdOEvgX3eYLckb8fth6AzJlHkyvZiVfabn4klhGuc_V1xkM6Ktyu8BxusgM1zE9jTu8rq-mAIAXa2FCPEWK7kGMg4-Os8p1WGfHSW_2XZ5DImKMyk5Q7rNSquOzB2AqRA1k4nvQ1pR_Is9QG_cmclazU1jhdHGpGDHqBp0dxLHFfo58rqlklyfrRRmCAGXRUpyXc652wk5Y"/>
+<span class="absolute top-3 left-3 bg-primary/90 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Camilan</span>
+</div>
+<div class="p-4">
+<h3 class="font-h3 text-body-md mb-1 text-on-surface">Sambal Terasi Spesial</h3>
+<p class="font-bold text-primary mb-3">Rp 18.000</p>
+<div class="flex items-center gap-2 mb-4">
+<img class="w-6 h-6 rounded-full" data-alt="cheerful indonesian grandmother in her kitchen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDV23D9vAaWI2dBndTJavilehSKY85mxYXvyDFKWSDQL8AwIlE8t2iOoPb9F63UNkakPpIiE7Eq13yl_NUCFXqSccGgiSvXo70RTSVyYlMlU_kWbiFAffaeDSUkh60AWYlX0qKUAfsrkCqFkacf9YPlT0Sls_adK3R0GZxAGJGyZtxQDs5I0E429FdACBjRQNZn7d4Wd4z5RNfJO0-cF3K4Z953XO2EzYY1thM5qLTH92oiv93S-6ELlH8JUI4JGQhwouCBHHXAiq4"/>
+<span class="text-label-sm text-stone-500">Dapur Pedas</span>
+</div>
+<button class="w-full py-2.5 rounded-lg border-2 border-primary text-primary font-bold text-label-sm hover:bg-primary hover:text-white transition-all active:scale-95">Lihat Detail</button>
+</div>
+</div>
+<!-- Card 8 -->
+<div class="bg-white rounded-xl overflow-hidden shadow-[0_4px_12px_rgba(93,64,55,0.05)] border border-stone-100 group transition-all hover:shadow-[0_8px_24px_rgba(93,64,55,0.1)]">
+<div class="aspect-[4/3] overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="white raw rice in a wooden bowl with green paddy field background, natural daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC19Q2lhlQrrVCqEkIiT9RjGAbZISiUaGTR737IwZttwDZW2OQ3rmI7WP5PidGyhLGGkKMJtqVfWqLye4D-bxCDE6_PZxXNm_7wd7ei4EqQaOpZN6HgM96IyOeUVoh4wR9vUhfdumZMDbzLzoJXaNKaU85kXSOphQN38V61HBduerSxbvgfGVDYjZ6r7hbKnTBUWCkpW4xE26XK110QTYwKHwokVHagKX8SgO5cYmcZmQ2oKOdwE02druZanqG4kQoziy4b1uEoFYE"/>
+<span class="absolute top-3 left-3 bg-primary/90 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Sembako</span>
+</div>
+<div class="p-4">
+<h3 class="font-h3 text-body-md mb-1 text-on-surface">Beras Organik Cianjur</h3>
+<p class="font-bold text-primary mb-3">Rp 65.000</p>
+<div class="flex items-center gap-2 mb-4">
+<img class="w-6 h-6 rounded-full" data-alt="farmer standing in a rice field" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAquuPmLFqNbpZW7B4XDO2a8KyplFXcapJbfHziC5-4j7eLKZ4mF9hh2noRbsV92Ze0Z4gVSBXWB0prZAmifnc2w64_otlCalDNVlGAjlf3-vuVsK3G1z2ZlCMfhQq8Nf3Lh67nWqx8gNdh8WnbBYxTuI6_twg-tfjjvniNbNuXUD5pW7EbSgs29bnZfoLLqz9haCB-leG85Vu136omRag1aM32CLDlNv9oH0TLTH9p2-ana9UuJ3_Il6OEXyu3MQNjK9a64yhX4co"/>
+<span class="text-label-sm text-stone-500">Toko Sembako Jaya</span>
+</div>
+<button class="w-full py-2.5 rounded-lg border-2 border-primary text-primary font-bold text-label-sm hover:bg-primary hover:text-white transition-all active:scale-95">Lihat Detail</button>
+</div>
+</div>
+<!-- Card 9 -->
+<div class="bg-white rounded-xl overflow-hidden shadow-[0_4px_12px_rgba(93,64,55,0.05)] border border-stone-100 group transition-all hover:shadow-[0_8px_24px_rgba(93,64,55,0.1)]">
+<div class="aspect-[4/3] overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="traditional fermented soybean cake (tempeh) wrapped in banana leaves, organic appearance" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAXHdojXGv83Idha919fdZnCep0hEyYOKeTtfs8mQbBN5W6Kl5GIr-1LZn2onu2h4UIF_z5wp8rL6QVbkkc64RUmG7LmvpJbkaUMyELYjfP_QlOtuS0P1WtaEYBv1OKc6jV7qbRpXOjwESb6D9sFhtLuvTa8-JYYP8PEryZi2mY-UkXLjx4z_4Q5mYjxExtphjAgoqe2wsvM279VjvGbnhfoawxi-L6rM9YPsGwE_YotlfBoQV4I67bDdIPDsFU1-XQ-yUKIzdDtU"/>
+<span class="absolute top-3 left-3 bg-primary/90 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Makanan</span>
+</div>
+<div class="p-4">
+<h3 class="font-h3 text-body-md mb-1 text-on-surface">Tempe Mendoan Mentah</h3>
+<p class="font-bold text-primary mb-3">Rp 5.000</p>
+<div class="flex items-center gap-2 mb-4">
+<img class="w-6 h-6 rounded-full" data-alt="smiling local seller at a market" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjCcCPUszgI2LZMst1RCwfO6LlBX0zVASaeBWn5hteUaWYU-CB7zVbB8hPqFxCPUY-9VNtTssl3fCcZyN7fdzBmpDXJbU_vKZPgx-hDTwcsS8Bn0Aiz4mQnUuAO2aAYJ5ad8V5hEJ30mkX24PEALsIjYmNfakDfuX2CzkaoDZ04u9yiyTkrfP3z9mmanmgkqfZz9dMgozliKt8ZKcRB7EOKV53SCZvdZLw1HsgMLr5KnbeZpJyGmSNUROxBDFfeQqyegqF3HZH1ko"/>
+<span class="text-label-sm text-stone-500">Tempe Barokah</span>
+</div>
+<button class="w-full py-2.5 rounded-lg border-2 border-primary text-primary font-bold text-label-sm hover:bg-primary hover:text-white transition-all active:scale-95">Lihat Detail</button>
+</div>
+</div>
+<!-- Card 10 -->
+<div class="bg-white rounded-xl overflow-hidden shadow-[0_4px_12px_rgba(93,64,55,0.05)] border border-stone-100 group transition-all hover:shadow-[0_8px_24px_rgba(93,64,55,0.1)]">
+<div class="aspect-[4/3] overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="blocks of brown palm sugar on a wooden board, natural and raw look, earth tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZq-ugKSRpmvzFJfZXUEzM9VvaXCyyTCxM917pded067qDOQ5XGN12U3meThT5tVewNbpTT0e8De3jHoS0K-H7saT2Fpek9V0wyoihndjDgh9F0eDkPHBwByvYfOl6Y2flx_4UnV12Ox6RyvZJZLFckd_PIX8xwgYCXJohdIWRzKymVS0AxZQMcNjk4OVrDIMSAkajXImHN6aM9xiQuwVKH10cL4Hp6eiscYHL35T0EuvHQ5H7nkp_3GrSeyz_SWhSDwi84mXaRu0"/>
+<span class="absolute top-3 left-3 bg-primary/90 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Makanan</span>
+</div>
+<div class="p-4">
+<h3 class="font-h3 text-body-md mb-1 text-on-surface">Gula Aren Alami</h3>
+<p class="font-bold text-primary mb-3">Rp 22.000</p>
+<div class="flex items-center gap-2 mb-4">
+<img class="w-6 h-6 rounded-full" data-alt="mature indonesian man with traditional headwear" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDH8uwa-hDuoItQaEM7i55fMxNiTtbBlgHr62h-XYIiba2wWwJnrmL_A82qOFR31L-YRkgYedUZ9UdPiRHWmZGqy23bAd5CwzNz-HtYPqzF7AErI04npZV46JRxkKO2Zkr8n0FB1HJtPiEWtvxJqjSg4UbGl88lmck4fKXV4fofVOkmByqRJsH4yLWQZXvg3n9Kx-KXq_Wnd4fmuCygXM0rInp91NxsihTYyL0htDsr0gOr9LCnhapkgOiFhfjVrb842f6VUSe19cY"/>
+<span class="text-label-sm text-stone-500">Nira Sejahtera</span>
+</div>
+<button class="w-full py-2.5 rounded-lg border-2 border-primary text-primary font-bold text-label-sm hover:bg-primary hover:text-white transition-all active:scale-95">Lihat Detail</button>
+</div>
+</div>
+<!-- Card 11 -->
+<div class="bg-white rounded-xl overflow-hidden shadow-[0_4px_12px_rgba(93,64,55,0.05)] border border-stone-100 group transition-all hover:shadow-[0_8px_24px_rgba(93,64,55,0.1)]">
+<div class="aspect-[4/3] overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="fresh raw whole chicken on a wooden cutting board with herbs, clean kitchen setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxytjo0PhxX0tlTlM_3nY5fk9NdaDsCvqLPABAYwUNlVPqJ8AV2lALE-knrYeu6WFfYQk7GOuaAEZhuniXOMyrG29AN0UnAR32PWgMNljS87qo5L_GuyfFf6LkEs4XN-KGmTaaoblLxEmy0GPNtxnorvuXQ8mkl3K9CpEawJ_5MjXB-mqROwwjRx1sA3TA4wqVcdeL_09ncxv77BjR3AW0SRQZkfnJnVf0fI1Qn_HQyO9zyKaLCuL5EKZ3y_e4hYuWb63cdc0o1CM"/>
+<span class="absolute top-3 left-3 bg-primary/90 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Peternakan</span>
+</div>
+<div class="p-4">
+<h3 class="font-h3 text-body-md mb-1 text-on-surface">Ayam Kampung Segar</h3>
+<p class="font-bold text-primary mb-3">Rp 75.000</p>
+<div class="flex items-center gap-2 mb-4">
+<img class="w-6 h-6 rounded-full" data-alt="strong man working on a farm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAl3IFX5Muq9RsHGkwyLJJrickHedQIbR7afmpsy3S7MEwcUfaB2MGpCXPMUA708nh2Bhitqre4nz_R4Y0GNrLYVo9OwlQ0Hy8yniZjGY7io2jDVznLEZsOsbMVfBH-0M38T9bI6uauBgyiemf8qkSG8TYh667FzLrLovltbSVNJT3IcoieHVvbEwNDOuORue1lzHI8ifSatAPag11cABZ3dZlQ7cpZTKZSwBNcYUevAIDlCAQPFbCRoRx75HphjRUiRJVPsvkz7o"/>
+<span class="text-label-sm text-stone-500">Farm Fresh Desa</span>
+</div>
+<button class="w-full py-2.5 rounded-lg border-2 border-primary text-primary font-bold text-label-sm hover:bg-primary hover:text-white transition-all active:scale-95">Lihat Detail</button>
+</div>
+</div>
+<!-- Card 12 -->
+<div class="bg-white rounded-xl overflow-hidden shadow-[0_4px_12px_rgba(93,64,55,0.05)] border border-stone-100 group transition-all hover:shadow-[0_8px_24px_rgba(93,64,55,0.1)]">
+<div class="aspect-[4/3] overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="intricately woven bamboo basket, handcrafted detail, light wood tones, minimalist background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8xrc8gl-0070kElmz1QE4goZFdCigiYaYlYeZ8j-6K3cVPfjFzgBu87BsZrfPAwDVEJFZWgCA5eZ4TVvihHIAgoL7GZOF9A8qJkzqimTsobB4apsNHQsbl4jLB7O6qUDGFr2Z0Ftyxaf5_Fb_g9mRHecmG3OMCiY02YiXdjwXzj_kfSiD9THdY3pbHHMhtr7UTJtO9ZpBjBxHDNQk2XWmdN33aJVGuBY-_rOo5pyYcd8IoalKefCsUySM9-igxcP2aOLLgrfJAHY"/>
+<span class="absolute top-3 left-3 bg-primary/90 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Kerajinan</span>
+</div>
+<div class="p-4">
+<h3 class="font-h3 text-body-md mb-1 text-on-surface">Kerajinan Bambu</h3>
+<p class="font-bold text-primary mb-3">Rp 35.000</p>
+<div class="flex items-center gap-2 mb-4">
+<img class="w-6 h-6 rounded-full" data-alt="elderly craftsman working with bamboo strips" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3PugFxXjZkFqi7fHbPOJ6B1_AatmQFqkGjqjgqO7RGxC65DigYymcFjK0f5602f_PbSKzh-PB3dL82P-aQJaFjXgM80ka9rE4nj4OGUxj4yUrgFFFc6qusImBUYzctsZVTmxxZgUv_j2wMm0EH5NWNgZroZs6wS1f-Cqop4mfDhdA5HUxMpUfZR44jF3C7d858Cw_j85uHmP9YQGUEzI9PU256bygTL1j8qrfGasON2JRTOc95RlQWlMR9QQEDv9x7XCYY-ZFNMo"/>
+<span class="text-label-sm text-stone-500">Anyaman Bambu</span>
+</div>
+<button class="w-full py-2.5 rounded-lg border-2 border-primary text-primary font-bold text-label-sm hover:bg-primary hover:text-white transition-all active:scale-95">Lihat Detail</button>
+</div>
+</div>
+</section>
+<!-- Pagination -->
+<section class="mt-16 mb-8 flex justify-center">
+<nav class="flex items-center gap-2">
+<button class="p-2 rounded-lg border border-stone-200 text-stone-500 hover:bg-stone-50 transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded-lg bg-primary text-white font-bold text-label-sm shadow-md">1</button>
+<button class="w-10 h-10 rounded-lg border border-stone-200 text-stone-600 hover:bg-stone-50 font-medium text-label-sm">2</button>
+<button class="w-10 h-10 rounded-lg border border-stone-200 text-stone-600 hover:bg-stone-50 font-medium text-label-sm">3</button>
+<span class="px-2 text-stone-400">...</span>
+<button class="w-10 h-10 rounded-lg border border-stone-200 text-stone-600 hover:bg-stone-50 font-medium text-label-sm">10</button>
+<button class="p-2 rounded-lg border border-stone-200 text-stone-500 hover:bg-stone-50 transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</nav>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-stone-100 dark:bg-stone-900 border-t border-stone-200 dark:border-stone-800 w-full mt-auto font-plus-jakarta-sans">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 py-12 gap-6 max-w-screen-2xl mx-auto">
+<div class="flex flex-col gap-2">
+<span class="text-lg font-bold text-green-900 dark:text-green-100">DesaMart</span>
+<p class="text-sm text-stone-600 dark:text-stone-400">© 2024 DesaMart. Rooted in community.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-sm text-stone-600 dark:text-stone-400 hover:text-green-700 transition-opacity" href="#">About Us</a>
+<a class="text-sm text-stone-600 dark:text-stone-400 hover:text-green-700 transition-opacity" href="#">Seller Portal</a>
+<a class="text-sm text-stone-600 dark:text-stone-400 hover:text-green-700 transition-opacity" href="#">Privacy Policy</a>
+<a class="text-sm text-stone-600 dark:text-stone-400 hover:text-green-700 transition-opacity" href="#">Contact Support</a>
+</div>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-3 md:hidden bg-white/90 dark:bg-stone-950/90 backdrop-blur-lg border-t border-stone-200 dark:border-stone-800 shadow-[0_-4px_12px_rgba(93,64,55,0.08)] z-50 rounded-t-2xl">
+<div class="flex flex-col items-center justify-center bg-green-50 dark:bg-green-900/30 text-green-800 dark:text-green-200 rounded-xl px-5 py-2 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-[11px] font-semibold">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-stone-500 hover:text-green-700 active:scale-90 transition-transform">
+<span class="material-symbols-outlined">storefront</span>
+<span class="text-[11px] font-semibold">Market</span>
+</div>
+<div class="flex flex-col items-center justify-center text-stone-500 hover:text-green-700 active:scale-90 transition-transform">
+<span class="material-symbols-outlined">shopping_basket</span>
+<span class="text-[11px] font-semibold">Cart</span>
+</div>
+<div class="flex flex-col items-center justify-center text-stone-500 hover:text-green-700 active:scale-90 transition-transform">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[11px] font-semibold">Profile</span>
+</div>
+</nav>
+<!-- Floating Chat -->
+<button class="fixed bottom-24 right-6 md:bottom-10 md:right-10 w-14 h-14 bg-primary text-white rounded-full shadow-lg flex items-center justify-center hover:bg-surface-tint active:scale-90 transition-all z-40 group">
+<span class="material-symbols-outlined text-2xl group-hover:rotate-12 transition-transform">chat</span>
+<span class="absolute -top-1 -right-1 flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+</span>
+</button>
+</body></html>

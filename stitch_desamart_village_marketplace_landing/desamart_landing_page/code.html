@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary": "#77574d",
+                    "tertiary": "#004516",
+                    "background": "#fff9ec",
+                    "primary-container": "#1b5e20",
+                    "on-secondary-fixed-variant": "#5d4037",
+                    "error-container": "#ffdad6",
+                    "surface-container-low": "#faf3e2",
+                    "on-surface-variant": "#41493e",
+                    "on-tertiary-fixed-variant": "#07521d",
+                    "tertiary-fixed": "#abf4ac",
+                    "surface-container-high": "#eee8d7",
+                    "on-secondary-fixed": "#2c160e",
+                    "on-tertiary-container": "#8fd691",
+                    "inverse-primary": "#91d78a",
+                    "on-error-container": "#93000a",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed-dim": "#91d78a",
+                    "surface": "#fff9ec",
+                    "on-background": "#1e1c12",
+                    "inverse-surface": "#333025",
+                    "surface-bright": "#fff9ec",
+                    "on-error": "#ffffff",
+                    "secondary-fixed": "#ffdbd0",
+                    "on-primary": "#ffffff",
+                    "on-primary-container": "#90d689",
+                    "surface-container-highest": "#e9e2d2",
+                    "on-surface": "#1e1c12",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed-variant": "#0c5216",
+                    "outline-variant": "#c0c9bb",
+                    "primary-fixed": "#acf4a4",
+                    "tertiary-fixed-dim": "#90d792",
+                    "surface-dim": "#e0dac9",
+                    "outline": "#717a6d",
+                    "inverse-on-surface": "#f7f0df",
+                    "surface-variant": "#e9e2d2",
+                    "on-secondary-container": "#795950",
+                    "tertiary-container": "#185e27",
+                    "surface-tint": "#2a6b2c",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed": "#002107",
+                    "secondary-fixed-dim": "#e7bdb1",
+                    "surface-container": "#f4eddd",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed": "#002203",
+                    "secondary-container": "#fed3c7",
+                    "primary": "#00450d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "40px",
+                    "gutter": "16px",
+                    "md": "16px",
+                    "lg": "24px",
+                    "sm": "8px",
+                    "margin-mobile": "20px",
+                    "xs": "4px",
+                    "margin-desktop": "64px"
+            },
+            "fontFamily": {
+                    "h3": ["Plus Jakarta Sans"],
+                    "h2": ["Plus Jakarta Sans"],
+                    "label-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "h1": ["Plus Jakarta Sans"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "h3": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "h2": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "label-sm": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "h1": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-background antialiased">
+<!-- TopNavBar -->
+<header class="bg-[#F5F5F0] dark:bg-stone-950 docked full-width top-0 sticky z-50 border-b border-[#5D4037]/10 dark:border-stone-800 shadow-[0_4px_20px_-4px_rgba(93,64,55,0.08)]">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto font-['Plus_Jakarta_Sans'] text-sm antialiased">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">eco</span>
+<span class="text-2xl font-extrabold text-[#1B5E20] dark:text-green-500 tracking-tight">DesaMart</span>
+</div>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-[#1B5E20] dark:text-green-400 font-bold border-b-2 border-[#1B5E20] pb-1" href="#">Beranda</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-[#1B5E20] transition-colors" href="#">Marketplace</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-[#1B5E20] transition-colors" href="#">Tentang</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="px-6 py-2 rounded-xl border border-primary text-primary font-semibold active:scale-95 transition-all duration-200 hover:bg-primary/5">Masuk</button>
+<button class="px-6 py-2 rounded-xl bg-primary-container text-white font-semibold active:scale-95 transition-all duration-200 shadow-md">Daftar</button>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-6 py-16 md:py-24 grid md:grid-cols-2 items-center gap-12">
+<div>
+<h1 class="font-h1 text-h1 text-on-background mb-6">Jual Beli Mudah untuk Warga Desa</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-lg">
+                    Platform marketplace yang menghubungkan penjual dan pembeli di desa Anda. Satu akun untuk belanja sekaligus berjualan produk lokal berkualitas.
+                </p>
+<div class="flex flex-wrap items-center gap-6">
+<button class="px-8 py-4 bg-primary text-white rounded-xl font-semibold flex items-center gap-2 active:scale-95 transition-transform shadow-lg">
+                        Mulai Sekarang
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<a class="text-primary font-semibold hover:underline decoration-2 underline-offset-4" href="#">Pelajari Lebih Lanjut</a>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -z-10 w-full h-full bg-primary/5 rounded-full blur-3xl scale-110"></div>
+<img alt="DesaMart Marketplace" class="w-full h-auto rounded-xl shadow-2xl object-cover aspect-[4/3]" data-alt="Illustration of a vibrant local Indonesian village market with friendly residents exchanging fresh produce in a sunlit outdoor setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDocA0q5hMDBugXEOSphr_m7DA_i90F3lP1jpeRjMlYc1errmlNCdQ-E-u1gprWWYxbOyB0ap3nlvrNqFMeZpcJ_Ux0fUXVL1FT0IsIMscrZ3KB1WSUUK81C9auGy8KNdUV461RN4TTixz3MLoXNi7_Viv2ZRkZAcSl7hF2VEa5yfqXp2FE6GE-iWqt_u42luswXnXxQ7T_cCmRnRfztWWE2myccwfpgNCvEFenXAROAbbZvyTCUXGVj6nodU6rq-jBOnhQiVVMGeU"/>
+</div>
+</section>
+<!-- Features Bento Grid -->
+<section class="max-w-7xl mx-auto px-6 py-16">
+<div class="text-center mb-16">
+<h2 class="font-h2 text-h2 text-primary mb-4">Keunggulan DesaMart</h2>
+<p class="text-on-surface-variant">Solusi digital untuk memajukan ekonomi desa secara aman dan nyaman.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="bg-white p-8 rounded-xl shadow-[0_8px_30px_rgb(93,64,55,0.05)] border border-secondary/10 hover:shadow-xl transition-shadow">
+<div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">storefront</span>
+</div>
+<h3 class="font-h3 text-h3 mb-4">Jual &amp; Beli</h3>
+<p class="text-on-surface-variant">Satu akun untuk berbelanja produk desa sekaligus menjual produk Anda sendiri tanpa repot ganti identitas.</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-white p-8 rounded-xl shadow-[0_8px_30px_rgb(93,64,55,0.05)] border border-secondary/10 hover:shadow-xl transition-shadow">
+<div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">smart_toy</span>
+</div>
+<h3 class="font-h3 text-h3 mb-4">Chatbot Cerdas</h3>
+<p class="text-on-surface-variant">Dapatkan bantuan instan dan laporkan kendala melalui chatbot berbasis AI yang siap melayani 24/7.</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-white p-8 rounded-xl shadow-[0_8px_30px_rgb(93,64,55,0.05)] border border-secondary/10 hover:shadow-xl transition-shadow">
+<div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">verified_user</span>
+</div>
+<h3 class="font-h3 text-h3 mb-4">Aman &amp; Terpercaya</h3>
+<p class="text-on-surface-variant">Setiap transaksi dipantau oleh admin untuk menjaga keamanan Anda dan memastikan produk sampai tujuan.</p>
+</div>
+</div>
+</section>
+<!-- How It Works Asymmetric Layout -->
+<section class="bg-surface-container-low py-20 px-6">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+<div class="max-w-2xl">
+<h2 class="font-h2 text-h2 text-primary mb-4">Cara Kerja DesaMart</h2>
+<p class="text-on-surface-variant">Langkah mudah untuk mulai bertransaksi di dalam ekosistem digital desa kita.</p>
+</div>
+<div class="hidden md:block">
+<span class="material-symbols-outlined text-primary/20 text-8xl">local_florist</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="flex flex-col items-center text-center group">
+<div class="w-20 h-20 bg-primary text-white rounded-2xl flex items-center justify-center mb-6 rotate-3 group-hover:rotate-0 transition-transform">
+<span class="material-symbols-outlined text-4xl">person_add</span>
+</div>
+<div class="font-h3 text-h3 mb-2">1. Daftar Akun</div>
+<p class="text-on-surface-variant text-sm">Registrasi mudah hanya dengan nomor telepon aktif.</p>
+</div>
+<div class="flex flex-col items-center text-center mt-8 md:mt-12 group">
+<div class="w-20 h-20 bg-secondary text-white rounded-2xl flex items-center justify-center mb-6 -rotate-3 group-hover:rotate-0 transition-transform">
+<span class="material-symbols-outlined text-4xl">search</span>
+</div>
+<div class="font-h3 text-h3 mb-2">2. Jelajahi Produk</div>
+<p class="text-on-surface-variant text-sm">Temukan berbagai kebutuhan harian dan produk lokal unggulan.</p>
+</div>
+<div class="flex flex-col items-center text-center group">
+<div class="w-20 h-20 bg-primary text-white rounded-2xl flex items-center justify-center mb-6 rotate-6 group-hover:rotate-0 transition-transform">
+<span class="material-symbols-outlined text-4xl">handshake</span>
+</div>
+<div class="font-h3 text-h3 mb-2">3. Beli atau Jual</div>
+<p class="text-on-surface-variant text-sm">Lakukan transaksi aman atau mulai pasang iklan produk Anda.</p>
+</div>
+<div class="flex flex-col items-center text-center mt-8 md:mt-12 group">
+<div class="w-20 h-20 bg-tertiary-container text-white rounded-2xl flex items-center justify-center mb-6 -rotate-6 group-hover:rotate-0 transition-transform">
+<span class="material-symbols-outlined text-4xl">check_circle</span>
+</div>
+<div class="font-h3 text-h3 mb-2">4. Selesai!</div>
+<p class="text-on-surface-variant text-sm">Pesanan dikirim atau saldo penjualan masuk ke dompet Anda.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust Section -->
+<section class="max-w-7xl mx-auto px-6 py-20">
+<div class="bg-primary text-white rounded-[2rem] p-8 md:p-16 flex flex-col md:flex-row items-center gap-12 overflow-hidden relative">
+<div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -mr-32 -mt-32"></div>
+<div class="z-10">
+<h2 class="font-h2 text-h2 mb-6">Siap Memajukan Ekonomi Desa?</h2>
+<p class="text-white/80 mb-10 text-lg">Bergabunglah dengan ribuan warga desa lainnya yang telah merasakan kemudahan berbisnis digital.</p>
+<button class="bg-white text-primary px-10 py-4 rounded-xl font-bold text-lg active:scale-95 transition-transform shadow-xl">
+                        Daftar Gratis Sekarang
+                    </button>
+</div>
+<div class="md:w-1/2 z-10">
+<img alt="Fresh local produce" class="rounded-2xl shadow-lg border-4 border-white/20" data-alt="Close-up of friendly Indonesian farmer hands holding a basket of fresh colorful organic vegetables with sun flare" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDF3EEwgL9D1ITkxYX-l-YX2IeUh9X_RRrfbW1N7Gk7SGqtHQnetH5d01L0DAACxac8b4MqfJXV6MTnJBJTeiG5BJrYhBBApaHnwCYiHqzL5hHQ7ZncU2kPgMOZ4Pgjk5O6NwcSNNORT-rCosqTFTjIfXlTbRq2xhBJplFSeBGsJc-UwLZhfNxtCcnToVQhw2zfKEWm1aZSu0ikDfFhiFQ1U8_9Hi5RRcRbytnOp7Vtn2s4epBQlH-2XT6f7UwmqFFrdMNRihIKYHc"/>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#F5F5F0] dark:bg-stone-950 border-t border-[#5D4037]/10 dark:border-stone-800">
+<div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+<div>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-[#1B5E20]" style="font-variation-settings: 'FILL' 1;">eco</span>
+<span class="text-xl font-bold text-[#1B5E20] dark:text-green-500">DesaMart</span>
+</div>
+<p class="text-stone-500 dark:text-stone-400 max-w-sm mb-6">
+                    Menanam Harapan, Menuai Kesejahteraan. Marketplace digital terpercaya untuk pemberdayaan ekonomi desa berkelanjutan.
+                </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-stone-200 flex items-center justify-center hover:bg-primary hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">mail</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-stone-200 flex items-center justify-center hover:bg-primary hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">call</span>
+</a>
+</div>
+</div>
+<div class="md:text-right">
+<nav class="flex flex-wrap md:justify-end gap-x-8 gap-y-4 mb-8">
+<a class="text-stone-500 dark:text-stone-400 hover:text-[#1B5E20] transition-colors" href="#">Beranda</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-[#1B5E20] transition-colors" href="#">Marketplace</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-[#1B5E20] transition-colors" href="#">Tentang</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-[#1B5E20] transition-colors" href="#">Bantuan</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-[#1B5E20] transition-colors" href="#">Privasi</a>
+</nav>
+<p class="text-stone-500 dark:text-stone-400 text-sm">
+                    © 2026 DesaMart. Marketplace Desa Digital.
+                </p>
+</div>
+</div>
+</footer>
+</body></html>

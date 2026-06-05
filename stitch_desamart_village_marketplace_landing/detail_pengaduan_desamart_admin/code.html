@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Detail Pengaduan #CMP-001 - DesaMart Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#90d792",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#002107",
+                        "on-secondary-container": "#795950",
+                        "surface": "#fff9ec",
+                        "primary-container": "#1b5e20",
+                        "primary-fixed-dim": "#91d78a",
+                        "secondary-container": "#fed3c7",
+                        "surface-dim": "#e0dac9",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#07521d",
+                        "on-primary-container": "#90d689",
+                        "background": "#fff9ec",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#ffdbd0",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed": "#abf4ac",
+                        "surface-container-low": "#faf3e2",
+                        "on-primary-fixed": "#002203",
+                        "outline-variant": "#c0c9bb",
+                        "outline": "#717a6d",
+                        "secondary": "#77574d",
+                        "on-background": "#1e1c12",
+                        "surface-container-highest": "#e9e2d2",
+                        "inverse-primary": "#91d78a",
+                        "on-tertiary-container": "#8fd691",
+                        "on-surface": "#1e1c12",
+                        "on-secondary-fixed-variant": "#5d4037",
+                        "inverse-on-surface": "#f7f0df",
+                        "on-primary-fixed-variant": "#0c5216",
+                        "surface-tint": "#2a6b2c",
+                        "primary-fixed": "#acf4a4",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#f4eddd",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#e7bdb1",
+                        "on-surface-variant": "#41493e",
+                        "on-secondary-fixed": "#2c160e",
+                        "surface-variant": "#e9e2d2",
+                        "primary": "#00450d",
+                        "inverse-surface": "#333025",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#004516",
+                        "surface-container-high": "#eee8d7",
+                        "tertiary-container": "#185e27",
+                        "surface-bright": "#fff9ec",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "xl": "40px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px",
+                        "lg": "24px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "h2": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "h1": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "h3": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .chat-bubble-user {
+            border-radius: 12px 12px 0 12px;
+        }
+        .chat-bubble-bot {
+            border-radius: 12px 12px 12px 0;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-background min-h-screen">
+<!-- TopNavBar -->
+<header class="bg-green-900 dark:bg-green-950 text-white font-['Plus_Jakarta_Sans'] text-sm tracking-tight docked full-width top-0 z-50 h-16 border-b border-green-800 dark:border-green-900 shadow-sm flex items-center justify-between px-6 w-full">
+<div class="flex items-center gap-4">
+<span class="text-xl font-bold tracking-tight text-white">Village Hub Admin</span>
+<div class="h-6 w-px bg-green-800 ml-2"></div>
+<span class="ml-2 font-medium opacity-80">DesaMart</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex items-center bg-green-800 dark:bg-green-900 px-3 py-1.5 rounded-lg border border-green-700/50">
+<span class="material-symbols-outlined text-green-100/70 mr-2" style="font-size: 18px;">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm placeholder-green-100/50 text-white w-48" placeholder="Cari data..." type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<button class="hover:bg-green-800 dark:hover:bg-green-900 transition-colors p-2 rounded-full active:scale-95 duration-200 relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-error rounded-full border border-green-900"></span>
+</button>
+<button class="hover:bg-green-800 dark:hover:bg-green-900 transition-colors p-2 rounded-full active:scale-95 duration-200">
+<span class="material-symbols-outlined">help</span>
+</button>
+<button class="hover:bg-green-800 dark:hover:bg-green-900 transition-colors p-2 rounded-full active:scale-95 duration-200">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="flex items-center gap-3 pl-2 border-l border-green-800">
+<img alt="Admin user avatar" class="w-8 h-8 rounded-full border border-green-700" data-alt="professional portrait of a confident male administrative officer with a friendly smile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDesxnei33kqR4qbY6OFXit9ehAceEWVjOqBdd-65SEi6fIRQbxBvz9o5NueP_KlT32Y_IhILZLhvFg_DwiXykKZPdeLju31kXfEB1628trvKEiXDXJhO0qVY3HTVtPEDs2u1MMG4ehFxWBRCveRAIFpZz4J2XiZOzS4BnoYbl9LghqTfnMLcNkLF5PuZ2ZTD_pXYxiFm6ZvBuUz5a7SrNrLvyRy0PjRsr6tn3OUdHCLMPztk5JJeUCCIKX0IevPqiVioK4l13d5gk"/>
+<div class="hidden lg:block text-left">
+<p class="text-xs font-bold leading-none">Admin Desa</p>
+<p class="text-[10px] opacity-70">Super Admin</p>
+</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-[1440px] mx-auto px-margin-desktop py-lg">
+<!-- Header Actions -->
+<div class="flex items-center gap-4 mb-xl">
+<button class="w-10 h-10 rounded-full flex items-center justify-center bg-white shadow-sm border border-outline-variant hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-on-surface">arrow_back</span>
+</button>
+<h1 class="font-h1 text-h3 text-on-surface">Detail Pengaduan #CMP-001</h1>
+</div>
+<div class="grid grid-cols-12 gap-gutter">
+<!-- LEFT COLUMN (60%) -->
+<div class="col-span-12 lg:col-span-7 space-y-gutter">
+<!-- COMPLAINT INFO CARD -->
+<section class="bg-white rounded-xl shadow-[0_4px_12px_rgba(93,64,55,0.06)] p-lg border border-outline-variant/10">
+<div class="flex justify-between items-start mb-md">
+<div class="space-y-sm">
+<h2 class="font-h3 text-h3 text-on-surface">Informasi Pengaduan</h2>
+<div class="flex flex-wrap gap-sm">
+<span class="px-3 py-1 bg-error-container text-on-error-container text-label-sm rounded-full font-label-sm">Open</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-fixed-variant text-label-sm rounded-full font-label-sm">Produk</span>
+</div>
+</div>
+<div class="text-right">
+<p class="text-label-sm text-outline mb-1">NLP Confidence</p>
+<div class="flex items-center gap-sm">
+<div class="w-32 h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary-container" style="width: 92%;"></div>
+</div>
+<span class="text-label-sm font-bold text-primary-container">92%</span>
+</div>
+</div>
+</div>
+<div class="p-md bg-surface-container-lowest rounded-lg border border-outline-variant/20 italic text-on-surface-variant">
+                        "Barang saya rusak, madunya pecah saat sampai ke rumah saya. Mohon bantuannya."
+                    </div>
+</section>
+<!-- RELATED ENTITIES CARD -->
+<section class="bg-white rounded-xl shadow-[0_4px_12px_rgba(93,64,55,0.06)] p-lg border border-outline-variant/10">
+<h3 class="font-h3 text-label-sm uppercase tracking-wider text-outline mb-md">Entitas Terkait</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<div class="p-md rounded-lg bg-surface-container-low border border-outline-variant/30 flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-primary mb-2" style="font-size: 32px;">receipt_long</span>
+<p class="text-label-sm font-bold text-primary hover:underline cursor-pointer">#ORD-20260428-001</p>
+<p class="text-xs text-on-surface-variant mt-1">28 April 2026</p>
+</div>
+<div class="p-md rounded-lg bg-surface-container-low border border-outline-variant/30 flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-secondary mb-2" style="font-size: 32px;">shopping_bag</span>
+<p class="text-label-sm font-bold text-on-surface">Madu Hutan Asli</p>
+<p class="text-xs text-on-surface-variant mt-1">Stok 500ml</p>
+</div>
+<div class="p-md rounded-lg bg-surface-container-low border border-outline-variant/30 flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-tertiary mb-2" style="font-size: 32px;">storefront</span>
+<p class="text-label-sm font-bold text-on-surface">Toko Pak Budi</p>
+<p class="text-xs text-on-surface-variant mt-1">Sukun, Malang</p>
+</div>
+</div>
+<div class="mt-md flex items-center justify-between p-md rounded-lg bg-surface-container-highest/30">
+<div class="flex items-center gap-3">
+<img alt="User Avatar" class="w-10 h-10 rounded-full" data-alt="close up portrait of an elderly Indonesian woman wearing a headscarf with a gentle smile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_9C8FtKu5MqrZa-ILOjqNvdk7IJvZ0iA7k3MimdsOJjS0Gx9Utb4-d1PL-7YMwPwZ0IB1Kec77yYX51olDfmXtcaTF-_uOmbMUYEZY6gJYlQbyPkjqk85CW2ZVeVo8fkhKof9I9_nPv_ITcgPX8wJF4eKxGo7wabpbVibK3TC4DL5tZD2obK6Puiu3iHjw1wCefYIlOJNvU5QKvzaK8cGIMBEjN0NyJyO29gH0-WEtTpGzgj0Vpo-V9sNIsYrlmhdRgfz3PAobDA"/>
+<div>
+<p class="text-label-sm font-bold">Ibu Ratna</p>
+<p class="text-xs text-on-surface-variant">Pembeli Setia DesaMart</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline">chevron_right</span>
+</div>
+</section>
+<!-- CHAT HISTORY CARD -->
+<section class="bg-white rounded-xl shadow-[0_4px_12px_rgba(93,64,55,0.06)] p-lg border border-outline-variant/10">
+<div class="flex items-center justify-between mb-lg">
+<h3 class="font-h3 text-h3 text-on-surface">Riwayat Chat Bot</h3>
+<span class="flex items-center gap-1 text-xs text-primary font-bold">
+<span class="w-2 h-2 bg-primary-container rounded-full animate-pulse"></span>
+                            Live Interaction
+                        </span>
+</div>
+<div class="space-y-md max-h-[400px] overflow-y-auto pr-2 custom-scrollbar">
+<!-- Bot msg -->
+<div class="flex justify-start">
+<div class="max-w-[80%]">
+<div class="bg-surface-container text-on-surface p-md chat-bubble-bot shadow-sm border border-outline-variant/20">
+                                    Halo Ibu Ratna, ada yang bisa DesaBot bantu hari ini?
+                                </div>
+<span class="text-[10px] text-outline mt-1 block">09:12 AM</span>
+</div>
+</div>
+<!-- User msg -->
+<div class="flex justify-end">
+<div class="max-w-[80%] flex flex-col items-end">
+<div class="bg-primary text-white p-md chat-bubble-user shadow-md">
+                                    Barang saya rusak
+                                </div>
+<span class="text-[10px] text-outline mt-1 block">09:12 AM</span>
+</div>
+</div>
+<!-- Bot msg -->
+<div class="flex justify-start">
+<div class="max-w-[80%]">
+<div class="bg-surface-container text-on-surface p-md chat-bubble-bot shadow-sm border border-outline-variant/20">
+                                    Mohon maaf atas ketidaknyamanannya. Bisa jelaskan lebih detail kerusakan apa yang dialami?
+                                </div>
+<span class="text-[10px] text-outline mt-1 block">09:13 AM</span>
+</div>
+</div>
+<!-- User msg -->
+<div class="flex justify-end">
+<div class="max-w-[80%] flex flex-col items-end">
+<div class="bg-primary text-white p-md chat-bubble-user shadow-md">
+                                    Produk madunya pecah saat saya buka paketnya tadi pagi. Air madunya tumpah semua.
+                                </div>
+<span class="text-[10px] text-outline mt-1 block">09:15 AM</span>
+</div>
+</div>
+<!-- Bot msg -->
+<div class="flex justify-start">
+<div class="max-w-[80%]">
+<div class="bg-surface-container text-on-surface p-md chat-bubble-bot shadow-sm border border-outline-variant/20">
+                                    Terima kasih atas informasinya. Saya telah membuat laporan pengaduan #CMP-001. Admin kami akan segera meninjau pesanan dari Toko Pak Budi ini.
+                                </div>
+<span class="text-[10px] text-outline mt-1 block">09:15 AM</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- RIGHT COLUMN (40%) -->
+<div class="col-span-12 lg:col-span-5 space-y-gutter">
+<!-- ADMIN ACTION CARD -->
+<section class="bg-white rounded-xl shadow-[0_10px_30px_rgba(93,64,55,0.1)] p-lg border-2 border-primary/10">
+<h3 class="font-h3 text-h3 text-on-surface mb-lg">Tindakan Admin</h3>
+<form class="space-y-lg">
+<div class="space-y-sm">
+<label class="font-label-sm text-on-surface-variant block">Ubah Status Pengaduan</label>
+<select class="w-full bg-surface-container border border-outline-variant rounded-lg p-md focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 text-on-surface">
+<option>In Progress</option>
+<option>Resolved</option>
+<option>Closed</option>
+</select>
+</div>
+<div class="space-y-sm">
+<label class="font-label-sm text-on-surface-variant block">Pilih Tindakan Penjual/Produk</label>
+<select class="w-full bg-surface-container border border-outline-variant rounded-lg p-md focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 text-on-surface">
+<option>Warning (Peringatan)</option>
+<option>Delete Product (Hapus Produk)</option>
+<option>Ban Seller (Blokir Penjual)</option>
+<option>No Action (Tidak Ada Tindakan)</option>
+</select>
+</div>
+<div class="space-y-sm">
+<label class="font-label-sm text-on-surface-variant block">Catatan Internal Admin</label>
+<textarea class="w-full bg-surface-container border border-outline-variant rounded-lg p-md focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 text-on-surface" placeholder="Tulis alasan atau instruksi tambahan..." rows="4"></textarea>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container font-h3 py-md rounded-lg shadow-lg hover:shadow-xl active:scale-[0.98] transition-all flex items-center justify-center gap-2" type="submit">
+<span class="material-symbols-outlined">send</span>
+                            Kirim Tindakan
+                        </button>
+</form>
+</section>
+<!-- ADMIN HISTORY CARD -->
+<section class="bg-white rounded-xl shadow-[0_4px_12px_rgba(93,64,55,0.06)] p-lg border border-outline-variant/10">
+<h3 class="font-h3 text-label-sm uppercase tracking-wider text-outline mb-md">Log Aktivitas Admin</h3>
+<div class="space-y-md relative before:absolute before:left-3 before:top-2 before:bottom-2 before:w-px before:bg-outline-variant/30">
+<div class="relative pl-8">
+<div class="absolute left-1 top-1 w-4 h-4 rounded-full bg-primary-container border-2 border-white ring-2 ring-primary-container/20"></div>
+<p class="text-body-md font-semibold text-on-surface">Admin mengubah status ke "In Progress"</p>
+<p class="text-xs text-outline mt-0.5">Hari ini, 10:20 AM oleh Budi Santoso</p>
+</div>
+<div class="relative pl-8">
+<div class="absolute left-1 top-1 w-4 h-4 rounded-full bg-error border-2 border-white ring-2 ring-error/20"></div>
+<p class="text-body-md font-semibold text-on-surface">Admin memberikan peringatan ke Seller</p>
+<p class="text-xs text-outline mt-0.5">Hari ini, 10:25 AM oleh Budi Santoso</p>
+<p class="text-xs bg-surface-container p-2 mt-2 rounded italic text-on-surface-variant">"Peringatan diberikan karena kemasan produk tidak sesuai standar keamanan pengiriman."</p>
+</div>
+<div class="relative pl-8">
+<div class="absolute left-1 top-1 w-4 h-4 rounded-full bg-outline-variant border-2 border-white"></div>
+<p class="text-body-md text-outline">Pengaduan dibuat oleh Sistem</p>
+<p class="text-xs text-outline mt-0.5">Hari ini, 09:15 AM</p>
+</div>
+</div>
+</section>
+<!-- TRUST BADGE / COMPLIANCE -->
+<div class="bg-secondary-container/30 p-md rounded-xl border border-secondary/20 flex items-center gap-4">
+<div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-secondary-fixed-variant" data-weight="fill">verified</span>
+</div>
+<div>
+<p class="text-label-sm font-bold text-on-secondary-fixed-variant">Standar DesaMart</p>
+<p class="text-xs text-on-secondary-fixed-variant/80">Sesuai Kebijakan Komunitas v2.4</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Decoration -->
+<footer class="mt-xl py-lg text-center opacity-30 select-none">
+<p class="font-h3 text-h3 text-on-surface grayscale">DesaMart Admin Ecosystem</p>
+</footer>
+</body></html>

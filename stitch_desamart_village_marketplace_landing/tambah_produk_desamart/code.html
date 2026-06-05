@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tambah Produk Baru - Village Marketplace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#004516",
+                        "surface-dim": "#e0dac9",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-variant": "#e9e2d2",
+                        "secondary-fixed": "#ffdbd0",
+                        "primary-container": "#1b5e20",
+                        "on-secondary-fixed": "#2c160e",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#002203",
+                        "outline": "#717a6d",
+                        "on-surface": "#1e1c12",
+                        "background": "#fff9ec",
+                        "surface-container": "#f4eddd",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#91d78a",
+                        "on-surface-variant": "#41493e",
+                        "surface-container-low": "#faf3e2",
+                        "primary": "#00450d",
+                        "on-secondary-fixed-variant": "#5d4037",
+                        "primary-fixed": "#acf4a4",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#2a6b2c",
+                        "outline-variant": "#c0c9bb",
+                        "tertiary-container": "#185e27",
+                        "surface": "#fff9ec",
+                        "on-tertiary-fixed-variant": "#07521d",
+                        "inverse-surface": "#333025",
+                        "tertiary-fixed-dim": "#90d792",
+                        "secondary": "#77574d",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed": "#002107",
+                        "surface-container-highest": "#e9e2d2",
+                        "on-secondary-container": "#795950",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#eee8d7",
+                        "on-background": "#1e1c12",
+                        "secondary-fixed-dim": "#e7bdb1",
+                        "tertiary-fixed": "#abf4ac",
+                        "inverse-on-surface": "#f7f0df",
+                        "surface-bright": "#fff9ec",
+                        "secondary-container": "#fed3c7",
+                        "on-tertiary-container": "#8fd691",
+                        "primary-fixed-dim": "#91d78a",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#90d689",
+                        "on-primary-fixed-variant": "#0c5216"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "12px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "lg": "24px",
+                        "xs": "4px",
+                        "margin-mobile": "20px",
+                        "gutter": "16px",
+                        "xl": "40px",
+                        "sm": "8px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "h3": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-sm": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "h1": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "h2": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "h3": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fff9ec;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-body-md text-on-surface">
+<!-- TopNavBar Component -->
+<header class="fixed top-0 w-full bg-[#F5F5F0] border-b border-stone-200 shadow-sm shadow-[#5D4037]/5 z-50">
+<div class="flex items-center justify-between px-6 py-3 w-full max-w-7xl mx-auto">
+<div class="text-xl font-black text-[#1B5E20] tracking-tight font-h2">Village Marketplace</div>
+<nav class="hidden md:flex items-center gap-8 font-['Plus_Jakarta_Sans'] text-sm font-medium">
+<a class="text-stone-600 hover:text-[#1B5E20] transition-all duration-200" href="#">Beranda</a>
+<a class="text-stone-600 hover:text-[#1B5E20] transition-all duration-200" href="#">Pasar</a>
+<a class="text-[#1B5E20] font-bold border-b-2 border-[#1B5E20] pb-1" href="#">Toko Saya</a>
+<a class="text-stone-600 hover:text-[#1B5E20] transition-all duration-200" href="#">Komunitas</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="pl-10 pr-4 py-2 bg-stone-100 border-none rounded-full text-sm focus:ring-2 focus:ring-[#1B5E20] w-64" placeholder="Cari di desa..." type="text"/>
+</div>
+<button aria-label="Notifications" class="p-2 text-stone-600 hover:bg-stone-100 rounded-full transition-all">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button aria-label="Shopping Basket" class="p-2 text-stone-600 hover:bg-stone-100 rounded-full transition-all">
+<span class="material-symbols-outlined" data-icon="shopping_basket">shopping_basket</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-stone-200">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="close-up portrait of a friendly Indonesian male farmer smiling warmly at the camera" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzpX8fBFWMIC0YKwFlbhsg7QrehwGtWlljSbKi6JG66SP8dwHIt2saSzXiGcjQP1MjWAqWIPiP1SWaHWhdJBvhlNuFZzsKyKde_s9RuvKvYrSnuV4QlkgI6cGLW9lnyhtkbQAAkkSH0Uo_UKsBRtbrZ8I17IY_J5_uhVEONn5FKL_SNyMLPTHMKwdlSg51S6j_6JUZlm_k4WDoE9mpPRk4yqerevjp8hrP4XL7qo1NjAcvl7ai-jvjLTHOmj6Jm4Ev4IDlT1CfAfs"/>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow pt-24 pb-xl px-margin-mobile md:px-0">
+<div class="max-w-[720px] mx-auto">
+<!-- Breadcrumb -->
+<nav class="flex items-center gap-2 mb-md text-label-sm text-on-surface-variant font-label-sm">
+<a class="hover:text-primary transition-colors" href="#">Toko Saya</a>
+<span class="material-symbols-outlined text-[16px]" data-icon="chevron_right">chevron_right</span>
+<span class="text-primary font-bold">Tambah Produk Baru</span>
+</nav>
+<!-- Page Title -->
+<div class="flex items-center gap-3 mb-lg">
+<span class="material-symbols-outlined text-primary text-[32px]" data-icon="add_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+<h1 class="font-h1 text-h2 text-on-surface">Tambah Produk Baru</h1>
+</div>
+<!-- Form Container -->
+<div class="bg-surface-container-lowest rounded-xl p-lg shadow-sm border border-stone-200/50">
+<form class="space-y-lg">
+<!-- Foto Produk Section -->
+<div class="space-y-sm">
+<label class="block font-h3 text-body-md font-semibold text-on-surface">Foto Produk</label>
+<div class="border-2 border-dashed border-outline-variant rounded-xl h-[200px] flex flex-col items-center justify-center bg-surface-container-low hover:bg-surface-container transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-outline text-[48px] group-hover:scale-110 transition-transform" data-icon="add_a_photo">add_a_photo</span>
+<p class="mt-md font-body-md text-on-surface font-medium">Klik atau seret foto ke sini</p>
+<p class="text-label-sm text-on-surface-variant mt-xs">Maksimal 5 foto, format JPG/PNG (Maks. 5MB)</p>
+</div>
+<div class="flex gap-md overflow-x-auto pb-sm">
+<div class="min-w-[80px] h-[80px] rounded-lg bg-surface-container-high border border-stone-200 flex items-center justify-center">
+<span class="material-symbols-outlined text-outline-variant" data-icon="image">image</span>
+</div>
+<div class="min-w-[80px] h-[80px] rounded-lg bg-surface-container-high border border-stone-200 flex items-center justify-center">
+<span class="material-symbols-outlined text-outline-variant" data-icon="image">image</span>
+</div>
+<div class="min-w-[80px] h-[80px] rounded-lg bg-surface-container-high border border-stone-200 flex items-center justify-center">
+<span class="material-symbols-outlined text-outline-variant" data-icon="image">image</span>
+</div>
+<div class="min-w-[80px] h-[80px] rounded-lg bg-surface-container-high border border-stone-200 flex items-center justify-center">
+<span class="material-symbols-outlined text-outline-variant" data-icon="image">image</span>
+</div>
+<div class="min-w-[80px] h-[80px] rounded-lg bg-surface-container-high border border-stone-200 flex items-center justify-center">
+<span class="material-symbols-outlined text-outline-variant" data-icon="image">image</span>
+</div>
+</div>
+</div>
+<!-- Nama Produk -->
+<div class="space-y-xs">
+<label class="block font-h3 text-body-md font-semibold text-on-surface">Nama Produk</label>
+<input class="w-full h-[48px] px-md rounded-xl border-none bg-surface-container focus:ring-2 focus:ring-primary text-body-md transition-all" placeholder="Contoh: Madu Hutan Asli" type="text"/>
+</div>
+<!-- Kategori -->
+<div class="space-y-xs">
+<label class="block font-h3 text-body-md font-semibold text-on-surface">Kategori</label>
+<div class="relative">
+<select class="w-full h-[48px] px-md rounded-xl border-none bg-surface-container focus:ring-2 focus:ring-primary text-body-md appearance-none transition-all">
+<option disabled="" selected="" value="">Pilih Kategori</option>
+<option>Makanan &amp; Minuman</option>
+<option>Pertanian &amp; Perkebunan</option>
+<option>Kerajinan Tangan</option>
+<option>Pakaian &amp; Aksesoris</option>
+<option>Elektronik</option>
+<option>Rumah Tangga</option>
+<option>Jasa</option>
+<option>Lainnya</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<!-- Harga -->
+<div class="space-y-xs">
+<label class="block font-h3 text-body-md font-semibold text-on-surface">Harga</label>
+<div class="relative">
+<div class="absolute left-md top-1/2 -translate-y-1/2 text-on-surface font-semibold">Rp</div>
+<input class="w-full h-[48px] pl-12 pr-md rounded-xl border-none bg-surface-container focus:ring-2 focus:ring-primary text-body-md transition-all" placeholder="0" type="number"/>
+</div>
+<p class="text-label-sm text-on-surface-variant">Harga minimum Rp 100</p>
+</div>
+<!-- Stok -->
+<div class="space-y-xs">
+<label class="block font-h3 text-body-md font-semibold text-on-surface">Stok</label>
+<input class="w-full h-[48px] px-md rounded-xl border-none bg-surface-container focus:ring-2 focus:ring-primary text-body-md transition-all" placeholder="0" type="number"/>
+<p class="text-label-sm text-on-surface-variant">Jumlah barang yang tersedia</p>
+</div>
+</div>
+<!-- Deskripsi -->
+<div class="space-y-xs">
+<label class="block font-h3 text-body-md font-semibold text-on-surface">Deskripsi</label>
+<textarea class="w-full p-md rounded-xl border-none bg-surface-container focus:ring-2 focus:ring-primary text-body-md transition-all resize-none" placeholder="Jelaskan produk Anda secara detail..." rows="6"></textarea>
+<div class="flex justify-between items-center px-xs">
+<p class="text-label-sm text-on-surface-variant">Minimal 10 karakter dengan penjelasan jelas</p>
+<p class="text-label-sm text-on-surface-variant">0/2000</p>
+</div>
+</div>
+<!-- Actions -->
+<div class="pt-lg flex flex-col sm:flex-row gap-md border-t border-stone-200">
+<button class="flex-1 h-[48px] bg-primary-container text-white font-bold rounded-xl hover:bg-primary transition-all active:scale-95 flex items-center justify-center gap-2" type="submit">
+<span class="material-symbols-outlined" data-icon="save">save</span>
+                            Simpan Produk
+                        </button>
+<button class="flex-1 h-[48px] bg-transparent border-2 border-stone-300 text-on-surface-variant font-bold rounded-xl hover:bg-stone-100 hover:border-stone-400 transition-all active:scale-95" type="button">
+                            Batal
+                        </button>
+</div>
+</form>
+</div>
+</div>
+</main>
+<!-- Footer Component -->
+<footer class="w-full border-t border-stone-200 bg-[#F5F5F0] mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 py-10 w-full max-w-7xl mx-auto gap-4">
+<div class="flex flex-col gap-2">
+<div class="text-lg font-bold text-[#1B5E20] font-h3">Village Marketplace</div>
+<p class="font-['Plus_Jakarta_Sans'] text-xs text-stone-500">© 2024 Village Marketplace. Membangun Ekonomi Desa yang Modern dan Berkelanjutan.</p>
+</div>
+<nav class="flex gap-6">
+<a class="font-['Plus_Jakarta_Sans'] text-xs text-stone-500 hover:text-[#1B5E20] hover:underline transition-all" href="#">Tentang Kami</a>
+<a class="font-['Plus_Jakarta_Sans'] text-xs text-stone-500 hover:text-[#1B5E20] hover:underline transition-all" href="#">Pusat Bantuan</a>
+<a class="font-['Plus_Jakarta_Sans'] text-xs text-stone-500 hover:text-[#1B5E20] hover:underline transition-all" href="#">Kebijakan Privasi</a>
+<a class="font-['Plus_Jakarta_Sans'] text-xs text-stone-500 hover:text-[#1B5E20] hover:underline transition-all" href="#">Kontak</a>
+</nav>
+</div>
+</footer>
+</body></html>

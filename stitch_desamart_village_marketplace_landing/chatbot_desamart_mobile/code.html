@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DesaMart Assistant</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-error-container": "#93000a",
+                      "inverse-primary": "#91d78a",
+                      "surface-container-highest": "#e9e2d2",
+                      "primary-fixed": "#acf4a4",
+                      "outline-variant": "#c0c9bb",
+                      "secondary-fixed-dim": "#e7bdb1",
+                      "on-background": "#1e1c12",
+                      "surface-container": "#f4eddd",
+                      "on-error": "#ffffff",
+                      "on-primary-fixed-variant": "#0c5216",
+                      "surface-variant": "#e9e2d2",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary-fixed-variant": "#5d4037",
+                      "surface-tint": "#2a6b2c",
+                      "tertiary-container": "#185e27",
+                      "on-primary-fixed": "#002203",
+                      "secondary-container": "#fed3c7",
+                      "background": "#fff9ec",
+                      "on-tertiary": "#ffffff",
+                      "outline": "#717a6d",
+                      "surface-dim": "#e0dac9",
+                      "surface-container-high": "#eee8d7",
+                      "on-secondary-container": "#795950",
+                      "primary-fixed-dim": "#91d78a",
+                      "surface-container-low": "#faf3e2",
+                      "tertiary-fixed": "#abf4ac",
+                      "primary": "#00450d",
+                      "secondary": "#77574d",
+                      "inverse-surface": "#333025",
+                      "error-container": "#ffdad6",
+                      "surface": "#fff9ec",
+                      "on-tertiary-fixed": "#002107",
+                      "on-primary": "#ffffff",
+                      "surface-bright": "#fff9ec",
+                      "on-tertiary-fixed-variant": "#07521d",
+                      "on-surface": "#1e1c12",
+                      "tertiary": "#004516",
+                      "on-surface-variant": "#41493e",
+                      "on-secondary-fixed": "#2c160e",
+                      "on-tertiary-container": "#8fd691",
+                      "on-secondary": "#ffffff",
+                      "error": "#ba1a1a",
+                      "inverse-on-surface": "#f7f0df",
+                      "on-primary-container": "#90d689",
+                      "secondary-fixed": "#ffdbd0",
+                      "primary-container": "#1b5e20"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-mobile": "20px",
+                      "lg": "24px",
+                      "gutter": "16px",
+                      "sm": "8px",
+                      "margin-desktop": "64px",
+                      "md": "16px",
+                      "xl": "40px",
+                      "xs": "4px"
+              },
+              "fontFamily": {
+                      "body-md": ["Inter"],
+                      "h3": ["Plus Jakarta Sans"],
+                      "h1": ["Plus Jakarta Sans"],
+                      "label-sm": ["Inter"],
+                      "h2": ["Plus Jakarta Sans"],
+                      "body-lg": ["Inter"]
+              },
+              "fontSize": {
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "h3": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                      "h1": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label-sm": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                      "h2": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e9e2d2;
+            border-radius: 10px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-container-lowest text-on-surface font-body-md antialiased overflow-hidden h-screen flex flex-col items-center justify-center">
+<!-- Mobile Viewport Mockup (375px) -->
+<div class="w-[375px] h-[812px] bg-white shadow-2xl flex flex-col relative overflow-hidden rounded-[40px] border-[8px] border-inverse-surface">
+<!-- TopAppBar Shared Component Logic -->
+<header class="bg-stone-50 flex justify-between items-center w-full px-4 h-16 sticky top-0 z-50 border-b border-stone-200/50 shadow-sm shrink-0">
+<div class="flex items-center gap-3">
+<button class="active:scale-95 transition-all text-stone-500">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of a friendly village digital assistant character with a warm smile in organic earth tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCU5r0iZ4DYbghojbxeX1x6VoSo77DItYSzHiodSIw3Iq-Y5s0qYhV0y4DYmvzE-_af3FkQM9o6_1Msn5yvWfBqPN3iIZS71ct6CCXTvHs7UBKl_p-TvtcX4zBcK-3ndGMVrrRA5U86TmBNVkwGok9VVwCyVWwjL8jXfSiPjYgMyOzc0qavm3IMYMvAMF4zhGSM4cX1leXTFRiBRcfnHtmxMkFMV0wPVpDdjS1qEJ_E0bnHPhMoLcyWkmQi0RPbin1cS7fBrsmTyLs"/>
+</div>
+<div>
+<h1 class="font-['Plus_Jakarta_Sans'] font-semibold text-[16px] text-green-900 leading-tight">DesaMart Bot</h1>
+<div class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-green-500"></span>
+<span class="text-[12px] text-stone-500">Online</span>
+</div>
+</div>
+</div>
+</div>
+<button class="text-stone-500 active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="info">info</span>
+</button>
+</header>
+<!-- Chat Area -->
+<main class="flex-1 overflow-y-auto p-4 bg-stone-50/50 flex flex-col gap-4">
+<!-- Bot Message -->
+<div class="flex flex-col gap-1 max-w-[85%] self-start">
+<div class="bg-[#E8F5E9] text-on-surface p-4 rounded-xl rounded-tl-none shadow-sm border border-green-100">
+<p class="font-body-md text-body-md">Halo! 👋 Saya DesaMart Bot. Ada yang bisa saya bantu?</p>
+</div>
+<span class="text-[10px] text-stone-400 ml-1">10:00 AM</span>
+</div>
+<!-- Quick Replies Chips -->
+<div class="flex flex-wrap gap-2 mb-4">
+<button class="px-4 py-2 bg-white border border-stone-200 rounded-full text-label-sm text-green-900 shadow-sm active:scale-95 transition-all">Cara beli barang</button>
+<button class="px-4 py-2 bg-white border border-stone-200 rounded-full text-label-sm text-green-900 shadow-sm active:scale-95 transition-all">Cara jual barang</button>
+<button class="px-4 py-2 bg-white border border-stone-200 rounded-full text-label-sm text-green-900 shadow-sm active:scale-95 transition-all">Lacak pesanan</button>
+<button class="px-4 py-2 bg-white border border-stone-200 rounded-full text-label-sm text-green-900 shadow-sm active:scale-95 transition-all">Laporkan masalah</button>
+</div>
+<!-- User Message -->
+<div class="flex flex-col gap-1 max-w-[85%] self-end">
+<div class="bg-white text-on-surface p-4 rounded-xl rounded-tr-none shadow-sm border border-stone-100">
+<p class="font-body-md text-body-md">Barang saya rusak</p>
+</div>
+<span class="text-[10px] text-stone-400 text-right mr-1">10:02 AM</span>
+</div>
+<!-- Bot Response -->
+<div class="flex flex-col gap-1 max-w-[85%] self-start">
+<div class="bg-[#E8F5E9] text-on-surface p-4 rounded-xl rounded-tl-none shadow-sm border border-green-100">
+<p class="font-body-md text-body-md">Mohon maaf atas kendala. Silakan jelaskan kerusakan produk dan sertakan detail pesanan Anda. <br/><br/>📌 <strong>Kategori:</strong> Produk</p>
+</div>
+<span class="text-[10px] text-stone-400 ml-1">10:03 AM</span>
+</div>
+<!-- User Follow-up -->
+<div class="flex flex-col gap-1 max-w-[85%] self-end">
+<div class="bg-white text-on-surface p-4 rounded-xl rounded-tr-none shadow-sm border border-stone-100">
+<p class="font-body-md text-body-md">Produk madunya pecah waktu sampai</p>
+</div>
+<span class="text-[10px] text-stone-400 text-right mr-1">10:05 AM</span>
+</div>
+<!-- Bot Resolution -->
+<div class="flex flex-col gap-1 max-w-[85%] self-start">
+<div class="bg-[#E8F5E9] text-on-surface p-4 rounded-xl rounded-tl-none shadow-sm border border-green-100">
+<div class="flex flex-col gap-3">
+<p class="font-body-md text-body-md">Terima kasih atas informasinya. Pengaduan Anda telah dicatat dengan nomor <strong>#CMP-001</strong>. Tim admin akan segera menindaklanjuti. 📋</p>
+<div class="bg-white/50 p-3 rounded-lg border border-green-200 flex items-center gap-3">
+<span class="material-symbols-outlined text-green-700">support_agent</span>
+<span class="text-label-sm text-green-800">Menunggu respons admin</span>
+</div>
+</div>
+</div>
+<span class="text-[10px] text-stone-400 ml-1">10:06 AM</span>
+</div>
+</main>
+<!-- Input Bar Section -->
+<footer class="bg-white p-3 border-t border-stone-100 shrink-0 mb-6">
+<div class="flex items-center gap-3">
+<div class="flex-1 relative flex items-center">
+<button class="absolute left-3 text-stone-400">
+<span class="material-symbols-outlined">sentiment_satisfied</span>
+</button>
+<input class="w-full bg-stone-100 border-none rounded-full py-3 pl-11 pr-11 focus:ring-2 focus:ring-primary text-body-md" placeholder="Ketik pesan..." type="text"/>
+<button class="absolute right-3 text-stone-400">
+<span class="material-symbols-outlined">attach_file</span>
+</button>
+</div>
+<button class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white active:scale-90 transition-transform shadow-lg">
+<span class="material-symbols-outlined translate-x-0.5">send</span>
+</button>
+</div>
+</footer>
+<!-- iPhone Notch/Bar Mimicry -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-inverse-surface rounded-b-2xl z-[100]"></div>
+<div class="absolute bottom-2 left-1/2 -translate-x-1/2 w-28 h-1 bg-inverse-surface rounded-full z-[100]"></div>
+</div>
+</body></html>

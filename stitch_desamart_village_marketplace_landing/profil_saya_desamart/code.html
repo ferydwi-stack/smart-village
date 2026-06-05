@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#185e27",
+                    "tertiary-fixed-dim": "#90d792",
+                    "on-surface": "#1e1c12",
+                    "surface": "#fff9ec",
+                    "on-secondary-fixed-variant": "#5d4037",
+                    "outline-variant": "#c0c9bb",
+                    "inverse-primary": "#91d78a",
+                    "secondary": "#77574d",
+                    "outline": "#717a6d",
+                    "on-secondary": "#ffffff",
+                    "surface-container-high": "#eee8d7",
+                    "on-primary-fixed-variant": "#0c5216",
+                    "on-error": "#ffffff",
+                    "inverse-surface": "#333025",
+                    "surface-container": "#f4eddd",
+                    "tertiary-fixed": "#abf4ac",
+                    "on-primary": "#ffffff",
+                    "tertiary": "#004516",
+                    "on-primary-fixed": "#002203",
+                    "surface-container-low": "#faf3e2",
+                    "inverse-on-surface": "#f7f0df",
+                    "secondary-fixed-dim": "#e7bdb1",
+                    "on-primary-container": "#90d689",
+                    "on-secondary-fixed": "#2c160e",
+                    "primary-fixed-dim": "#91d78a",
+                    "error": "#ba1a1a",
+                    "surface-tint": "#2a6b2c",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "secondary-container": "#fed3c7",
+                    "background": "#fff9ec",
+                    "primary-fixed": "#acf4a4",
+                    "surface-dim": "#e0dac9",
+                    "surface-container-highest": "#e9e2d2",
+                    "surface-bright": "#fff9ec",
+                    "on-tertiary-fixed-variant": "#07521d",
+                    "on-surface-variant": "#41493e",
+                    "on-secondary-container": "#795950",
+                    "on-tertiary-fixed": "#002107",
+                    "on-tertiary-container": "#8fd691",
+                    "on-error-container": "#93000a",
+                    "surface-variant": "#e9e2d2",
+                    "primary-container": "#1b5e20",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed": "#ffdbd0",
+                    "primary": "#00450d",
+                    "on-background": "#1e1c12"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "4px",
+                    "sm": "8px",
+                    "md": "16px",
+                    "margin-desktop": "64px",
+                    "lg": "24px",
+                    "gutter": "16px",
+                    "margin-mobile": "20px",
+                    "xl": "40px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Inter"],
+                    "h3": ["Plus Jakarta Sans"],
+                    "h2": ["Plus Jakarta Sans"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "h1": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "label-sm": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "h3": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "h2": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "h1": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #fff9ec;
+            font-family: 'Inter', sans-serif;
+            color: #1e1c12;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .shadow-soft {
+            box-shadow: 0 4px 20px -2px rgba(93, 64, 55, 0.08);
+        }
+    </style>
+</head>
+<body class="min-h-screen pb-24">
+<!-- Top App Bar -->
+<header class="bg-white dark:bg-stone-900 border-b border-stone-200 dark:border-stone-800 shadow-sm sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-4 h-16 max-w-4xl mx-auto">
+<h1 class="text-xl font-bold text-green-900 dark:text-green-50 font-['Plus_Jakarta_Sans'] antialiased">DesaMart</h1>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-stone-50 dark:hover:bg-stone-800 transition-colors active:scale-95 duration-150 rounded-full">
+<span class="material-symbols-outlined text-stone-600">notifications</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-[640px] mx-auto px-4 pt-8 space-y-6">
+<!-- Profile Header Card -->
+<section class="flex flex-col items-center text-center space-y-4">
+<div class="relative group">
+<div class="w-24 h-24 rounded-full border-4 border-white shadow-soft overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="portrait of a middle-aged Indonesian woman with a warm smile wearing traditional batik, soft outdoor lighting, rural setting background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBffrEanj6Yg4c5h7zgAoq_w9yWsu9zydDFUcOrcVslBWVGrdoI0UOVm8jPFTZKDPJ_1KjsaQrej5rMVTk49CIGPpfolz7I40xDchOYvr0uhNhPSKPgo4lR5hAvLSz0m-jkWW_oBr8b7LTJDhOzb7shcEV3wDuoOu6qn0g6VQ--NhPcgYbLbpGlKAtUr2J5Uf-bQJdmxVX1eHj7LBwS_VuWtHDrqjjzwLApnxSV7tIUdbS6pUwFma1QOngZl06IWvoBuyRHZdGtQaU"/>
+</div>
+<button class="absolute bottom-0 right-0 bg-primary-container text-white p-2 rounded-full shadow-lg hover:scale-105 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-sm">camera_alt</span>
+</button>
+</div>
+<div class="space-y-1">
+<h2 class="font-h3 text-[20px] text-primary font-bold">Ibu Ratna</h2>
+<p class="text-on-surface-variant font-body-md text-sm">ratna@email.com</p>
+<div class="flex justify-center pt-2">
+<span class="bg-primary-fixed text-on-primary-fixed-variant px-3 py-1 rounded-full text-xs font-semibold">
+                        Pembeli &amp; Penjual
+                    </span>
+</div>
+<p class="text-[12px] text-outline pt-2">Bergabung Januari 2026</p>
+</div>
+</section>
+<!-- Stats Row -->
+<section class="grid grid-cols-3 gap-3">
+<div class="bg-white p-4 rounded-xl shadow-soft text-center border border-surface-container">
+<p class="text-2xl font-bold text-primary">5</p>
+<p class="text-[11px] font-medium text-on-surface-variant">Produk Dijual</p>
+</div>
+<div class="bg-white p-4 rounded-xl shadow-soft text-center border border-surface-container">
+<p class="text-2xl font-bold text-primary">12</p>
+<p class="text-[11px] font-medium text-on-surface-variant">Pesanan Dibeli</p>
+</div>
+<div class="bg-white p-4 rounded-xl shadow-soft text-center border border-surface-container">
+<p class="text-2xl font-bold text-primary">23</p>
+<p class="text-[11px] font-medium text-on-surface-variant">Pesanan Dijual</p>
+</div>
+</section>
+<!-- Edit Profile Form -->
+<section class="bg-white rounded-2xl shadow-soft border border-surface-container overflow-hidden">
+<div class="p-6 border-b border-surface-container">
+<h3 class="font-h3 text-lg text-primary">Informasi Pribadi</h3>
+</div>
+<div class="p-6 space-y-6">
+<!-- Name Field -->
+<div class="space-y-2">
+<label class="block text-sm font-semibold text-on-surface-variant">Nama Lengkap</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl focus:ring-2 focus:ring-primary p-4 font-body-md" type="text" value="Ibu Ratna"/>
+</div>
+<!-- Email Field -->
+<div class="space-y-2">
+<label class="block text-sm font-semibold text-on-surface-variant">Email</label>
+<input class="w-full bg-surface-container-high border-none rounded-xl p-4 font-body-md text-outline cursor-not-allowed" disabled="" type="email" value="ratna@email.com"/>
+</div>
+<!-- Phone Field -->
+<div class="space-y-2">
+<label class="block text-sm font-semibold text-on-surface-variant">Nomor Telepon</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl focus:ring-2 focus:ring-primary p-4 font-body-md" type="tel" value="08123456789"/>
+</div>
+<!-- Address Field -->
+<div class="space-y-2">
+<label class="block text-sm font-semibold text-on-surface-variant">Alamat</label>
+<textarea class="w-full bg-surface-container-low border-none rounded-xl focus:ring-2 focus:ring-primary p-4 font-body-md" rows="3">Jl. Mawar No. 12, Desa Sukamaju, Kec. Cisarua, Bogor, Jawa Barat</textarea>
+</div>
+</div>
+<div class="p-6 border-t border-surface-container bg-surface-container-lowest">
+<h3 class="font-h3 text-lg text-primary mb-6">Keamanan</h3>
+<div class="space-y-6">
+<div class="space-y-2">
+<label class="block text-sm font-semibold text-on-surface-variant">Kata Sandi Saat Ini</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl focus:ring-2 focus:ring-primary p-4 font-body-md" placeholder="••••••••" type="password"/>
+</div>
+<div class="space-y-2">
+<label class="block text-sm font-semibold text-on-surface-variant">Kata Sandi Baru</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl focus:ring-2 focus:ring-primary p-4 font-body-md" placeholder="Min. 8 karakter" type="password"/>
+</div>
+<div class="space-y-2">
+<label class="block text-sm font-semibold text-on-surface-variant">Konfirmasi Kata Sandi Baru</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl focus:ring-2 focus:ring-primary p-4 font-body-md" placeholder="Ulangi kata sandi baru" type="password"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Actions -->
+<div class="flex flex-col gap-3">
+<button class="w-full bg-primary-container text-white font-bold py-4 rounded-xl shadow-lg active:scale-[0.98] transition-all">
+                Simpan Perubahan
+            </button>
+<button class="w-full border border-outline text-outline font-semibold py-4 rounded-xl hover:bg-surface-container transition-colors">
+                Batal
+            </button>
+</div>
+<!-- Danger Zone -->
+<section class="bg-white rounded-2xl shadow-soft border border-error/20 overflow-hidden mt-8">
+<div class="p-6">
+<h3 class="font-h3 text-lg text-error mb-1">Zona Bahaya</h3>
+<p class="text-sm text-on-surface-variant mb-6">Akun Anda akan dinonaktifkan sementara</p>
+<button class="w-full border border-error text-error font-semibold py-3 rounded-xl hover:bg-error/5 transition-colors">
+                    Nonaktifkan Akun
+                </button>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 py-3 bg-white/90 dark:bg-stone-900/90 backdrop-blur-md border-t border-stone-200 dark:border-stone-800 shadow-[0_-2px_10px_rgba(0,0,0,0.05)]">
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-500 hover:text-green-700 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[11px] font-medium font-['Plus_Jakarta_Sans']">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-500 hover:text-green-700 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">storefront</span>
+<span class="text-[11px] font-medium font-['Plus_Jakarta_Sans']">Market</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-500 hover:text-green-700 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="text-[11px] font-medium font-['Plus_Jakarta_Sans']">Village</span>
+</a>
+<a class="flex flex-col items-center justify-center text-green-800 dark:text-green-400 bg-green-50 dark:bg-green-900/20 rounded-xl px-3 py-1 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="text-[11px] font-medium font-['Plus_Jakarta_Sans']">Profile</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "primary-container": "#1b5e20",
+                "on-secondary": "#ffffff",
+                "outline": "#717a6d",
+                "inverse-primary": "#91d78a",
+                "surface-tint": "#2a6b2c",
+                "background": "#fff9ec",
+                "on-surface": "#1e1c12",
+                "tertiary-container": "#185e27",
+                "primary-fixed": "#acf4a4",
+                "secondary": "#77574d",
+                "surface-variant": "#e9e2d2",
+                "tertiary-fixed": "#abf4ac",
+                "on-secondary-fixed": "#2c160e",
+                "on-primary-container": "#90d689",
+                "primary": "#00450d",
+                "on-secondary-fixed-variant": "#5d4037",
+                "on-surface-variant": "#41493e",
+                "inverse-surface": "#333025",
+                "surface-container-lowest": "#ffffff",
+                "on-primary-fixed": "#002203",
+                "surface-bright": "#fff9ec",
+                "surface-container-low": "#faf3e2",
+                "tertiary": "#004516",
+                "surface": "#fff9ec",
+                "surface-dim": "#e0dac9",
+                "on-error-container": "#93000a",
+                "inverse-on-surface": "#f7f0df",
+                "error": "#ba1a1a",
+                "secondary-container": "#fed3c7",
+                "primary-fixed-dim": "#91d78a",
+                "on-tertiary": "#ffffff",
+                "tertiary-fixed-dim": "#90d792",
+                "on-secondary-container": "#795950",
+                "surface-container": "#f4eddd",
+                "on-primary-fixed-variant": "#0c5216",
+                "on-background": "#1e1c12",
+                "on-tertiary-fixed-variant": "#07521d",
+                "error-container": "#ffdad6",
+                "on-tertiary-container": "#8fd691",
+                "on-error": "#ffffff",
+                "surface-container-high": "#eee8d7",
+                "secondary-fixed": "#ffdbd0",
+                "on-tertiary-fixed": "#002107",
+                "secondary-fixed-dim": "#e7bdb1",
+                "outline-variant": "#c0c9bb",
+                "on-primary": "#ffffff",
+                "surface-container-highest": "#e9e2d2"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "md": "16px",
+                "gutter": "16px",
+                "lg": "24px",
+                "sm": "8px",
+                "margin-mobile": "20px",
+                "xl": "40px",
+                "xs": "4px",
+                "margin-desktop": "64px"
+            },
+            "fontFamily": {
+                "h2": ["Plus Jakarta Sans"],
+                "body-md": ["Inter"],
+                "body-lg": ["Inter"],
+                "h1": ["Plus Jakarta Sans"],
+                "label-sm": ["Inter"],
+                "h3": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                "h2": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "h1": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "label-sm": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                "h3": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fff9ec;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-body-md text-on-surface">
+<!-- TopAppBar -->
+<header class="bg-stone-50 dark:bg-stone-900 border-stone-200/40 dark:border-stone-800 shadow-sm docked full-width top-0 border-b z-50 sticky">
+<div class="flex justify-between items-center w-full px-4 h-16 max-w-7xl mx-auto">
+<div class="font-['Plus_Jakarta_Sans'] antialiased text-2xl font-extrabold tracking-tight text-green-900 dark:text-green-50">
+                DesaMart
+            </div>
+<div class="flex items-center gap-4">
+<button class="text-stone-600 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors active:scale-95 duration-150 p-2 rounded-full">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-stone-600 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors active:scale-95 duration-150 p-2 rounded-full">
+<span class="material-symbols-outlined">shopping_basket</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-grow flex items-center justify-center px-margin-mobile py-xl">
+<!-- 404 Card -->
+<div class="max-w-xl w-full bg-surface-container-lowest rounded-xl shadow-[0_4px_24px_rgba(93,64,55,0.08)] p-lg md:p-xl text-center border border-secondary-container/20">
+<!-- Illustration Container -->
+<div class="relative w-full aspect-square max-w-[320px] mx-auto mb-lg">
+<div class="absolute inset-0 bg-primary-container/5 rounded-full blur-3xl transform -scale-95"></div>
+<img class="relative z-10 w-full h-full object-contain" data-alt="whimsical 3D illustration of a friendly village farmer in a straw hat holding a paper map looking puzzled in a lush green countryside" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcLbXZE6osN40ERbstAPjTpr6LBXLi0oQ_lH40SbalhDw3FXilbC5sK9-WelbXwrBFYsHQmf36Vvpp5zDsWk865iO-EthXs3EsDtZrzP5WmkvQVnq-nBMlUD_22i9RD5B3QyA6LtZf64PR9YHtxgc_hpG5IxkRSDHBVzYb7qNfzzOr2njReCEYpwiJJjpOBvWtuBCSrxL_aOhIjnHqkUzoLRD1YY6hFJ_8wGOsN4mJqNIFEQheWaQV0ZY1yt8lIWzvdnq3r3ABTek"/>
+</div>
+<!-- Content -->
+<div class="space-y-md">
+<h1 class="font-h1 text-h1 text-primary">
+                    Halaman Tidak Ditemukan
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md mx-auto">
+                    Sepertinya halaman yang Anda cari sudah dipindahkan atau tidak tersedia.
+                </p>
+<div class="pt-lg">
+<a class="inline-flex items-center justify-center px-lg py-md bg-primary text-on-primary font-h3 text-body-md rounded-xl shadow-lg hover:brightness-110 active:scale-95 transition-all duration-150 gap-sm group" href="#">
+                        Kembali ke Beranda
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<!-- Subtle Village Elements -->
+<div class="flex justify-center items-center gap-xl mt-xl pt-xl border-t border-secondary-container/30">
+<div class="flex flex-col items-center gap-xs opacity-60">
+<span class="material-symbols-outlined text-primary-container">grass</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-secondary-fixed-variant">Produk Lokal</span>
+</div>
+<div class="flex flex-col items-center gap-xs opacity-60">
+<span class="material-symbols-outlined text-primary-container">groups</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-secondary-fixed-variant">Komunitas</span>
+</div>
+<div class="flex flex-col items-center gap-xs opacity-60">
+<span class="material-symbols-outlined text-primary-container">verified</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-secondary-fixed-variant">Terpercaya</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Hidden on desktop, shown on mobile) -->
+<!-- Determined not to show because 404 is a 'dead end' relative to global nav as per shell visibility rule -->
+<!-- Secondary footer-like detail -->
+<footer class="pb-xl px-4 text-center">
+<p class="font-label-sm text-label-sm text-stone-400">
+            © 2024 DesaMart - Inovasi dari Desa untuk Bangsa
+        </p>
+</footer>
+</body></html>

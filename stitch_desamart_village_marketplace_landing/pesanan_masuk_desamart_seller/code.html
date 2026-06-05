@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#ffffff",
+                    "surface-bright": "#fff9ec",
+                    "on-secondary-container": "#795950",
+                    "primary": "#00450d",
+                    "on-primary": "#ffffff",
+                    "on-surface": "#1e1c12",
+                    "surface": "#fff9ec",
+                    "on-secondary-fixed-variant": "#5d4037",
+                    "primary-fixed": "#acf4a4",
+                    "surface-container-high": "#eee8d7",
+                    "tertiary-container": "#185e27",
+                    "on-tertiary-fixed": "#002107",
+                    "on-tertiary": "#ffffff",
+                    "surface-variant": "#e9e2d2",
+                    "secondary-fixed-dim": "#e7bdb1",
+                    "error-container": "#ffdad6",
+                    "surface-tint": "#2a6b2c",
+                    "on-primary-fixed": "#002203",
+                    "on-error-container": "#93000a",
+                    "inverse-primary": "#91d78a",
+                    "tertiary": "#004516",
+                    "surface-dim": "#e0dac9",
+                    "on-error": "#ffffff",
+                    "outline-variant": "#c0c9bb",
+                    "on-tertiary-fixed-variant": "#07521d",
+                    "secondary": "#77574d",
+                    "error": "#ba1a1a",
+                    "surface-container-highest": "#e9e2d2",
+                    "background": "#fff9ec",
+                    "surface-container": "#f4eddd",
+                    "on-secondary-fixed": "#2c160e",
+                    "secondary-fixed": "#ffdbd0",
+                    "primary-container": "#1b5e20",
+                    "on-secondary": "#ffffff",
+                    "secondary-container": "#fed3c7",
+                    "outline": "#717a6d",
+                    "inverse-surface": "#333025",
+                    "inverse-on-surface": "#f7f0df",
+                    "tertiary-fixed": "#abf4ac",
+                    "tertiary-fixed-dim": "#90d792",
+                    "on-tertiary-container": "#8fd691",
+                    "on-primary-fixed-variant": "#0c5216",
+                    "primary-fixed-dim": "#91d78a",
+                    "on-surface-variant": "#41493e",
+                    "on-primary-container": "#90d689",
+                    "on-background": "#1e1c12",
+                    "surface-container-low": "#faf3e2"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "16px",
+                    "gutter": "16px",
+                    "xl": "40px",
+                    "sm": "8px",
+                    "xs": "4px",
+                    "margin-mobile": "20px",
+                    "lg": "24px",
+                    "margin-desktop": "64px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "h3": ["Plus Jakarta Sans"],
+                    "h1": ["Plus Jakarta Sans"],
+                    "h2": ["Plus Jakarta Sans"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "label-sm": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "h3": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "h1": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "h2": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fff9ec;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-background">
+<!-- TopNavBar -->
+<header class="flex justify-between items-center px-6 h-16 w-full sticky top-0 bg-[#F5F5F0] border-b border-[#5D4037]/10 shadow-sm z-50 font-['Plus_Jakarta_Sans'] antialiased">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-black text-[#1B5E20] tracking-tight">VillageMarket</span>
+<nav class="hidden md:flex gap-6">
+<a class="text-[#5D4037]/70 font-medium hover:bg-[#1B5E20]/5 px-3 py-2 rounded-lg transition-colors duration-150 active:scale-95" href="#">Beranda</a>
+<a class="text-[#1B5E20] font-bold px-3 py-2 rounded-lg transition-colors duration-150 active:scale-95" href="#">Toko Saya</a>
+<a class="text-[#5D4037]/70 font-medium hover:bg-[#1B5E20]/5 px-3 py-2 rounded-lg transition-colors duration-150 active:scale-95" href="#">Laporan</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container rounded-full border-none focus:ring-2 focus:ring-primary text-sm w-64" placeholder="Cari pesanan..." type="text"/>
+</div>
+<button class="p-2 rounded-full text-on-surface-variant hover:bg-[#1B5E20]/5 transition-colors duration-150 active:scale-95">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 rounded-full text-on-surface-variant hover:bg-[#1B5E20]/5 transition-colors duration-150 active:scale-95">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-primary-container flex items-center justify-center overflow-hidden border border-primary/20">
+<img alt="Seller Profile Avatar" class="w-full h-full object-cover" data-alt="close-up portrait of a friendly Indonesian local farmer wearing a traditional hat, soft warm natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYkTHb99Hz7SKS0RCaL89PmNEUroiE94CR-3UNCwunqj8Jx7x1vhfStkAk0H0UTiMXy_UgBpQABf3ts2KokJQYfWHL8FslBRYKrpoFQadVsNaX0-lTSkoFKahdb_Ti-z6qovDd0jVVZTiyEsONzCRrtflLpRIpmGchvV_ogV6Sb1luroBtSi62Lb3ac2ts2zzZLlW68_vef3_Cvri4ZV8fL3Fwf53rQ96Be3KxXzRz_f-fGJDZgvKRnI_oQCmqGlCYSAHAKzaqqLQ"/>
+</div>
+</div>
+</header>
+<div class="flex min-h-[calc(100vh-64px)]">
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col h-auto w-64 border-r border-[#5D4037]/10 bg-[#F5F5F0] py-4 space-y-2 sticky top-16 font-['Plus_Jakarta_Sans'] text-sm">
+<div class="px-6 mb-6">
+<div class="flex items-center gap-3 mb-1">
+<div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-white">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+</div>
+<div>
+<h2 class="text-lg font-bold text-[#1B5E20] leading-none">Seller Dashboard</h2>
+<span class="text-[10px] text-on-secondary-container uppercase tracking-wider font-bold">Agrarian Commerce</span>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="bg-[#1B5E20] text-white rounded-lg mx-2 my-1 flex items-center justify-between px-4 py-3 shadow-md transition-all duration-200 ease-in-out" href="#">
+<div class="flex items-center">
+<span class="material-symbols-outlined mr-3" data-icon="pending_actions">pending_actions</span>
+<span>Incoming Orders</span>
+</div>
+<span class="bg-error text-white text-[10px] font-bold px-2 py-0.5 rounded-full">3</span>
+</a>
+<a class="text-[#5D4037] mx-2 my-1 flex items-center px-4 py-3 rounded-lg hover:bg-[#1B5E20]/10 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="inventory_2">inventory_2</span>
+<span>My Products</span>
+</a>
+<a class="text-[#5D4037] mx-2 my-1 flex items-center px-4 py-3 rounded-lg hover:bg-[#1B5E20]/10 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="add_circle">add_circle</span>
+<span>Add Product</span>
+</a>
+<a class="text-[#5D4037] mx-2 my-1 flex items-center px-4 py-3 rounded-lg hover:bg-[#1B5E20]/10 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="bar_chart">bar_chart</span>
+<span>Sales Statistics</span>
+</a>
+</nav>
+<div class="pt-4 mt-auto border-t border-[#5D4037]/10 space-y-1">
+<a class="text-[#5D4037] mx-2 my-1 flex items-center px-4 py-3 rounded-lg hover:bg-[#1B5E20]/10 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="help">help</span>
+<span>Help Center</span>
+</a>
+<a class="text-error mx-2 my-1 flex items-center px-4 py-3 rounded-lg hover:bg-error/5 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="logout">logout</span>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 p-6 md:p-10 max-w-5xl mx-auto w-full">
+<header class="mb-8">
+<h1 class="font-h2 text-h2 text-primary mb-1">Pesanan Masuk</h1>
+<p class="font-body-md text-on-surface-variant">Kelola pesanan dari pembeli dengan efisien.</p>
+</header>
+<!-- Filter Tabs -->
+<div class="flex overflow-x-auto pb-4 gap-2 mb-6 no-scrollbar">
+<button class="whitespace-nowrap px-6 py-2.5 rounded-full bg-primary text-white font-label-sm shadow-sm transition-transform active:scale-95">Semua (8)</button>
+<button class="whitespace-nowrap px-6 py-2.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm hover:bg-surface-container-high transition-colors">Menunggu (3)</button>
+<button class="whitespace-nowrap px-6 py-2.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm hover:bg-surface-container-high transition-colors">Dikemas (2)</button>
+<button class="whitespace-nowrap px-6 py-2.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm hover:bg-surface-container-high transition-colors">Dikirim (2)</button>
+<button class="whitespace-nowrap px-6 py-2.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm hover:bg-surface-container-high transition-colors">Selesai (1)</button>
+</div>
+<!-- Orders Grid/List -->
+<div class="space-y-6">
+<!-- Order Card 1: Menunggu -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_4px_20px_-4px_rgba(93,64,55,0.08)] border border-secondary/10 overflow-hidden">
+<div class="p-5 md:p-6">
+<div class="flex flex-wrap justify-between items-center gap-4 mb-6">
+<div class="flex items-center gap-3">
+<span class="bg-surface-container px-3 py-1 rounded-md text-sm font-bold text-on-secondary-container">#ORD-20260428-001</span>
+<span class="text-on-surface-variant text-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">calendar_today</span> 28 Apr 2026
+                                </span>
+</div>
+<span class="bg-yellow-100 text-yellow-800 text-[12px] font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-yellow-200">Menunggu Diproses</span>
+</div>
+<div class="flex flex-col md:flex-row gap-8">
+<!-- Buyer & Product Info -->
+<div class="flex-1 space-y-4">
+<div class="flex items-center gap-3">
+<img alt="Buyer Avatar" class="w-10 h-10 rounded-full object-cover border border-secondary/20" data-alt="smiling middle-aged woman wearing a traditional batik headscarf, bright warm lighting, rural indonesian setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWFUnkAsBFmIHARUK6uYds0cjELZNA64V0QyaTJMeQBwwSQ2l5FD4oyKnUhGe4fa5ai4_mW2w2gSzeiPCldM5Pag_9v5Ug44pnomQiusFbVafl4ilYV6nmi90b4-tW6f-TRI-OIG6hlGgnZfmTgrLA0Fwe8UsDzPiMoxmPjkmtiT_it4osHg_HKYcngugy1Mz_kw8AIkRKf3N-pxcHoVPMrinth0fIIi67fDCok2tD6SjWnCZIBYDjlWqV27MKqvLZVxIDfMNXV4M"/>
+<div>
+<h4 class="font-bold text-on-surface">Ibu Ratna</h4>
+<p class="text-xs text-on-surface-variant">Desa Sumber Makmur</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 bg-surface-bright rounded-lg border border-secondary/5">
+<img alt="Madu Hutan Asli" class="w-16 h-16 rounded-md object-cover" data-alt="organic wild forest honey in a rustic glass jar with wooden honeycomb stick, warm golden lighting, macro photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxoHMQ8-bVeaRAolVyp1wvkhJuwTfY1SrlrAL5Nm-Y_lOXBRbvoeqXK0pxEIyYlwgfsK9rwvVvQIvS7bC_zWyPNJQiRrMB2grDWtc_OZqL1xSYo4MZwYALBR41XLNzurdoq9qOfWrtxRoviroF4SJrV8izJgc-tUoIBS6F456opDh6iZai2Qo_09KZyju1DxffxM1pOrPmRLqUB1Vy6UhhCYsVqCKmCv5aympiy0g82d8g4-OZm4FfK0f3lGwk9yGzyBdSrtwe7A0"/>
+<div class="flex-1">
+<h5 class="font-semibold text-primary">Madu Hutan Asli</h5>
+<p class="text-sm text-on-surface-variant">1x • Rp 85.000</p>
+</div>
+<div class="text-right">
+<p class="text-xs text-on-surface-variant">Total Pesanan</p>
+<p class="font-bold text-primary">Rp 85.000</p>
+</div>
+</div>
+</div>
+<!-- Address & Note -->
+<div class="md:w-1/3 space-y-3 pt-4 md:pt-0 border-t md:border-t-0 md:border-l border-secondary/10 md:pl-8">
+<div>
+<p class="text-[10px] font-bold uppercase text-on-surface-variant tracking-widest mb-1">Alamat Pengiriman</p>
+<p class="text-sm text-on-surface leading-relaxed">Jl. Melati No. 45, RT 02/RW 03, Desa Sumber Makmur, Kec. Sentosa.</p>
+</div>
+<div class="bg-surface-container-low p-3 rounded-lg">
+<p class="text-[10px] font-bold uppercase text-on-secondary-container tracking-widest mb-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">sticky_note_2</span> Catatan
+                                    </p>
+<p class="text-sm italic text-on-secondary-container">"Tolong dikemas dengan baik ya, untuk kado orang tua."</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="bg-surface-container-low px-6 py-4 flex flex-wrap gap-3 justify-end items-center border-t border-secondary/10">
+<button class="px-6 py-2.5 rounded-lg border border-error text-error font-label-sm hover:bg-error/5 transition-colors active:scale-95">Tolak</button>
+<button class="px-8 py-2.5 rounded-lg bg-primary text-white font-label-sm hover:opacity-90 shadow-md transition-all active:scale-95 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+                            Terima Pesanan
+                        </button>
+</div>
+</div>
+<!-- Order Card 2: Dikemas -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_4px_20px_-4px_rgba(93,64,55,0.08)] border border-secondary/10 overflow-hidden">
+<div class="p-5 md:p-6">
+<div class="flex flex-wrap justify-between items-center gap-4 mb-6">
+<div class="flex items-center gap-3">
+<span class="bg-surface-container px-3 py-1 rounded-md text-sm font-bold text-on-secondary-container">#ORD-20260427-042</span>
+<span class="text-on-surface-variant text-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">calendar_today</span> 27 Apr 2026
+                                </span>
+</div>
+<span class="bg-blue-100 text-blue-800 text-[12px] font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-blue-200">Dikemas</span>
+</div>
+<div class="flex flex-col md:flex-row gap-8">
+<div class="flex-1 space-y-4">
+<div class="flex items-center gap-3">
+<img alt="Buyer Avatar" class="w-10 h-10 rounded-full object-cover border border-secondary/20" data-alt="elderly indonesian man with a kind smile, wearing a sarong and white cap, natural outdoor village lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_FRT8SI3-VrnnP1KuG99x9KBRck8fqegOrZaWl-fQWONEXagvwrBJ8fahtwWawlJoRVSgVZO95pSQzKXmjRrYWHXGJJ5zz0djEQ9l-nM_WwADYm7d6SGun77APJ7adAiI4956m9D7cFSYt-Kcdlh0pdb_TxMqaNjsNSRG-0W557mPn6hWgYq0RCl6E_1PEWDK4YjfApAqcVt2xvqLNSdvjW7vz-LvNMcyeLEwzT6hpRctwEViah4uPLirBc5Hmj23oun1bIP82D8"/>
+<div>
+<h4 class="font-bold text-on-surface">Pak Ahmad</h4>
+<p class="text-xs text-on-surface-variant">Desa Beringin</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 bg-surface-bright rounded-lg border border-secondary/5">
+<img alt="Sayur Segar Paket" class="w-16 h-16 rounded-md object-cover" data-alt="vibrant selection of freshly harvested leafy green vegetables and bright red chili peppers in a woven bamboo basket" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyiMcxU43DKsQfD1Fo1h58pyP4jsTQVfGqu0R-BV8Pkw8G3oe_jb_9Wc50FocPqFuUsbQ0veZp1yi5ksTpvY3jZ-VcoGYkbc252Xbk_A3z53MPrrXI8xLbeadppDer8EWKmK6dEmEwrmKV8mPCsBJ8hDPKdkNg5TIB1b9KzoYEzpo0bogKiTf1dwhhXpHK0FixEXWykuSBnlRx9f6a4Pt9R1FBduJsSSNPUCfnmi0PoB8kXlBpXvPG9N3vN_gSu0F4Lf1LSVMkUhk"/>
+<div class="flex-1">
+<h5 class="font-semibold text-primary">Paket Sayur Organik</h5>
+<p class="text-sm text-on-surface-variant">2x • Rp 45.000</p>
+</div>
+<div class="text-right">
+<p class="text-xs text-on-surface-variant">Total Pesanan</p>
+<p class="font-bold text-primary">Rp 90.000</p>
+</div>
+</div>
+</div>
+<div class="md:w-1/3 space-y-3 pt-4 md:pt-0 border-t md:border-t-0 md:border-l border-secondary/10 md:pl-8">
+<div>
+<p class="text-[10px] font-bold uppercase text-on-surface-variant tracking-widest mb-1">Alamat Pengiriman</p>
+<p class="text-sm text-on-surface leading-relaxed">Dusun Krajan, RT 01, Desa Beringin (Samping Masjid Al-Ikhlas).</p>
+</div>
+<p class="text-sm text-on-surface-variant italic">Tidak ada catatan.</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low px-6 py-4 flex justify-end items-center border-t border-secondary/10">
+<button class="px-8 py-2.5 rounded-lg bg-primary text-white font-label-sm hover:opacity-90 shadow-md transition-all active:scale-95 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">local_shipping</span>
+                            Tandai Dikirim
+                        </button>
+</div>
+</div>
+<!-- Order Card 3: Dikirim -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_4px_20px_-4px_rgba(93,64,55,0.08)] border border-secondary/10 overflow-hidden opacity-90">
+<div class="p-5 md:p-6">
+<div class="flex flex-wrap justify-between items-center gap-4 mb-6">
+<div class="flex items-center gap-3">
+<span class="bg-surface-container px-3 py-1 rounded-md text-sm font-bold text-on-secondary-container">#ORD-20260426-088</span>
+<span class="text-on-surface-variant text-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">calendar_today</span> 26 Apr 2026
+                                </span>
+</div>
+<span class="bg-purple-100 text-purple-800 text-[12px] font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-purple-200">Dikirim</span>
+</div>
+<div class="flex flex-col md:flex-row gap-8">
+<div class="flex-1 space-y-4">
+<div class="flex items-center gap-3">
+<img alt="Buyer Avatar" class="w-10 h-10 rounded-full object-cover border border-secondary/20" data-alt="young indonesian man with modern glasses and short hair, urban cafe setting with soft focus background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2zUI0uw6kI4ye61DK_SPa9EMkhZmNA3uYEedQSuynKXtE1s0Se1bA-7We92pgA6S-YEKQYyseYRgyXeygLbzsTJ1hrcphbBNY8NbTKKXpxy6YJqH-1x24AOllFFt26N9jmEJs6xPcFKse010Iaw5SPIr9meSqt9RLBY6Cb5SfnMEpcBwLdbGNC4EKu7a9RUiYBYn3Qyzs0rFBTvMQnLIAt6qQ9UGLnej3N7akXonFLnRqJcLRFL2ML6-UDWQp5nhieUf-TJQ71x8"/>
+<div>
+<h4 class="font-bold text-on-surface">Mas Budi</h4>
+<p class="text-xs text-on-surface-variant">Desa Harapan Jaya</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 bg-surface-bright rounded-lg border border-secondary/5">
+<img alt="Telur Bebek" class="w-16 h-16 rounded-md object-cover" data-alt="fresh salted duck eggs with blue shells neatly arranged in a cardboard carton, cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUGAomVCTRslaYu7qWWhlTsG2Rhz1G-Hn6AFmbdaEG6KbT09mB85rquSCH7TjmhVDZTwT2AZBVZBW4mLiQaexdaiGldXpLfEbo-2PCyX67EUWT6Ng8J7hmbQyxnWXA8yX6qGOLeiKYiSnJte16KBJIeiIVw3WWJ_91HukzlwcoWR-7LYOSdCD1JvrzaDjwmwY8nynxpE9AY-wc3UeQpVCNq-uv6whuUP2ugJUnxMaObsivB0XvBNpy6_hZTPOELGGpUBpsM3tBT9A"/>
+<div class="flex-1">
+<h5 class="font-semibold text-primary">Telur Asin Desa (10 btr)</h5>
+<p class="text-sm text-on-surface-variant">1x • Rp 35.000</p>
+</div>
+<div class="text-right">
+<p class="text-xs text-on-surface-variant">Total Pesanan</p>
+<p class="font-bold text-primary">Rp 35.000</p>
+</div>
+</div>
+</div>
+<div class="md:w-1/3 space-y-3 pt-4 md:pt-0 border-t md:border-t-0 md:border-l border-secondary/10 md:pl-8">
+<div>
+<p class="text-[10px] font-bold uppercase text-on-surface-variant tracking-widest mb-1">Alamat Pengiriman</p>
+<p class="text-sm text-on-surface leading-relaxed">Perumahan Griya Indah, Blok C2, Desa Harapan Jaya.</p>
+</div>
+<div class="flex items-center gap-2 text-primary font-medium text-sm">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+                                    Resi: DM-20260426-TRACK
+                                </div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low px-6 py-4 flex justify-between items-center border-t border-secondary/10 italic">
+<span class="text-sm text-on-surface-variant">Estimasi tiba: Besok</span>
+<span class="text-sm font-medium text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+                            Menunggu konfirmasi pembeli
+                        </span>
+</div>
+</div>
+</div>
+<!-- Empty State / Footer Info -->
+<div class="mt-12 text-center p-8 border-2 border-dashed border-secondary/20 rounded-2xl">
+<span class="material-symbols-outlined text-4xl text-secondary/30 mb-2">assignment_turned_in</span>
+<p class="text-on-surface-variant">Semua pesanan hari ini telah diperbarui.</p>
+</div>
+</main>
+</div>
+<!-- Floating Action Button - Mobile Only -->
+<div class="md:hidden fixed bottom-6 right-6">
+<button class="w-14 h-14 bg-primary text-white rounded-full shadow-lg flex items-center justify-center active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+</div>
+</body></html>

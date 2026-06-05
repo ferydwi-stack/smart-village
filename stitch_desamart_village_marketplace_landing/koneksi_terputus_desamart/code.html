@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-container": "#1b5e20",
+                    "on-secondary": "#ffffff",
+                    "outline": "#717a6d",
+                    "inverse-primary": "#91d78a",
+                    "surface-tint": "#2a6b2c",
+                    "background": "#fff9ec",
+                    "on-surface": "#1e1c12",
+                    "tertiary-container": "#185e27",
+                    "primary-fixed": "#acf4a4",
+                    "secondary": "#77574d",
+                    "surface-variant": "#e9e2d2",
+                    "tertiary-fixed": "#abf4ac",
+                    "on-secondary-fixed": "#2c160e",
+                    "on-primary-container": "#90d689",
+                    "primary": "#00450d",
+                    "on-secondary-fixed-variant": "#5d4037",
+                    "on-surface-variant": "#41493e",
+                    "inverse-surface": "#333025",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed": "#002203",
+                    "surface-bright": "#fff9ec",
+                    "surface-container-low": "#faf3e2",
+                    "tertiary": "#004516",
+                    "surface": "#fff9ec",
+                    "surface-dim": "#e0dac9",
+                    "on-error-container": "#93000a",
+                    "inverse-on-surface": "#f7f0df",
+                    "error": "#ba1a1a",
+                    "secondary-container": "#fed3c7",
+                    "primary-fixed-dim": "#91d78a",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#90d792",
+                    "on-secondary-container": "#795950",
+                    "surface-container": "#f4eddd",
+                    "on-primary-fixed-variant": "#0c5216",
+                    "on-background": "#1e1c12",
+                    "on-tertiary-fixed-variant": "#07521d",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-container": "#8fd691",
+                    "on-error": "#ffffff",
+                    "surface-container-high": "#eee8d7",
+                    "secondary-fixed": "#ffdbd0",
+                    "on-tertiary-fixed": "#002107",
+                    "secondary-fixed-dim": "#e7bdb1",
+                    "outline-variant": "#c0c9bb",
+                    "on-primary": "#ffffff",
+                    "surface-container-highest": "#e9e2d2"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "16px",
+                    "gutter": "16px",
+                    "lg": "24px",
+                    "sm": "8px",
+                    "margin-mobile": "20px",
+                    "xl": "40px",
+                    "xs": "4px",
+                    "margin-desktop": "64px"
+            },
+            "fontFamily": {
+                    "h2": ["Plus Jakarta Sans"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "h1": ["Plus Jakarta Sans"],
+                    "label-sm": ["Inter"],
+                    "h3": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "h2": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "h1": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-sm": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "h3": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .village-bg-pattern {
+            background-color: #fff9ec;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 15c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-4c-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6zm0 16c-3.3 0-6 2.7-6 6v3h12v-3c0-3.3-2.7-6-6-6z' fill='%235d4037' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface selection:bg-primary-container selection:text-on-primary-container min-h-screen village-bg-pattern">
+<!-- TopAppBar -->
+<header class="bg-stone-50 dark:bg-stone-900 text-green-900 dark:text-green-400 font-['Plus_Jakarta_Sans'] antialiased docked full-width top-0 border-b border-stone-200/40 dark:border-stone-800 shadow-sm flex justify-between items-center w-full px-4 h-16 z-50 fixed">
+<div class="flex items-center gap-2">
+<span class="text-2xl font-extrabold tracking-tight text-green-900 dark:text-green-50">DesaMart</span>
+</div>
+<div class="flex items-center space-x-2">
+<button class="p-2 hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors active:scale-95 duration-150 rounded-full">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors active:scale-95 duration-150 rounded-full">
+<span class="material-symbols-outlined">shopping_basket</span>
+</button>
+</div>
+</header>
+<main class="pt-24 pb-12 px-margin-mobile md:px-margin-desktop flex flex-col items-center justify-center min-h-[calc(100vh-64px)]">
+<div class="max-w-lg w-full bg-surface-container-lowest rounded-xl shadow-[0_8px_30px_rgb(93,64,55,0.08)] overflow-hidden border border-surface-variant/30 flex flex-col items-center text-center p-lg md:p-xl relative">
+<!-- Illustration Area -->
+<div class="relative w-full aspect-square max-w-[320px] mb-lg overflow-hidden rounded-lg group">
+<img alt="Broken connection" class="w-full h-full object-cover grayscale opacity-40 mix-blend-multiply" data-alt="Soft watercolor illustration of a traditional Indonesian village with broken electrical wires and fading signal bars, warm hazy sunset light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAf3aBuup_uNrkq2hJsbppmJYuTphvE1FbxGRg4uJCvYLqDikMZP4shdBdDyJLuGJtLxCBdz6HafKZtJ9Uv4C6sUIJRfAHZAFhnl4GkJnLRjnV7Wio0h0Q2YUvmX4BrhKzwJUGpnAdmmVJE6n4k364MZ7fwo1wYi993U2VahbedugSXwGVbVPEqzqV5KXrQlyP_li4UhBiyNaKECG3ygovjz4YWPYrndkaS2FTdU6ynKrSKnr7khv85dlqtHy4ezkcNCw1jY6ulXcs"/>
+<!-- Overlay Elements -->
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<div class="bg-white/90 backdrop-blur-sm p-lg rounded-full shadow-lg border border-error/10 animate-pulse">
+<span class="material-symbols-outlined text-error text-6xl" style="font-variation-settings: 'opsz' 48;">signal_wifi_off</span>
+</div>
+<!-- Village Silhouette Elements -->
+<div class="absolute bottom-0 left-0 right-0 flex justify-between px-md opacity-20 pointer-events-none">
+<span class="material-symbols-outlined text-primary text-4xl">home</span>
+<span class="material-symbols-outlined text-primary text-4xl">park</span>
+<span class="material-symbols-outlined text-primary text-4xl">agriculture</span>
+</div>
+</div>
+</div>
+<!-- Content Area -->
+<div class="space-y-sm">
+<h1 class="font-h2 text-h2 text-on-surface">Koneksi Terputus</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-sm mx-auto">
+                    Periksa koneksi internet Anda dan coba lagi. DesaMart memerlukan sinyal untuk menghubungkan Anda dengan petani lokal.
+                </p>
+</div>
+<!-- CTA -->
+<div class="mt-xl w-full">
+<button class="group inline-flex items-center justify-center gap-2 px-xl py-3 border-2 border-primary text-primary font-h3 text-h3 rounded-full hover:bg-primary hover:text-on-primary transition-all active:scale-95 duration-150 w-full sm:w-auto">
+<span>Coba Lagi</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+<!-- Decorative Agrarian Accent -->
+<div class="mt-lg flex items-center gap-2 opacity-30">
+<div class="h-px w-8 bg-on-secondary-fixed-variant"></div>
+<span class="material-symbols-outlined text-on-secondary-fixed-variant">eco</span>
+<div class="h-px w-8 bg-on-secondary-fixed-variant"></div>
+</div>
+</div>
+<!-- Helpful Suggestions (Bento Style Sub-info) -->
+<div class="max-w-lg w-full mt-lg grid grid-cols-2 gap-md">
+<div class="bg-surface-container-low p-md rounded-xl border border-outline-variant/20 flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-secondary text-2xl mb-xs">cell_tower</span>
+<span class="text-label-sm font-label-sm text-secondary">Sinyal Lemah?</span>
+<p class="text-[12px] text-on-surface-variant mt-xs">Cari tempat yang lebih terbuka di sekitar desa.</p>
+</div>
+<div class="bg-surface-container-low p-md rounded-xl border border-outline-variant/20 flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-secondary text-2xl mb-xs">router</span>
+<span class="text-label-sm font-label-sm text-secondary">Cek Wi-Fi</span>
+<p class="text-[12px] text-on-surface-variant mt-xs">Pastikan modem desa menyala dan terhubung.</p>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="bg-white/90 dark:bg-stone-900/90 backdrop-blur-md text-green-900 dark:text-green-400 text-[11px] font-semibold font-['Plus_Jakarta_Sans'] fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-safe pt-2 border-t border-stone-200/50 dark:border-stone-800 shadow-[0_-4px_12px_rgba(93,64,55,0.05)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-5 py-1.5 hover:text-green-800 dark:hover:text-green-300 transition-all active:scale-90" href="#">
+<span class="material-symbols-outlined">storefront</span>
+<span>Pasar</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-5 py-1.5 hover:text-green-800 dark:hover:text-green-300 transition-all active:scale-90" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span>Pesanan</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-green-100 dark:bg-green-900/40 text-green-900 dark:text-green-100 rounded-2xl px-5 py-1.5 transition-all active:scale-90" href="#">
+<span class="material-symbols-outlined">contact_support</span>
+<span>Bantuan</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-5 py-1.5 hover:text-green-800 dark:hover:text-green-300 transition-all active:scale-90" href="#">
+<span class="material-symbols-outlined">person</span>
+<span>Profil</span>
+</a>
+</nav>
+</body></html>

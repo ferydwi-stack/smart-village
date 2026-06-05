@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kelola Pengaduan - DesaMart Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#5d4037",
+                        "surface-container-high": "#eee8d7",
+                        "primary-fixed": "#acf4a4",
+                        "surface": "#fff9ec",
+                        "on-surface": "#1e1c12",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#fff9ec",
+                        "on-secondary-container": "#795950",
+                        "on-primary": "#ffffff",
+                        "primary": "#00450d",
+                        "on-tertiary-fixed-variant": "#07521d",
+                        "tertiary": "#004516",
+                        "outline-variant": "#c0c9bb",
+                        "surface-dim": "#e0dac9",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed": "#002203",
+                        "on-error-container": "#93000a",
+                        "inverse-primary": "#91d78a",
+                        "surface-tint": "#2a6b2c",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#185e27",
+                        "on-tertiary-fixed": "#002107",
+                        "surface-variant": "#e9e2d2",
+                        "secondary-fixed-dim": "#e7bdb1",
+                        "secondary-fixed": "#ffdbd0",
+                        "primary-container": "#1b5e20",
+                        "surface-container-highest": "#e9e2d2",
+                        "background": "#fff9ec",
+                        "on-secondary-fixed": "#2c160e",
+                        "surface-container": "#f4eddd",
+                        "secondary": "#77574d",
+                        "error": "#ba1a1a",
+                        "surface-container-low": "#faf3e2",
+                        "on-primary-container": "#90d689",
+                        "primary-fixed-dim": "#91d78a",
+                        "on-surface-variant": "#41493e",
+                        "on-background": "#1e1c12",
+                        "tertiary-fixed": "#abf4ac",
+                        "on-primary-fixed-variant": "#0c5216",
+                        "tertiary-fixed-dim": "#90d792",
+                        "on-tertiary-container": "#8fd691",
+                        "on-secondary": "#ffffff",
+                        "outline": "#717a6d",
+                        "inverse-surface": "#333025",
+                        "inverse-on-surface": "#f7f0df",
+                        "secondary-container": "#fed3c7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "margin-mobile": "20px",
+                        "lg": "24px",
+                        "margin-desktop": "64px",
+                        "md": "16px",
+                        "gutter": "16px",
+                        "xl": "40px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "h3": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "h1": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "h2": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .complaint-card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .complaint-card:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 right-0 z-40 bg-emerald-900 border-b border-emerald-800 shadow-sm flex justify-between items-center h-16 px-6 w-full text-white font-['Plus_Jakarta_Sans'] text-sm antialiased">
+<div class="flex items-center gap-8">
+<h1 class="text-xl font-bold tracking-tight text-white">Village Market Admin</h1>
+<div class="hidden md:flex relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-emerald-100/70">search</span>
+<input class="bg-emerald-800 border-none rounded-full py-1.5 pl-10 pr-4 text-emerald-50 placeholder:text-emerald-100/50 focus:ring-2 focus:ring-primary-fixed outline-none w-64 transition-all" placeholder="Search data..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-emerald-800 transition-colors relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="p-2 rounded-full hover:bg-emerald-800 transition-colors">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="h-8 w-px bg-emerald-800 mx-1"></div>
+<div class="flex items-center gap-3 pl-2">
+<div class="text-right hidden sm:block">
+<p class="font-semibold text-xs leading-none">Admin Desa</p>
+<p class="text-[10px] text-emerald-100/70">Superuser</p>
+</div>
+<img alt="Admin Avatar" class="w-10 h-10 rounded-full border-2 border-emerald-700 object-cover" data-alt="Professional headshot of a mature man with a friendly expression, soft studio lighting, clean background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkYNeYWA4mJxgHLThK45FLfL9ue_vyc6mWvtSo856ph6yMXKzCmFHaVgJ2v8z5wzpx4HDNBt6Lk3QSAGOiyYGYMgASVb81iwISCizE0xmP3PS42XUMPil8dcwmwoEzgDRJlzqNQlYDkiYCS_1CAn4P34fqvF5OkCsimOMjHkI3OXyXviRILnQsSh0GJV3x4NjNuK-Vxld8FyYB3TLOKpz_Xek6MEu056gBbIjioW_OCjaLZRlysNRC9X9786p70lhK08wFwYtqViI"/>
+</div>
+</div>
+</header>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 bottom-0 flex flex-col w-64 z-50 bg-slate-950 border-r border-slate-800 shadow-xl font-['Plus_Jakarta_Sans'] text-[13px] font-medium transition-all duration-200 ease-in-out">
+<div class="h-16 flex items-center px-6 gap-3 mb-4">
+<div class="w-8 h-8 bg-emerald-500 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-xl" data-weight="fill">storefront</span>
+</div>
+<div>
+<p class="text-lg font-black text-white leading-none">Marketplace Admin</p>
+<p class="text-[10px] text-slate-500 uppercase tracking-wider">Village Operations</p>
+</div>
+</div>
+<nav class="flex-1 px-3 space-y-1">
+<a class="flex items-center gap-3 text-slate-400 hover:text-slate-100 hover:bg-slate-900 px-4 py-3 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 text-slate-400 hover:text-slate-100 hover:bg-slate-900 px-4 py-3 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+<span>Vendors</span>
+</a>
+<a class="flex items-center gap-3 text-slate-400 hover:text-slate-100 hover:bg-slate-900 px-4 py-3 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span>Inventory</span>
+</a>
+<!-- Active Tab: Kelola Pengaduan (mapped to Orders/Hub logic) -->
+<a class="flex items-center gap-3 bg-emerald-500/10 text-emerald-400 border-r-4 border-emerald-500 px-4 py-3 rounded-l-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+<span>Kelola Pengaduan</span>
+</a>
+<a class="flex items-center gap-3 text-slate-400 hover:text-slate-100 hover:bg-slate-900 px-4 py-3 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span>Orders</span>
+</a>
+<a class="flex items-center gap-3 text-slate-400 hover:text-slate-100 hover:bg-slate-900 px-4 py-3 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="bar_chart">bar_chart</span>
+<span>Analytics</span>
+</a>
+</nav>
+<div class="mt-auto p-3 border-t border-slate-800">
+<a class="flex items-center gap-3 text-slate-400 hover:text-slate-100 hover:bg-slate-900 px-4 py-3 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="contact_support">contact_support</span>
+<span>Support</span>
+</a>
+<a class="flex items-center gap-3 text-slate-400 hover:text-slate-100 hover:bg-slate-900 px-4 py-3 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 mt-16 p-8 min-h-screen">
+<!-- Header Section -->
+<div class="mb-8">
+<h2 class="font-h2 text-h2 text-on-surface">Kelola Pengaduan</h2>
+<div class="flex items-center gap-2 mt-1">
+<span class="w-2 h-2 rounded-full bg-error animate-pulse"></span>
+<p class="font-body-md text-on-surface-variant">5 pengaduan menunggu ditangani</p>
+</div>
+</div>
+<!-- Filter Bar -->
+<div class="bg-surface-container border border-outline-variant/30 rounded-xl p-4 mb-8 flex flex-wrap items-center gap-4 shadow-sm">
+<div class="flex-1 min-w-[200px] relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-sm">search</span>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-lg py-2 pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary outline-none" placeholder="Cari ID atau nama..." type="text"/>
+</div>
+<div class="flex items-center gap-3">
+<select class="bg-surface-container-low border border-outline-variant rounded-lg px-3 py-2 text-sm focus:ring-primary">
+<option>Semua Status</option>
+<option>Open</option>
+<option>In Progress</option>
+<option>Resolved</option>
+</select>
+<select class="bg-surface-container-low border border-outline-variant rounded-lg px-3 py-2 text-sm focus:ring-primary">
+<option>Semua Kategori</option>
+<option>Produk</option>
+<option>Transaksi</option>
+<option>Pengiriman</option>
+<option>Akun</option>
+</select>
+<div class="flex items-center bg-surface-container-low border border-outline-variant rounded-lg px-3 py-2 gap-2 text-sm text-on-surface-variant cursor-pointer">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+<span>20 Apr - 30 Apr 2026</span>
+</div>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg text-sm font-semibold hover:opacity-90 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">filter_alt</span>
+                    Terapkan
+                </button>
+</div>
+</div>
+<!-- Complaint Cards Grid -->
+<div class="grid grid-cols-1 gap-4">
+<!-- Card 1: Produk (Red) -->
+<div class="complaint-card bg-surface-container-lowest border border-outline-variant/20 rounded-xl overflow-hidden shadow-sm flex">
+<div class="w-1.5 bg-error"></div>
+<div class="p-5 flex-1">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<span class="bg-surface-container-high px-3 py-1 rounded-md text-xs font-bold text-on-surface">#CMP-001</span>
+<span class="text-xs text-on-surface-variant font-medium">28 Apr 2026, 09:15</span>
+<span class="bg-error-container text-on-error-container px-3 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wider">Open</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="text-xs font-semibold text-on-surface-variant">Kategori: Produk</span>
+<div class="w-16 bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full" style="width: 92%"></div>
+</div>
+<span class="text-[10px] font-bold text-primary">92%</span>
+</div>
+</div>
+<div class="flex gap-4 items-start mb-4">
+<img alt="Ibu Ratna" class="w-12 h-12 rounded-full object-cover border border-outline-variant/30" data-alt="Close-up of a mature village woman with a warm, kind face wearing a simple traditional headscarf, soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuZFqH0uK_sJcRp_UgrVHsXHpJCz536LliJag8x89J92W3PpuQ8YB4So_l_5b1jvzTT-2wOUn8oH25Nzs-Eeshk2BS0WI6LZgLrEL9APdL01pXiQeeYm5Q4jmDyZ9KPuHyaMPL8TcXx33GNfm_SdEWMs7604aW3R6k2SuBTnezt6F9riTWvwr-SgM1ag0LTuZEhUnGbjy4gs3UcSf_8bXAkf_vQn0Ck5QCA79nNRApp3sfCr7rgEtMt1_blf2u3PQhQ58qXNa3G_w"/>
+<div>
+<p class="font-bold text-on-surface leading-tight">Ibu Ratna</p>
+<p class="text-xs text-on-surface-variant">Desa Sumber Makmur</p>
+</div>
+<div class="ml-auto bg-surface-container-low px-4 py-3 rounded-lg border border-outline-variant/10 max-w-md">
+<p class="text-sm font-medium text-on-surface italic">"Barang saya rusak saat diterima. Madu di dalam botol rembes keluar padahal tutupnya masih disegel."</p>
+</div>
+</div>
+<div class="flex items-center gap-6 border-t border-outline-variant/10 pt-4">
+<div class="flex items-center gap-4 text-xs">
+<a class="text-primary font-bold hover:underline" href="#">Pesanan #ORD-2026</a>
+<a class="text-on-secondary-fixed-variant font-medium hover:underline flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[14px]">local_mall</span> Madu Hutan Asli
+                            </a>
+<a class="text-on-secondary-fixed-variant font-medium hover:underline flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[14px]">store</span> Toko Pak Budi
+                            </a>
+</div>
+<div class="ml-auto flex gap-2">
+<button class="px-4 py-1.5 bg-surface-container-high text-on-surface text-xs font-bold rounded-lg border border-outline-variant/30 hover:bg-surface-container-highest transition-colors">Tutup</button>
+<button class="px-5 py-1.5 bg-primary text-on-primary text-xs font-bold rounded-lg hover:opacity-90 transition-all flex items-center gap-1">
+                                Tangani <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2: Transaksi (Blue) -->
+<div class="complaint-card bg-surface-container-lowest border border-outline-variant/20 rounded-xl overflow-hidden shadow-sm flex">
+<div class="w-1.5 bg-blue-500"></div>
+<div class="p-5 flex-1">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<span class="bg-surface-container-high px-3 py-1 rounded-md text-xs font-bold text-on-surface">#CMP-002</span>
+<span class="text-xs text-on-surface-variant font-medium">28 Apr 2026, 11:20</span>
+<span class="bg-blue-100 text-blue-700 px-3 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wider">In Progress</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="text-xs font-semibold text-on-surface-variant">Kategori: Transaksi</span>
+<div class="w-16 bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full" style="width: 88%"></div>
+</div>
+<span class="text-[10px] font-bold text-primary">88%</span>
+</div>
+</div>
+<div class="flex gap-4 items-start mb-4">
+<img alt="Pak Joko" class="w-12 h-12 rounded-full object-cover border border-outline-variant/30" data-alt="Portrait of an elderly village farmer with weathered skin and a gentle smile, wearing a traditional straw hat, natural outdoor lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwAhXX2M5_WeVgyFuUQJY7aytUMV5NwcAZNKtnTCyU2ej5Rn5xqOIs15431qWzrIQ8xxbnF1bVd_sPEsqh9QCDJBgTizOb2T0fLD6iKoyef5YWOsgMeRs818nd_dIBbLY1zLGugWSZNzlj_7C7aIrBb3TcZcppo9NRi9ue1kfLBPNHFP-BgZYznYmKTpIoztQkAznrrkIRNVsNoXQH5KL8_4OfqKlGwQmvbgYHreeQxHU_1JggTJ14yLa-mZ8K9_dQ0Nsi3AURVIU"/>
+<div>
+<p class="font-bold text-on-surface leading-tight">Pak Joko</p>
+<p class="text-xs text-on-surface-variant">Desa Ngadimulyo</p>
+</div>
+<div class="ml-auto bg-surface-container-low px-4 py-3 rounded-lg border border-outline-variant/10 max-w-md">
+<p class="text-sm font-medium text-on-surface italic">"Saldo dompet DesaMart saya tidak bertambah setelah top up via ATM. Sudah 2 jam belum masuk."</p>
+</div>
+</div>
+<div class="flex items-center gap-6 border-t border-outline-variant/10 pt-4">
+<div class="flex items-center gap-4 text-xs">
+<a class="text-primary font-bold hover:underline" href="#">Transaksi #TRX-9921</a>
+<span class="text-on-secondary-fixed-variant font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">account_balance_wallet</span> Top Up Dompet
+                            </span>
+</div>
+<div class="ml-auto flex gap-2">
+<button class="px-4 py-1.5 bg-surface-container-high text-on-surface text-xs font-bold rounded-lg border border-outline-variant/30 hover:bg-surface-container-highest transition-colors">Tutup</button>
+<button class="px-5 py-1.5 bg-primary text-on-primary text-xs font-bold rounded-lg hover:opacity-90 transition-all flex items-center gap-1">
+                                Tangani <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 3: Pengiriman (Orange) -->
+<div class="complaint-card bg-surface-container-lowest border border-outline-variant/20 rounded-xl overflow-hidden shadow-sm flex">
+<div class="w-1.5 bg-orange-500"></div>
+<div class="p-5 flex-1">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<span class="bg-surface-container-high px-3 py-1 rounded-md text-xs font-bold text-on-surface">#CMP-003</span>
+<span class="text-xs text-on-surface-variant font-medium">27 Apr 2026, 14:45</span>
+<span class="bg-error-container text-on-error-container px-3 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wider">Open</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="text-xs font-semibold text-on-surface-variant">Kategori: Pengiriman</span>
+<div class="w-16 bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full" style="width: 95%"></div>
+</div>
+<span class="text-[10px] font-bold text-primary">95%</span>
+</div>
+</div>
+<div class="flex gap-4 items-start mb-4">
+<img alt="Mbak Siti" class="w-12 h-12 rounded-full object-cover border border-outline-variant/30" data-alt="Young Indonesian woman with a friendly look, wearing a stylish modern hijab, bright soft daylight background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXGptFUMyY-R4HA2UWmch-OwdiE5WowIw-k208T3p2IMDD7vJFSF3c7Kz9QFRLBfb7e9MCqsPcEdri6BLV2ei-UBi_KuiwzS39iI8Ky0egMJ_7DIwTmi5ZGyc2C9bdKzU3uykJZzbLJXxvihCxTNPHS4qSuEoWu2d3D0XQMpeOj1UoLT3L9ea6IDXHEK8UJPPnpbBRyZFsZAjzvNgJJ_ru83akGkBcSoHlezc7yWduYDSND_aB3Av7o9EC12MocBmaj7ruvUHTqJM"/>
+<div>
+<p class="font-bold text-on-surface leading-tight">Mbak Siti</p>
+<p class="text-xs text-on-surface-variant">Desa Karangduren</p>
+</div>
+<div class="ml-auto bg-surface-container-low px-4 py-3 rounded-lg border border-outline-variant/10 max-w-md">
+<p class="text-sm font-medium text-on-surface italic">"Kurir belum sampai padahal status sudah 'Diterima'. Saya sudah cek di pos satpam juga tidak ada."</p>
+</div>
+</div>
+<div class="flex items-center gap-6 border-t border-outline-variant/10 pt-4">
+<div class="flex items-center gap-4 text-xs">
+<a class="text-primary font-bold hover:underline" href="#">Pesanan #ORD-3012</a>
+<a class="text-on-secondary-fixed-variant font-medium hover:underline flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[14px]">local_shipping</span> JNE Express
+                            </a>
+<a class="text-on-secondary-fixed-variant font-medium hover:underline flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[14px]">store</span> Beras Organik Cianjur
+                            </a>
+</div>
+<div class="ml-auto flex gap-2">
+<button class="px-4 py-1.5 bg-surface-container-high text-on-surface text-xs font-bold rounded-lg border border-outline-variant/30 hover:bg-surface-container-highest transition-colors">Tutup</button>
+<button class="px-5 py-1.5 bg-primary text-on-primary text-xs font-bold rounded-lg hover:opacity-90 transition-all flex items-center gap-1">
+                                Tangani <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 4: Akun (Purple) -->
+<div class="complaint-card bg-surface-container-lowest border border-outline-variant/20 rounded-xl overflow-hidden shadow-sm flex">
+<div class="w-1.5 bg-purple-500"></div>
+<div class="p-5 flex-1">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<span class="bg-surface-container-high px-3 py-1 rounded-md text-xs font-bold text-on-surface">#CMP-004</span>
+<span class="text-xs text-on-surface-variant font-medium">27 Apr 2026, 16:00</span>
+<span class="bg-surface-container-highest text-on-surface-variant px-3 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wider">Resolved</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="text-xs font-semibold text-on-surface-variant">Kategori: Akun</span>
+<div class="w-16 bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full" style="width: 90%"></div>
+</div>
+<span class="text-[10px] font-bold text-primary">90%</span>
+</div>
+</div>
+<div class="flex gap-4 items-start mb-4">
+<img alt="Bapak Ahmad" class="w-12 h-12 rounded-full object-cover border border-outline-variant/30" data-alt="Portrait of a middle-aged Asian man with glasses, looking professional and calm, neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-5K7CxUDvIkCCgDosOI7YQNcfJNNf9fl0gAFTaoTVSEoAe_s75VRvEJm7zmf0G4GxDs92LVf3UqmawfPBEJ-bfNBIc32phfF5TSqCa9MPQUo4m9F6pEa2mlNI4-rc8GdwvS55NKZlo35ERVD4_57jaza1tR5l2sm0RU7jwzroVHU84XQvkfkrnY1R0R6gj9F6hcTKuUipgFUkk5YuBl79K7GHzdhfItBKMcv4BKlr7y74r1UHC3TA83c6-5h7iXXoPZJ3fDM_7q0"/>
+<div>
+<p class="font-bold text-on-surface leading-tight">Bapak Ahmad</p>
+<p class="text-xs text-on-surface-variant">Desa Sukajadi</p>
+</div>
+<div class="ml-auto bg-surface-container-low px-4 py-3 rounded-lg border border-outline-variant/10 max-w-md opacity-70">
+<p class="text-sm font-medium text-on-surface italic">"Tidak bisa login karena lupa password, tapi kode OTP tidak masuk ke WhatsApp saya."</p>
+</div>
+</div>
+<div class="flex items-center gap-6 border-t border-outline-variant/10 pt-4">
+<div class="flex items-center gap-4 text-xs">
+<span class="text-on-secondary-fixed-variant font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">person</span> Pengaturan Akun
+                            </span>
+</div>
+<div class="ml-auto flex gap-2">
+<span class="text-xs text-primary font-bold flex items-center gap-1 pr-4">
+<span class="material-symbols-outlined text-sm">check_circle</span> Selesai ditangani
+                            </span>
+<button class="px-5 py-1.5 bg-surface-container-high text-on-surface text-xs font-bold rounded-lg border border-outline-variant/30">Detail</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 5: FAQ / Umum (Green) -->
+<div class="complaint-card bg-surface-container-lowest border border-outline-variant/20 rounded-xl overflow-hidden shadow-sm flex">
+<div class="w-1.5 bg-primary"></div>
+<div class="p-5 flex-1">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<span class="bg-surface-container-high px-3 py-1 rounded-md text-xs font-bold text-on-surface">#CMP-005</span>
+<span class="text-xs text-on-surface-variant font-medium">26 Apr 2026, 08:30</span>
+<span class="bg-error-container text-on-error-container px-3 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wider">Open</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="text-xs font-semibold text-on-surface-variant">Kategori: FAQ</span>
+<div class="w-16 bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full" style="width: 75%"></div>
+</div>
+<span class="text-[10px] font-bold text-primary">75%</span>
+</div>
+</div>
+<div class="flex gap-4 items-start mb-4">
+<img alt="Mas Budi" class="w-12 h-12 rounded-full object-cover border border-outline-variant/30" data-alt="Young Asian man with a casual style, outdoors in a village setting, soft warm morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUz-N4DPOld6D8pNibSP11B7abmfvwYe4DE5lp3dGgQdCyHSPBNI3YbmDNY_77CJ5klfJriwYGJ7p1hBsP5dyQohZazFnumLk0DbQQ72oZOlHh4nIPMclumxB79vqNI97AcoxxSlrqhj6FrYNNJ9dAIi1IOVar17RD3lDpmUYhkOgeSWUTHVnL3P2S4e_IharJqc49V5Ow-_xONnfMXOwuJdOLcI9a5YMw8gjV9WRDwNwugbPEpA_LjM_w93Jol8tNHhuXzvxwo6A"/>
+<div>
+<p class="font-bold text-on-surface leading-tight">Mas Budi</p>
+<p class="text-xs text-on-surface-variant">Desa Makmur Jaya</p>
+</div>
+<div class="ml-auto bg-surface-container-low px-4 py-3 rounded-lg border border-outline-variant/10 max-w-md">
+<p class="text-sm font-medium text-on-surface italic">"Bagaimana cara daftar jadi seller baru? Saya punya produk kripik pisang tapi bingung caranya."</p>
+</div>
+</div>
+<div class="flex items-center gap-6 border-t border-outline-variant/10 pt-4">
+<div class="flex items-center gap-4 text-xs">
+<a class="text-on-secondary-fixed-variant font-medium hover:underline flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[14px]">help</span> Panduan Seller
+                            </a>
+</div>
+<div class="ml-auto flex gap-2">
+<button class="px-4 py-1.5 bg-surface-container-high text-on-surface text-xs font-bold rounded-lg border border-outline-variant/30 hover:bg-surface-container-highest transition-colors">Tutup</button>
+<button class="px-5 py-1.5 bg-primary text-on-primary text-xs font-bold rounded-lg hover:opacity-90 transition-all flex items-center gap-1">
+                                Tangani <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-8 flex justify-between items-center bg-surface-container-low p-4 rounded-xl border border-outline-variant/20">
+<p class="text-xs text-on-surface-variant font-medium">Menampilkan 5 dari 128 pengaduan</p>
+<div class="flex items-center gap-1">
+<button class="p-2 rounded-md hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded-md bg-primary text-on-primary text-xs font-bold">1</button>
+<button class="w-8 h-8 rounded-md hover:bg-surface-container-high text-xs font-bold">2</button>
+<button class="w-8 h-8 rounded-md hover:bg-surface-container-high text-xs font-bold">3</button>
+<span class="px-2 text-xs">...</span>
+<button class="w-8 h-8 rounded-md hover:bg-surface-container-high text-xs font-bold">26</button>
+<button class="p-2 rounded-md hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</main>
+<!-- FAB (Suppressed based on screen purpose rule: "Details, Transactional screens suppress FAB", but here it fits for "New Response" if needed - keeping simple for this UI) -->
+</body></html>

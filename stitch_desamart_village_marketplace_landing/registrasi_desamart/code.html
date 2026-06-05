@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Daftar DesaMart - Digitalisasi Ekonomi Desa</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#717a6d",
+                    "on-secondary": "#ffffff",
+                    "background": "#fff9ec",
+                    "surface-container-low": "#faf3e2",
+                    "on-primary-fixed": "#002203",
+                    "error-container": "#ffdad6",
+                    "primary-fixed-dim": "#91d78a",
+                    "surface-container": "#f4eddd",
+                    "primary": "#00450d",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed": "#2c160e",
+                    "secondary-fixed": "#ffdbd0",
+                    "surface-bright": "#fff9ec",
+                    "inverse-on-surface": "#f7f0df",
+                    "tertiary-fixed": "#abf4ac",
+                    "on-primary-fixed-variant": "#0c5216",
+                    "outline-variant": "#c0c9bb",
+                    "error": "#ba1a1a",
+                    "secondary-container": "#fed3c7",
+                    "primary-fixed": "#acf4a4",
+                    "on-error-container": "#93000a",
+                    "tertiary": "#004516",
+                    "secondary-fixed-dim": "#e7bdb1",
+                    "primary-container": "#1b5e20",
+                    "on-tertiary-fixed-variant": "#07521d",
+                    "on-error": "#ffffff",
+                    "on-tertiary-fixed": "#002107",
+                    "on-secondary-fixed-variant": "#5d4037",
+                    "secondary": "#77574d",
+                    "on-primary": "#ffffff",
+                    "tertiary-container": "#185e27",
+                    "surface-dim": "#e0dac9",
+                    "surface-container-highest": "#e9e2d2",
+                    "on-secondary-container": "#795950",
+                    "on-primary-container": "#90d689",
+                    "surface-tint": "#2a6b2c",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-surface": "#333025",
+                    "tertiary-fixed-dim": "#90d792",
+                    "on-surface": "#1e1c12",
+                    "on-background": "#1e1c12",
+                    "inverse-primary": "#91d78a",
+                    "surface-container-high": "#eee8d7",
+                    "on-surface-variant": "#41493e",
+                    "surface-variant": "#e9e2d2",
+                    "on-tertiary-container": "#8fd691",
+                    "surface": "#fff9ec"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "4px",
+                    "margin-mobile": "20px",
+                    "xl": "40px",
+                    "sm": "8px",
+                    "gutter": "16px",
+                    "md": "16px",
+                    "margin-desktop": "64px",
+                    "lg": "24px"
+            },
+            "fontFamily": {
+                    "h3": ["Plus Jakarta Sans"],
+                    "body-lg": ["Inter"],
+                    "h2": ["Plus Jakarta Sans"],
+                    "body-md": ["Inter"],
+                    "h1": ["Plus Jakarta Sans"],
+                    "label-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "h3": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "h2": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "h1": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-sm": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fff9ec;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface antialiased overflow-x-hidden min-h-screen flex flex-col">
+<!-- TopNavBar is suppressed because this is a Transactional/Onboarding screen -->
+<main class="flex-grow flex flex-col md:flex-row h-screen overflow-hidden">
+<!-- Left Side: Form Section (55%) -->
+<section class="w-full md:w-[55%] h-full bg-surface-container-lowest overflow-y-auto px-6 md:px-16 py-10 flex flex-col">
+<!-- Brand Logo -->
+<div class="mb-12 flex items-center gap-2">
+<div class="bg-primary-container text-on-primary-container p-2 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="eco">eco</span>
+</div>
+<span class="font-h3 text-primary-container">DesaMart</span>
+</div>
+<div class="max-w-md w-full mx-auto md:mx-0">
+<header class="mb-8">
+<h1 class="font-h2 text-primary-container mb-2">Buat Akun Baru</h1>
+<p class="font-body-md text-on-surface-variant">Daftar sekarang dan mulai jual beli di marketplace desa</p>
+</header>
+<form class="space-y-5">
+<!-- Nama Lengkap -->
+<div class="space-y-1.5">
+<label class="font-label-sm text-on-surface">Nama Lengkap</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline" data-icon="person">person</span>
+<input class="w-full h-12 pl-10 pr-4 rounded-lg bg-surface-container border-none focus:ring-2 focus:ring-primary-container text-body-md outline-none" placeholder="Masukkan nama lengkap Anda" type="text"/>
+</div>
+</div>
+<!-- Email -->
+<div class="space-y-1.5">
+<label class="font-label-sm text-on-surface">Email</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline" data-icon="mail">mail</span>
+<input class="w-full h-12 pl-10 pr-4 rounded-lg bg-surface-container border-none focus:ring-2 focus:ring-primary-container text-body-md outline-none" placeholder="contoh@email.com" type="email"/>
+</div>
+</div>
+<!-- Nomor Telepon -->
+<div class="space-y-1.5">
+<label class="font-label-sm text-on-surface">Nomor Telepon</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline" data-icon="phone">phone</span>
+<input class="w-full h-12 pl-10 pr-4 rounded-lg bg-surface-container border-none focus:ring-2 focus:ring-primary-container text-body-md outline-none" placeholder="08123456789" type="tel"/>
+</div>
+<p class="text-[12px] text-outline px-1">Contoh: 08123456789</p>
+</div>
+<!-- Alamat Lengkap -->
+<div class="space-y-1.5">
+<label class="font-label-sm text-on-surface">Alamat Lengkap</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-3 text-outline" data-icon="location_on">location_on</span>
+<textarea class="w-full pl-10 pr-4 py-3 rounded-lg bg-surface-container border-none focus:ring-2 focus:ring-primary-container text-body-md outline-none resize-none" placeholder="Masukkan alamat desa Anda" rows="3"></textarea>
+</div>
+<p class="text-[12px] text-outline px-1">Masukkan alamat desa Anda</p>
+</div>
+<!-- Kata Sandi -->
+<div class="space-y-1.5">
+<label class="font-label-sm text-on-surface">Kata Sandi</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline" data-icon="lock">lock</span>
+<input class="w-full h-12 pl-10 pr-12 rounded-lg bg-surface-container border-none focus:ring-2 focus:ring-primary-container text-body-md outline-none" placeholder="••••••••" type="password"/>
+<button class="absolute right-3 top-1/2 -translate-y-1/2 text-outline hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+</div>
+<p class="text-[12px] text-outline px-1">Minimal 8 karakter dengan huruf dan angka</p>
+</div>
+<!-- Konfirmasi Kata Sandi -->
+<div class="space-y-1.5">
+<label class="font-label-sm text-on-surface">Konfirmasi Kata Sandi</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline" data-icon="lock">lock</span>
+<input class="w-full h-12 pl-10 pr-12 rounded-lg bg-surface-container border-none focus:ring-2 focus:ring-primary-container text-body-md outline-none" placeholder="••••••••" type="password"/>
+<button class="absolute right-3 top-1/2 -translate-y-1/2 text-outline hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+<!-- Submit Button -->
+<button class="w-full h-12 bg-primary-container text-on-primary-container font-h3 text-lg rounded-lg shadow-md hover:bg-opacity-90 active:scale-[0.98] transition-all flex items-center justify-center gap-2 mt-8" type="submit">
+                        Daftar
+                    </button>
+</form>
+<div class="mt-8 text-center">
+<p class="font-body-md text-on-surface-variant">
+                        Sudah punya akun? 
+                        <a class="text-primary-container font-semibold hover:underline" href="#">Masuk di sini</a>
+</p>
+</div>
+</div>
+<!-- Spacing for bottom scrolling -->
+<div class="h-10 shrink-0"></div>
+</section>
+<!-- Right Side: Illustration Section (45%) -->
+<section class="hidden md:flex w-[45%] h-full relative overflow-hidden bg-surface-container-low items-center justify-center p-12">
+<!-- Decorative Background Elements -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -mr-32 -mt-32"></div>
+<div class="absolute bottom-0 left-0 w-80 h-80 bg-secondary/5 rounded-full -ml-40 -mb-40"></div>
+<div class="relative z-10 flex flex-col items-center text-center max-w-lg">
+<div class="mb-10 w-full aspect-square rounded-[2rem] overflow-hidden shadow-xl border-4 border-white">
+<img alt="Pasar Desa yang Ramah" class="w-full h-full object-cover" data-alt="Friendly local marketplace scene with traditional bamboo stalls, fresh tropical produce, warm sunlight, and villagers interacting in a lush Indonesian setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2XCceVxRQGrLPnMX-QBC_JYQg58DClPWIkFfa7kA-wPhtNR7yTiax4uJA7v_I8nL6PKGM9Ud6BusRT8QXCtjt1vTJyt3ULb_sw9FTNLZxx23ZsbdQFtcL7QNUmDsAneEvK8nm5ToyFjmf1SEhia3rwmwnnmhFZVAdJItZTQtNV64UgkhaLlYVb_aYtomvKz2ssacnwi9omeS2Jyxek0oZGWhwcA5vkOybXoA0THponGPPJ-sKNNWnjIOmGZvl9RsEIadLZpgXiBQ"/>
+</div>
+<h2 class="font-h1 text-primary mb-6 leading-tight">
+                    Bergabunglah dengan komunitas desa digital kami
+                </h2>
+<div class="flex gap-4">
+<div class="flex items-center gap-2 bg-white/80 backdrop-blur px-4 py-2 rounded-full border border-primary/10">
+<span class="material-symbols-outlined text-primary" data-icon="verified_user">verified_user</span>
+<span class="text-label-sm text-primary">Petani Terverifikasi</span>
+</div>
+<div class="flex items-center gap-2 bg-white/80 backdrop-blur px-4 py-2 rounded-full border border-primary/10">
+<span class="material-symbols-outlined text-primary" data-icon="local_mall">local_mall</span>
+<span class="text-label-sm text-primary">Produk Lokal Segar</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer from Shared Components JSON -->
+<footer class="w-full border-t border-stone-200 dark:border-stone-800 bg-stone-100 dark:bg-stone-950">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 py-10 gap-4 max-w-full mx-auto">
+<div class="text-lg font-bold text-[#1B5E20] dark:text-green-600 font-['Plus_Jakarta_Sans']">
+                DesaMart
+            </div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="text-stone-500 dark:text-stone-400 hover:text-[#1B5E20] dark:hover:text-green-300 hover:underline transition-opacity duration-200 hover:opacity-80 font-['Plus_Jakarta_Sans'] text-sm" href="#">Tentang Kami</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-[#1B5E20] dark:hover:text-green-300 hover:underline transition-opacity duration-200 hover:opacity-80 font-['Plus_Jakarta_Sans'] text-sm" href="#">Pusat Bantuan</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-[#1B5E20] dark:hover:text-green-300 hover:underline transition-opacity duration-200 hover:opacity-80 font-['Plus_Jakarta_Sans'] text-sm" href="#">Privasi</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-[#1B5E20] dark:hover:text-green-300 hover:underline transition-opacity duration-200 hover:opacity-80 font-['Plus_Jakarta_Sans'] text-sm" href="#">Syarat &amp; Ketentuan</a>
+</div>
+<div class="text-stone-500 dark:text-stone-400 font-['Plus_Jakarta_Sans'] text-sm">
+                © 2024 DesaMart. Digitalisasi Ekonomi Desa.
+            </div>
+</div>
+</footer>
+</body></html>
