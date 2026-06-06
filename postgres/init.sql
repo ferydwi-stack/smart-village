@@ -29,6 +29,7 @@ CREATE INDEX IF NOT EXISTS idx_users_email ON users(email);
 CREATE INDEX IF NOT EXISTS idx_users_role ON users(role);
 
 -- Apply trigger to users
+DROP TRIGGER IF EXISTS update_users_timestamp ON users;
 CREATE TRIGGER update_users_timestamp
 BEFORE UPDATE ON users
 FOR EACH ROW
@@ -74,6 +75,7 @@ BEGIN
 END $$;
 
 -- Apply trigger to products
+DROP TRIGGER IF EXISTS update_products_timestamp ON products;
 CREATE TRIGGER update_products_timestamp
 BEFORE UPDATE ON products
 FOR EACH ROW
@@ -99,6 +101,7 @@ CREATE INDEX IF NOT EXISTS idx_orders_seller_id ON orders(seller_id);
 CREATE INDEX IF NOT EXISTS idx_orders_status ON orders(status);
 
 -- Apply trigger to orders
+DROP TRIGGER IF EXISTS update_orders_timestamp ON orders;
 CREATE TRIGGER update_orders_timestamp
 BEFORE UPDATE ON orders
 FOR EACH ROW
@@ -137,6 +140,7 @@ CREATE INDEX IF NOT EXISTS idx_complaints_status ON complaints(status);
 CREATE INDEX IF NOT EXISTS idx_complaints_category ON complaints(category);
 
 -- Apply trigger to complaints
+DROP TRIGGER IF EXISTS update_complaints_timestamp ON complaints;
 CREATE TRIGGER update_complaints_timestamp
 BEFORE UPDATE ON complaints
 FOR EACH ROW

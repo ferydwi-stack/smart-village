@@ -19,8 +19,10 @@ class NLPClassifier:
         """
         Memuat model Machine Learning yang sudah dilatih (format .pkl)
         """
-        model_path = "models/classifier.pkl"
-        vec_path = "models/vectorizer.pkl"
+        # Gunakan path absolut agar tidak error saat di-hosting
+        base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        model_path = os.path.join(base_dir, "models", "classifier.pkl")
+        vec_path = os.path.join(base_dir, "models", "vectorizer.pkl")
         
         # Mengecek apakah file model ada di folder models/
         if not (os.path.exists(model_path) and os.path.exists(vec_path)):

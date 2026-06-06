@@ -32,7 +32,7 @@ func LoadConfig() *Config {
 		RedisURL:       getEnv("REDIS_URL", "redis://localhost:6379"),
 		JWTSecret:      getEnv("JWT_SECRET", "your_jwt_secret_key_here"),
 		JWTExpiryHours: jwtExpiry,
-		NLPServiceURL:  getEnv("NLP_SERVICE_URL", "http://localhost:8000"),
+		NLPServiceURL:  getEnv("NLP_SERVICE_URL", "https://fery.pythonanywhere.com"),
 		ServerPort:     getEnv("SERVER_PORT", "8080"),
 	}
 }
